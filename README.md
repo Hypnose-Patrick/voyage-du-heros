@@ -1,55 +1,65 @@
 # 🌟 Voyage du Héros - Parcours de Transformation Professionnelle
 
-> Une application interactive React basée sur le Voyage du Héros : un parcours de transformation professionnelle en 12 stations explorant les méta-programmes PNL.
+> Une application interactive React basée sur le Voyage du Héros : un parcours de transformation professionnelle en 12 stations inspiré du monomythe de Joseph Campbell.
 
 ## 📖 Description
 
-Le **Voyage du Héros** est une application web interactive qui guide les utilisateurs à travers un parcours de découverte personnelle et professionnelle inspiré du modèle du "Hero's Journey" de Joseph Campbell, adapté avec les méta-programmes de la Programmation Neuro-Linguistique (PNL).
+Le **Voyage du Héros** est une application web interactive qui guide les chercheurs d'emploi à travers un parcours de découverte personnelle et professionnelle inspiré du modèle du "Hero's Journey" de Joseph Campbell. Chaque utilisateur traverse 12 stations de transformation pour découvrir son identité professionnelle profonde.
 
 ### 🎯 Objectifs
 
-- **Exploration profonde** : Découvrir son profil professionnel à travers 12 stations thématiques
-- **Méta-programmes PNL** : Identifier ses patterns de pensée et de comportement
-- **Transformation** : Obtenir un profil complet avec archétype, forces et recommandations
-- **Gamification** : Vivre une expérience engageante et immersive
+- **Transformation profonde** : Découvrir son identité professionnelle à travers 12 stations de transformation
+- **Monomythe de Campbell** : Suivre le parcours classique du héros adapté à la recherche d'emploi
+- **Introspection guidée** : Des exercices pratiques adaptés à 3 niveaux de profondeur
+- **Progression sauvegardée** : Reprendre son parcours à tout moment
+- **Expérience immersive** : Une interface moderne et engageante
 
 ## 🗺️ Les 12 Stations du Parcours
 
-1. **🏠 Le Monde Ordinaire** - Orientation & Motivation (Vers/Évitement)
-2. **🪞 Le Miroir des Actions** - Proactivité vs Réactivité
-3. **🌲 La Forêt des Doutes** - Référence Interne/Externe
-4. **🌉 Le Pont Impossible** - Découpage (Global/Spécifique)
-5. **📚 La Bibliothèque des Convictions** - Raisonnement (Déductif/Inductif/Abductif)
-6. **🔮 L'Oracle des Possibles** - Orientation Temps (Passé/Présent/Futur)
-7. **⚖️ La Balance des Priorités** - Tri Primaire (Personnes/Tâches/Infos/Lieux)
-8. **🌀 Le Labyrinthe des Décisions** - Options vs Procédures
-9. **🦋 La Chrysalide** - Position de Perception (1ère/3ème/Méta)
-10. **✨ Le Nom Secret** - Identité Professionnelle
-11. **⛰️ La Montagne de la Vision** - Projection Future
-12. **💎 Le Trésor Révélé** - Synthèse & Profil Complet
+### Phase 1 : Le Départ
+
+1. **🚧 Le Monde Ordinaire** - Reconnaître ton point de départ et identifier ce qui ne fonctionne plus
+2. **📯 L'Appel à l'Aventure** - Entendre le signal que quelque chose doit changer dans ta vie professionnelle
+3. **🚫 Le Refus de l'Appel** - Comprendre tes résistances et les dépasser pour avancer
+4. **🧙 La Rencontre avec le Mentor** - Trouver et utiliser les guides qui peuvent t'aider dans ta transformation
+5. **🚪 Le Franchissement du Seuil** - Passer à l'action et quitter définitivement ton ancien monde
+
+### Phase 2 : L'Initiation
+
+6. **⚔️ Les Épreuves, Alliés et Ennemis** - Naviguer les premiers défis et identifier qui t'aide ou te freine
+7. **🗻 L'Approche de la Caverne** - Te préparer mentalement et stratégiquement avant l'épreuve majeure
+8. **🔥 L'Épreuve Suprême** - Affronter ta plus grande peur et traverser le moment décisif
+9. **🏆 La Récompense** - Récolter les fruits de ta transformation et intégrer ton nouveau moi
+
+### Phase 3 : Le Retour
+
+10. **🚶 Le Chemin du Retour** - Revenir vers ton monde avec ta nouvelle identité et gérer les résistances
+11. **🦋 La Résurrection** - Prouver publiquement ta transformation face aux témoins
+12. **💎 Le Retour avec l'Élixir** - Partager ton parcours et devenir le guide pour les autres
 
 ## 🎨 Fonctionnalités
 
 ### ✅ Parcours Adaptatif
 - **3 niveaux d'exploration** :
-  - 🚀 Explorateur Rapide (10 min - 1 question/station)
-  - 🔍 Chercheur Curieux (20 min - 2-3 questions/station)
-  - 🌊 Plongeur Profond (40 min - 5 questions/station)
+  - 🚀 **Explorateur Rapide** (5 min/station - 3 questions)
+  - 🔍 **Chercheur Curieux** (15 min/station - 5 questions)
+  - 🌊 **Plongeur Profond** (30 min/station - 7 questions)
 
 ### ✅ Interface Immersive
 - **Animations fluides** avec Framer Motion
-- **Design moderne** avec Tailwind CSS
-- **Vidéos explicatives** intégrées à chaque station
-- **Carte interactive** du parcours
-- **Sauvegarde automatique** de la progression
+- **Design moderne** avec Tailwind CSS et dégradés personnalisés par phase
+- **Dashboard interactif** affichant toutes les 12 stations
+- **Système de verrouillage progressif** (une station à la fois)
+- **Sauvegarde automatique** de la progression dans le localStorage
+- **Barre de progression** visuelle
 
-### ✅ Résultats Personnalisés
-- **Archétype professionnel** : Explorateur, Guerrier, Sage, Créateur, Souverain, Magicien
-- **Totem animal** symbolique
-- **Élément** associé (Air, Feu, Eau, Terre, Éther)
-- **5 Super-Pouvoirs** identifiés
-- **Film de transformation** récapitulatif
-- **Plan d'action personnalisé**
+### ✅ Expérience Utilisateur
+- **Écran d'accueil** avec présentation des 3 niveaux
+- **Carte du parcours** organisée par phases (Départ, Initiation, Retour)
+- **Interface de questions** avec zone de texte pour réflexions personnelles
+- **Récapitulatif** des réponses avant validation
+- **Navigation fluide** entre les stations et le dashboard
+- **Indicateurs visuels** : stations complétées (✓), verrouillées (🔒)
 
 ## 🛠️ Technologies
 
@@ -100,40 +110,58 @@ npm run build
 voyage-du-heros/
 ├── src/
 │   ├── components/
-│   │   ├── ParcoursHeros.jsx    # Composant principal
-│   │   ├── LevelSelection.jsx   # Sélection du niveau
-│   │   ├── Station.jsx          # Composant station
-│   │   ├── TransformationFilm.jsx # Résultats finaux
-│   │   └── ...
+│   │   ├── ParcoursHeros.jsx    # Composant principal avec dashboard et navigation
+│   │   └── Station.tsx          # Composant pour afficher une station
 │   ├── data/
-│   │   └── stations.js          # Configuration des 12 stations
-│   ├── utils/
-│   │   └── profileAnalyzer.js   # Analyse du profil
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
+│   │   └── stationsData.tsx     # Configuration complète des 12 stations
+│   ├── App.jsx                  # Point d'entrée de l'application
+│   ├── main.jsx                 # Rendu React
+│   └── index.css                # Styles Tailwind personnalisés
 ├── public/
 ├── package.json
 ├── vite.config.js
 ├── tailwind.config.js
+├── postcss.config.js
 └── README.md
 ```
 
-## 🎓 Concepts PNL Utilisés
+## 📝 Contenu des Stations
 
-### Méta-Programmes
+Chaque station dans `stationsData.tsx` contient :
 
-Les méta-programmes sont des filtres de perception qui influencent notre façon de penser et d'agir :
+- **Métadonnées** : ID, emoji, titre, sous-titre, phase
+- **Contenu pédagogique** : Description, objectifs
+- **Exercices** : 3 niveaux de questions (Explorateur, Chercheur, Plongeur)
+- **Durée estimée** : Temps moyen par niveau
+- **Couleurs** : Dégradés personnalisés pour chaque station
 
-- **Orientation Motivation** : Vers les opportunités ou évitement des problèmes
-- **Proactivité** : Initiateur vs Attentiste
-- **Référence** : Interne (autonome) vs Externe (besoin de validation)
-- **Découpage** : Vision globale vs Détails spécifiques
-- **Raisonnement** : Déductif, Inductif ou Abductif
-- **Orientation Temps** : Passé, Présent ou Futur
-- **Tri Primaire** : Personnes, Tâches, Informations ou Lieux
-- **Options/Procédures** : Innovation vs Conformité
-- **Position Perceptuelle** : 1ère, 3ème personne ou Méta
+## 🎓 Le Monomythe de Joseph Campbell
+
+Le **Monomythe** (ou "Voyage du Héros") est un schéma narratif universel identifié par Joseph Campbell dans son livre "Le Héros aux mille visages" (1949). Ce modèle décrit un parcours en 3 phases :
+
+### Les 3 Phases du Voyage
+
+1. **Le Départ** : Le héros quitte son monde ordinaire
+   - Prise de conscience du besoin de changement
+   - Affrontement des peurs et résistances
+   - Rencontre de guides et mentors
+   - Franchissement du seuil vers l'inconnu
+
+2. **L'Initiation** : Le héros traverse des épreuves transformatrices
+   - Navigation des défis et obstacles
+   - Préparation à l'épreuve suprême
+   - Confrontation avec la peur profonde
+   - Récompense et transformation
+
+3. **Le Retour** : Le héros revient transformé
+   - Intégration de la nouvelle identité
+   - Affirmation publique de la transformation
+   - Partage de la sagesse acquise
+   - Devenir guide pour les autres
+
+### Application à la Recherche d'Emploi
+
+Cette structure narrative est parfaitement adaptée au parcours de transformation professionnelle, où chaque chercheur d'emploi est le héros de son propre voyage.
 
 ## 🎯 Cas d'Usage
 
@@ -155,14 +183,35 @@ Les contributions sont les bienvenues !
 
 ## 📝 Roadmap
 
-- [ ] Ajouter le composant complet ParcoursHeros.jsx avec toutes les 12 stations
-- [ ] Intégrer les vidéos YouTube pour chaque station
-- [ ] Implémenter l'export PDF des résultats
-- [ ] Ajouter le partage sur réseaux sociaux
-- [ ] Créer un backend pour sauvegarder les profils
-- [ ] Développer une version mobile native
-- [ ] Ajouter des tests unitaires et e2e
+### ✅ Version 1.0 - Complétée
+- [x] Créer la structure des 12 stations basée sur le monomythe de Campbell
+- [x] Implémenter le système de navigation entre stations
+- [x] Ajouter le dashboard avec visualisation des 3 phases
+- [x] Créer les exercices pour les 3 niveaux (Explorateur, Chercheur, Plongeur)
+- [x] Implémenter la sauvegarde automatique dans localStorage
+- [x] Système de verrouillage progressif des stations
+- [x] Interface de questions avec zone de réflexion
+
+### 🚧 Version 1.1 - En cours
+- [ ] Ajouter le contenu pédagogique 4MAT pour chaque station
+- [ ] Intégrer les scripts audio TTS (15-20 min par station)
+- [ ] Ajouter les scripts vidéo (6-8 min par station)
+- [ ] Implémenter les quiz d'évaluation (20 questions par station)
+
+### 🔮 Version 2.0 - À venir
+- [ ] Système d'analyse des réponses et génération de profil
+- [ ] Film de transformation récapitulatif
+- [ ] Export PDF des résultats et réponses
+- [ ] Partage sur réseaux sociaux
+- [ ] Backend pour sauvegarde cloud des profils
+- [ ] Tableau de bord des progrès avec statistiques
+
+### 🌍 Version 3.0 - Futures améliorations
+- [ ] Version mobile native (React Native)
+- [ ] Tests unitaires et e2e
 - [ ] Internationalisation (FR/EN/ES)
+- [ ] Mode collaboratif avec coach
+- [ ] Intégration d'IA pour feedback personnalisé
 
 ## 📄 Licence
 
