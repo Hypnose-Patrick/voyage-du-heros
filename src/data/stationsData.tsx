@@ -652,6 +652,210 @@ Direction : **Station 3 - Le Refus de l'Appel**`
         duration: '30 min'
       }
     ],
+    quiz: [
+      {
+        id: 'q1',
+        question: 'Quel est le VRAI problème de la Station 2 : L\'Appel à l\'Aventure ?',
+        options: [
+          'A) Ne pas recevoir d\'appel du tout',
+          'B) Recevoir trop d\'appels simultanément',
+          'C) Recevoir des appels mais les ignorer (Sourd, Sceptique, Confuseur)',
+          'D) Ne pas savoir comment répondre à un appel'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) Recevoir des appels mais les ignorer - Le problème n\'est pas l\'absence de signaux. Tu reçois des appels. Le problème, c\'est que tu les ignores de 3 façons : Le Sourd Volontaire (tu fais semblant de ne pas entendre), Le Sceptique Analytique (tu sur-analyses et tu hésites indéfiniment), Le Confuseur Chronique (tu es paralysé par trop d\'options). L\'appel est là. C\'est toi qui ne réponds pas.'
+      },
+      {
+        id: 'q2',
+        question: 'Quel est le lien entre ton Signal I.C.A.R.E. (Station 1) et le TYPE d\'appel que tu reçois (Station 2) ?',
+        options: [
+          'A) Il n\'y a pas de lien - les deux sont indépendants',
+          'B) Ton signal I.C.A.R.E. dominant influence directement le TYPE d\'appel que tu vas recevoir',
+          'C) L\'appel détermine ton signal I.C.A.R.E.',
+          'D) Les deux sont identiques'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) Ton signal I.C.A.R.E. dominant influence le type d\'appel - Exemples : Signal Identité → Appel-Révélation (déclic identitaire brutal). Signal Capacités → Appel-Insatisfaction (sous-régime progressif). Signal Risque → Appel-Crise (événement forcé). Ton appel n\'arrive pas au hasard. Il répond à ton signal.'
+      },
+      {
+        id: 'q3',
+        question: 'Parmi ces 4 exemples, lequel est un Appel-Crise ?',
+        options: [
+          'A) Tu lis un livre qui bouleverse ta vision de ta carrière',
+          'B) Un recruteur te contacte sur LinkedIn pour une opportunité',
+          'C) Tu te fais licencier suite à une restructuration',
+          'D) Depuis 6 mois, tu ressens un malaise croissant dans ton job'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) Licenciement suite à restructuration - L\'Appel-Crise est un événement externe, brutal, subi (licenciement, problème de santé, etc.). A) est un Appel-Révélation (déclic soudain). B) est un Appel-Opportunité (porte qui s\'ouvre). D) est un Appel-Insatisfaction (sentiment progressif).'
+      },
+      {
+        id: 'q4',
+        question: 'Marie reçoit un message d\'un ancien collègue qui lui propose de rejoindre une startup. Elle est excitée... mais aussi terrorisée. Salaire moins élevé, risque d\'échec. Quel critère d\'un VRAI appel est présent ici ?',
+        options: [
+          'A) La Persistance',
+          'B) Le Mix Peur + Excitation',
+          'C) La Cohérence Valeurs',
+          'D) La Clarté de Direction'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) Le Mix Peur + Excitation - Marie ressent les DEUX : l\'excitation de l\'opportunité ET la peur du risque. C\'est le signe d\'un vrai appel. Si c\'était JUSTE de l\'excitation → fantasme. Si c\'était JUSTE de la peur → obligation sociale. Les vrais appels génèrent cette ambivalence fascinante.'
+      },
+      {
+        id: 'q5',
+        question: 'Julien hésite depuis 8 mois entre devenir coach ou se lancer dans l\'immobilier. Il lit des livres sur les deux, mais ne passe jamais à l\'action. Quelle erreur fait-il ?',
+        options: [
+          'A) Il devrait choisir celui qui paie le mieux',
+          'B) Il est en mode "Sceptique Analytique" - il sur-analyse au lieu de tester',
+          'C) Il devrait ignorer les deux appels et attendre un troisième',
+          'D) Il devrait démissionner immédiatement pour se consacrer à l\'un des deux'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) Il est en mode "Sceptique Analytique" - Julien sur-analyse. Il lit, il pèse, il hésite... mais il ne TESTE pas. Le remède : lancer un Plan d\'Exploration 90 jours sur l\'un des deux appels. Tester concrètement. L\'action apporte plus de clarté que la réflexion.'
+      },
+      {
+        id: 'q6',
+        question: 'Vrai ou Faux : Un vrai appel doit être approuvé par ton entourage pour être authentique.',
+        options: [
+          'A) Vrai',
+          'B) Faux'
+        ],
+        correctAnswer: 1,
+        explanation: 'FAUX - Les vrais appels sont souvent incompris par l\'entourage. Parce qu\'ils sont PERSONNELS. Ton appel répond à TON identité, TES valeurs, TON signal I.C.A.R.E. L\'approbation sociale n\'est PAS un critère d\'authenticité. Les 5 vrais critères sont : Persistance, Cohérence Valeurs, Mix Peur+Excitation, Clarté de Direction, Coût du Non.'
+      },
+      {
+        id: 'q7',
+        question: 'Quel est le critère n°1 pour distinguer un vrai appel d\'une impulsion passagère ?',
+        options: [
+          'A) L\'intensité émotionnelle immédiate',
+          'B) La Persistance (le signal revient encore et encore, mois après mois)',
+          'C) L\'approbation de ton entourage',
+          'D) Le potentiel de revenus'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) La Persistance - Un vrai appel ne disparaît pas. Il revient. Encore et encore. Ce n\'est pas une impulsion d\'un dimanche soir déprimé. Test : Moins d\'1 mois → impulsion possible. 3-6 mois → signal sérieux. Plus d\'1 an → vrai appel que tu ignores.'
+      },
+      {
+        id: 'q8',
+        question: 'Sophie sent un appel vers la photographie depuis 14 mois. Mais elle se dit "Je suis Protectrice (archétype Station 1), pas Créatrice. Ça ne colle pas." Quel critère doit-elle réévaluer ?',
+        options: [
+          'A) La Persistance',
+          'B) Le Mix Peur + Excitation',
+          'C) La Cohérence Valeurs (alignement avec son identité profonde)',
+          'D) Le Coût du Non'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) La Cohérence Valeurs - Sophie doit vérifier si cet appel est cohérent avec son archétype et ses valeurs. Attention : elle peut être Protectrice ET photographe (ex: photographie documentaire sociale, portraits de personnes vulnérables). Mais si l\'appel la pousse vers quelque chose qui trahit son identité... c\'est peut-être une fuite déguisée. Ou alors, son archétype dominant évolue.'
+      },
+      {
+        id: 'q9',
+        question: 'Maxime a un appel vers l\'entrepreneuriat. Score 5/5 critères. Mais il a 3 enfants, un crédit immobilier, et son appel nécessiterait de quitter son CDI. Que faire ?',
+        options: [
+          'A) Abandonner l\'appel - le timing est impossible',
+          'B) Démissionner immédiatement malgré les risques',
+          'C) Lancer un Plan d\'Exploration 90 jours pour tester l\'appel SANS tout sacrifier (side project, weekends, soirées)',
+          'D) Attendre 10 ans que les conditions soient parfaites'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) Lancer un Plan 90 jours sans tout sacrifier - Un appel authentique ne signifie pas "tout ou rien immédiatement". Maxime peut : Tester son idée en side project le soir/weekend (Mois 3 : Expérimenter). Rencontrer des entrepreneurs (Mois 2 : Connecter). Se former en ligne (Mois 1 : Apprendre). Après 90 jours, il saura si l\'appel résonne encore. Alors il pourra prendre une décision éclairée (transition progressive, mi-temps, etc.).'
+      },
+      {
+        id: 'q10',
+        question: 'Dans le Plan d\'Exploration 90 jours, quelle est la bonne séquence des 3 mois ?',
+        options: [
+          'A) Expérimenter → Apprendre → Connecter',
+          'B) Connecter → Expérimenter → Apprendre',
+          'C) Apprendre → Connecter → Expérimenter',
+          'D) Apprendre → Expérimenter → Connecter'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) Apprendre → Connecter → Expérimenter - La séquence logique est : Mois 1 : APPRENDRE (comprendre le terrain, lire, rechercher). Mois 2 : CONNECTER (parler aux gens qui font déjà ce métier). Mois 3 : EXPÉRIMENTER (tester concrètement par des actions). Cette progression du théorique vers le concret permet de valider progressivement l\'authenticité de l\'appel.'
+      },
+      {
+        id: 'q11',
+        question: 'Thomas lance son Plan d\'Exploration 90 jours pour devenir développeur web. Mois 1 (Apprendre) : il suit 3 tutoriels en ligne et lit 2 livres. Mois 2 (Connecter) : il contacte 5 développeurs sur LinkedIn mais aucun ne répond. Il abandonne. Quelle est son erreur principale ?',
+        options: [
+          'A) Il aurait dû commencer par expérimenter directement',
+          'B) Il n\'a pas persévéré dans la phase Connecter (5 contacts, c\'est insuffisant)',
+          'C) Il aurait dû attendre 6 mois au lieu de 90 jours',
+          'D) Son appel n\'était pas authentique dès le départ'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) Il n\'a pas persévéré dans la phase Connecter (5 contacts, c\'est insuffisant) - La règle d\'or du networking : 5 contacts = trop peu. Vise 15-20 contacts minimum. Utilise plusieurs canaux (LinkedIn, événements, communautés en ligne). Personnalise tes messages. Ne pas recevoir de réponses après 5 tentatives n\'est PAS un signal que l\'appel n\'est pas authentique, c\'est juste une question de volume et de méthode.'
+      },
+      {
+        id: 'q12',
+        question: 'Quelles sont les 3 actions concrètes du Mois 3 (EXPÉRIMENTER) du Plan d\'Exploration 90 jours ? (Note: Sélectionne les réponses A, C, et E)',
+        options: [
+          'A) Créer un petit projet personnel lié au domaine',
+          'B) Démissionner pour se consacrer à plein temps',
+          'C) Offrir 2-3 services gratuits pour tester',
+          'D) S\'inscrire à une formation certifiante longue',
+          'E) Documenter ton expérience (blog, journal)',
+          'F) Attendre que les opportunités viennent à toi'
+        ],
+        correctAnswer: 0,
+        explanation: 'A, C, et E sont corrects - Les 3 actions concrètes du Mois 3 : 1) Projet perso : Crée quelque chose de concret, même petit. 2) Services gratuits : Offre 2-3 prestations gratuites pour tester la réalité du métier. 3) Documentation : Tiens un journal de bord de ton expérience. Démissionner (B) est prématuré. Une formation longue (D) vient APRÈS validation de l\'appel. Attendre passivement (F) n\'est pas expérimenter.'
+      },
+      {
+        id: 'q13',
+        question: 'À la fin des 90 jours d\'exploration, si ton appel ne résonne plus aussi fort qu\'au début, cela signifie que tu as échoué et perdu ton temps.',
+        options: [
+          'A) Vrai',
+          'B) Faux'
+        ],
+        correctAnswer: 1,
+        explanation: 'FAUX - Si après 90 jours d\'exploration concrète ton appel ne résonne plus, ce n\'est PAS un échec. C\'est une victoire d\'information. Tu as appris quelque chose d\'essentiel : ce n\'était pas le bon appel, ou pas le bon moment. Tu as économisé des années de fausse route. Retourne à l\'étape 1, cherche un autre signal. 90 jours investis pour éviter 5 ans de mauvaise direction = excellent ROI.'
+      },
+      {
+        id: 'q14',
+        question: 'Quelle est la question ultime à te poser au bout des 90 jours d\'exploration ?',
+        options: [
+          'A) "Ai-je gagné de l\'argent avec cette exploration ?"',
+          'B) "Est-ce que mon entourage approuve maintenant ?"',
+          'C) "Est-ce que cet appel résonne encore plus fort qu\'au jour 1 ?"',
+          'D) "Suis-je devenu expert dans ce domaine ?"'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) "Est-ce que cet appel résonne encore plus fort qu\'au jour 1 ?" - C\'est LA question décisive. Après 90 jours d\'apprentissage, de connexions et d\'expérimentation : Si OUI → C\'est un vrai appel authentique. Passe à l\'action concrète (Station 5 : Franchir le Seuil). Si NON → Ce n\'était pas le bon appel. Retourne à l\'observation des signaux. L\'argent (A), l\'approbation sociale (B) et l\'expertise (D) ne sont pas les bons critères à 90 jours.'
+      },
+      {
+        id: 'q15',
+        question: 'Léa, 42 ans, ressent depuis 8 mois un signal vers le métier de photographe de mariage (Appel-Insatisfaction progressif). Elle valide 5/5 critères. Elle lance son Plan 90 jours. Mois 1 : formation en ligne photo. Mois 2 : elle rencontre 12 photographes. Mois 3 : elle photographie gratuitement 2 mariages d\'amis. Bilan à J+90 : "J\'ai adoré l\'acte photographique, mais le stress de ne rien rater, les horaires (12h debout), la pression des clients... ça me mine. Mon appel était peut-être la photo, mais pas les mariages." Que devrait faire Léa ?',
+        options: [
+          'A) Abandonner complètement l\'idée de la photographie',
+          'B) Continuer les mariages en espérant s\'y habituer',
+          'C) Affiner son appel : explorer d\'autres niches photo (portraits, produits, reportage)',
+          'D) Considérer que son test a échoué et retourner à son emploi sans rien changer'
+        ],
+        correctAnswer: 2,
+        explanation: 'C) Affiner son appel : explorer d\'autres niches photo (portraits, produits, reportage) - Léa a fait une découverte précieuse : elle aime la PHOTO, mais pas le contexte MARIAGE. C\'est une maturation de l\'appel, pas un échec. Son vrai appel est peut-être : Photo de portraits en studio (moins de stress), Photo de produits e-commerce (créativité sans pression humaine), Photo documentaire/reportage (autre rythme). Elle doit lancer un nouveau cycle 90 jours sur une niche photographique différente. Les appels peuvent muter et s\'affiner. C\'est normal et sain.'
+      },
+      {
+        id: 'q16',
+        question: 'David ressent simultanément 3 appels différents : (1) Créer une startup tech, (2) Devenir coach sportif, (3) Partir vivre 6 mois en Asie. Les 3 résonnent fort. Il est paralysé. Quelle est la meilleure stratégie ?',
+        options: [
+          'A) Choisir celui qui paie le mieux à court terme',
+          'B) Choisir celui que son entourage préfère',
+          'C) Tester les 3 en parallèle pendant 90 jours',
+          'D) Faire le Plan 90 jours sur UN seul appel d\'abord (celui qui a le score 5 critères le plus élevé), puis tester les autres séquentiellement'
+        ],
+        correctAnswer: 3,
+        explanation: 'D) Faire le Plan 90 jours sur UN seul appel d\'abord, puis tester les autres séquentiellement - Tester 3 appels en parallèle (C) dilue ton attention et ton énergie. Aucun ne recevra l\'exploration approfondie nécessaire. Stratégie recommandée : 1) Passe les 3 appels au filtre des 5 critères. 2) Classe-les par score. 3) Teste le #1 pendant 90 jours. 4) Selon le résultat, teste le #2. 5) Puis le #3. Certains appels vont s\'estomper pendant que tu en explores un autre. C\'est normal. Les vrais appels authentiques persistent même quand tu les mets de côté temporairement.'
+      },
+      {
+        id: 'q17',
+        question: 'Sarah, 35 ans, mère de 2 enfants, entend un appel clair vers la reconversion en psychologie (5/5 critères). Mais : 5 ans d\'études nécessaires, revenus bloqués pendant ce temps, crédit immobilier en cours. Elle pense : "Mon appel est authentique, mais le timing est impossible. Je dois attendre 10 ans." A-t-elle raison ?',
+        options: [
+          'A) Oui, elle doit attendre que les conditions soient parfaites',
+          'B) Non, elle peut explorer des voies alternatives (formation progressive, psycho du travail avec cursus plus court, coaching certifié, etc.)',
+          'C) Non, elle doit démissionner et se lancer immédiatement malgré les risques',
+          'D) Son appel n\'est pas authentique si elle n\'est pas prête à tout sacrifier'
+        ],
+        correctAnswer: 1,
+        explanation: 'B) Non, elle peut explorer des voies alternatives (formation progressive, cursus plus court, coaching certifié) - Un appel authentique ne signifie pas "tout ou rien immédiatement". Sarah peut : Explorer la psychologie du travail (master plus court, souvent compatible temps partiel), Se former au coaching certifié (6-12 mois) qui utilise des outils psychologiques, Faire un DU de psychologie en cours du soir sur 2-3 ans, Travailler dans des associations d\'aide psychologique pour tester le terrain, Faire une VAE si elle a de l\'expérience pertinente. L\'appel vers "la psychologie" peut se manifester par 15 chemins différents. Le Plan 90 jours doit justement explorer ces alternatives réalistes. Attendre 10 ans (A) = ignorer l\'appel. Tout sacrifier (C) = irresponsable. L\'option D est toxique : un vrai appel cherche des solutions créatives, pas des sacrifices aveugles.'
+      }
+    ],
     duration: '20 min',
     color: 'from-amber-600 to-orange-700'
   },
