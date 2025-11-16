@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { stations } from '../data/stationsData';
+import Station from './Station';
 
 /**
  * ParcoursHeros - Composant principal du Voyage du Héros
@@ -10,16 +12,18 @@ const ParcoursHeros = () => {
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [userAnswers, setUserAnswers] = useState({});
   const [progress, setProgress] = useState(0);
+  const [currentStationId, setCurrentStationId] = useState(1);
 
   // Sauvegarde automatique dans le localStorage
   useEffect(() => {
     const savedData = localStorage.getItem('voyage-du-heros');
     if (savedData) {
-      const { level, answers, step, prog } = JSON.parse(savedData);
+      const { level, answers, step, prog, stationId } = JSON.parse(savedData);
       setSelectedLevel(level);
       setUserAnswers(answers);
       setCurrentStep(step);
       setProgress(prog);
+      setCurrentStationId(stationId || 1);
     }
   }, []);
 
@@ -29,10 +33,11 @@ const ParcoursHeros = () => {
         level: selectedLevel,
         answers: userAnswers,
         step: currentStep,
-        prog: progress
+        prog: progress,
+        stationId: currentStationId
       }));
     }
-  }, [selectedLevel, userAnswers, currentStep, progress]);
+  }, [selectedLevel, userAnswers, currentStep, progress, currentStationId]);
 
   const levels = [
     {
@@ -63,7 +68,7 @@ const ParcoursHeros = () => {
 
   const handleLevelSelection = (levelId) => {
     setSelectedLevel(levelId);
-    setCurrentStep('journey');
+    setCurrentStep('dashboard');
     setProgress(0);
   };
 
@@ -73,7 +78,36 @@ const ParcoursHeros = () => {
     setSelectedLevel(null);
     setUserAnswers({});
     setProgress(0);
+    setCurrentStationId(1);
   };
+
+  const handleStationComplete = (stationId, answers) => {
+    // Sauvegarder les réponses de cette station
+    const stationKey = `station${stationId}`;
+    setUserAnswers(prev => ({
+      ...prev,
+      [stationKey]: answers
+    }));
+
+    // Mettre à jour la progression
+    const newProgress = (stationId / 12) * 100;
+    setProgress(newProgress);
+
+    // Retourner au dashboard
+    setCurrentStep('dashboard');
+  };
+
+  const handleStartStation = (stationId) => {
+    setCurrentStationId(stationId);
+    setCurrentStep('station');
+  };
+
+  const handleBackToDashboard = () => {
+    setCurrentStep('dashboard');
+  };
+
+  const currentStation = stations.find(s => s.id === currentStationId);
+  const completedStations = Object.keys(userAnswers).filter(key => key.startsWith('station')).length;
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center p-4">
@@ -175,38 +209,129 @@ const ParcoursHeros = () => {
           </motion.div>
         )}
 
-        {currentStep === 'journey' && (
+        {currentStep === 'dashboard' && (
           <motion.div
-            key="journey"
+            key="dashboard"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="max-w-4xl w-full"
+            className="max-w-7xl w-full"
           >
-            <div className="card p-8 text-center">
-              <h2 className="text-3xl font-bold mb-4 text-white">
-                🚀 Ton Voyage Commence...
+            {/* Header */}
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold mb-4 text-white">
+                🗺️ Ton Parcours du Héros
               </h2>
-              <p className="text-white/70 mb-6">
-                Tu as choisi le niveau : <span className="text-gradient font-bold">
+              <p className="text-white/70 mb-2">
+                Niveau : <span className="text-gradient font-bold">
                   {levels.find(l => l.id === selectedLevel)?.title}
                 </span>
               </p>
-              <div className="space-y-4">
-                <p className="text-white/60">
-                  Les 12 stations du parcours seront bientôt disponibles.
-                </p>
-                <div className="flex gap-4 justify-center">
-                  <button onClick={handleRestart} className="btn-secondary">
-                    ← Retour au choix du niveau
-                  </button>
-                  <button className="btn-primary" disabled>
-                    Continuer (Prochainement)
-                  </button>
+              <div className="max-w-2xl mx-auto">
+                <div className="flex justify-between text-sm text-white/60 mb-2">
+                  <span>{completedStations} / 12 stations complétées</span>
+                  <span>{Math.round(progress)}%</span>
+                </div>
+                <div className="w-full bg-white/20 rounded-full h-3">
+                  <motion.div
+                    className="bg-gradient-to-r from-green-500 to-emerald-500 h-full rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.5 }}
+                  />
                 </div>
               </div>
+              <button onClick={handleRestart} className="mt-4 text-white/60 hover:text-white transition">
+                ← Changer de niveau
+              </button>
             </div>
+
+            {/* Phases */}
+            {['depart', 'initiation', 'retour'].map((phase) => {
+              const phaseStations = stations.filter(s => s.phase === phase);
+              const phaseName = phase === 'depart' ? 'Phase 1 : Le Départ' :
+                                phase === 'initiation' ? 'Phase 2 : L\'Initiation' :
+                                'Phase 3 : Le Retour';
+              const phaseColor = phase === 'depart' ? 'from-blue-500 to-cyan-500' :
+                                 phase === 'initiation' ? 'from-orange-500 to-red-500' :
+                                 'from-purple-500 to-pink-500';
+
+              return (
+                <div key={phase} className="mb-12">
+                  <div className={`inline-block bg-gradient-to-r ${phaseColor} px-6 py-2 rounded-full mb-6`}>
+                    <h3 className="text-xl font-bold text-white">{phaseName}</h3>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {phaseStations.map((station, index) => {
+                      const isCompleted = userAnswers[`station${station.id}`];
+                      const isLocked = station.id > 1 && !userAnswers[`station${station.id - 1}`];
+
+                      return (
+                        <motion.div
+                          key={station.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          whileHover={!isLocked ? { scale: 1.05 } : {}}
+                          className={`${isLocked ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                          onClick={() => !isLocked && handleStartStation(station.id)}
+                        >
+                          <div className={`card bg-gradient-to-br ${station.color} p-1 h-full`}>
+                            <div className="bg-slate-900/90 rounded-lg p-6 h-full flex flex-col">
+                              <div className="flex items-start justify-between mb-3">
+                                <div className="text-5xl">{station.emoji}</div>
+                                {isCompleted && (
+                                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    ✓ Complété
+                                  </div>
+                                )}
+                                {isLocked && (
+                                  <div className="bg-gray-500 text-white px-3 py-1 rounded-full text-sm">
+                                    🔒 Verrouillé
+                                  </div>
+                                )}
+                              </div>
+
+                              <h4 className="text-xl font-bold text-white mb-2">
+                                Station {station.id}: {station.title}
+                              </h4>
+                              <p className="text-white/70 text-sm mb-4 flex-1">
+                                {station.subtitle}
+                              </p>
+
+                              <div className="space-y-2">
+                                <div className="text-white/60 text-sm">
+                                  ⏱️ {station.duration}
+                                </div>
+                                {!isLocked && (
+                                  <button
+                                    className="w-full py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition font-semibold"
+                                  >
+                                    {isCompleted ? 'Refaire' : 'Commencer'}
+                                  </button>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </motion.div>
+        )}
+
+        {currentStep === 'station' && currentStation && (
+          <Station
+            key={currentStation.id}
+            station={currentStation}
+            level={selectedLevel}
+            onComplete={(answers) => handleStationComplete(currentStation.id, answers)}
+            onBack={handleBackToDashboard}
+          />
         )}
       </AnimatePresence>
     </div>
