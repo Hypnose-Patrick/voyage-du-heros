@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Station as StationType, Exercise } from '../data/stationsData';
+import { useProfileStore } from '../store/profileStore';
 
 interface StationProps {
   station: StationType;
@@ -13,6 +14,9 @@ export default function Station({ station, level, onComplete, onBack }: StationP
   const [currentStep, setCurrentStep] = useState<'intro' | 'exercise' | 'summary'>('intro');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  // Accès au store de profil
+  const { updateStationAnswers, completeStation } = useProfileStore();
 
   // Récupère l'exercice correspondant au niveau
   const exercise = station.exercises.find(ex => ex.level === level);
@@ -56,6 +60,13 @@ export default function Station({ station, level, onComplete, onBack }: StationP
   };
 
   const handleFinish = () => {
+    // Sauvegarder les réponses dans le store de profil
+    updateStationAnswers(station.id, answers);
+
+    // Marquer la station comme complétée
+    completeStation(station.id);
+
+    // Callback parent
     onComplete(answers);
   };
 
