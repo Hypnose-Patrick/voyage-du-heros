@@ -8,7 +8,7 @@
 
 **Niveau** : ⭐ Débutant
 
-**Objectif** : Déterminer ton type de franchissement de seuil optimal selon ton profil et ta situation
+**Objectif** : Déterminer ton type de franchissement dominant (Progressif, Brutal ou Spirale) selon ton profil et ta situation
 
 **Durée** : 10 minutes
 
@@ -16,129 +16,154 @@
 
 ### Instructions
 
-Le franchissement du seuil n'est pas une approche unique. Il existe 3 types de franchissement : **Progressif 🚶 (Le Pont)**, **Brutal ⚡ (Le Saut)**, et **Spirale 🌀 (La Danse)**.
+Le franchissement du seuil n'a pas qu'une seule forme. Il existe 3 types, et identifier le tien va te permettre de créer une stratégie alignée avec qui tu es et où tu en es.
 
-Cet exercice va t'aider à identifier le type de seuil qui correspond le mieux à ton profil I.C.A.R.E., ta situation actuelle, et tes besoins.
-
----
-
-### Étape 1 : Auto-Évaluation (7 min)
-
-Réponds honnêtement à ces 6 questions :
-
-**1. Mon profil I.C.A.R.E. dominant (identifié en Station 3) :**
-
-☐ Identité (besoin d'alignement identitaire)
-☐ Capacités (besoin de développer des compétences)
-☐ Appartenance (besoin de tribu/connexion)
-☐ Risque (besoin de sécurité/gestion du risque)
-☐ Estime (besoin de légitimité/valeur)
-
-**Mon profil dominant :** _______________
+Cet exercice va t'aider à clarifier ton type dominant.
 
 ---
 
-**2. Ma situation financière actuelle :**
+### Étape 1 : Auto-Évaluation par Questions (5 min)
 
-☐ J'ai 6+ mois de réserve financière
-☐ J'ai 3-6 mois de réserve
-☐ J'ai moins de 3 mois de réserve
+Réponds honnêtement à chaque question et note la lettre correspondant à ta réponse.
 
-**Ma situation :** _______________
+**QUESTION 1 : Quelle phrase résonne le PLUS avec toi ?**
 
----
+- **A)** "J'ai besoin de garder un filet de sécurité pendant que je teste mon nouveau projet."
+- **B)** "Je ne peux plus attendre. Si je ne le fais pas maintenant, je ne le ferai jamais."
+- **C)** "J'ai déjà essayé une fois et ça n'a pas marché, mais maintenant je sais ce que je ne savais pas."
 
-**3. Ma situation familiale :**
-
-☐ Célibataire sans enfants
-☐ En couple, partenaire soutient activement mon projet
-☐ En couple, partenaire inquiet mais ouvert à la discussion
-☐ En couple, partenaire opposé au projet
-☐ Avec enfants à charge
-
-**Ma situation :** _______________
+**Ma réponse :** _____
 
 ---
 
-**4. Mon rapport à la pression :**
+**QUESTION 2 : Quelle est ta situation financière actuelle ?**
 
-☐ La pression me motive (je performe mieux sous contrainte)
-☐ La pression me paralyse (j'ai besoin de sécurité pour créer)
-☐ Ça dépend du contexte
+- **A)** J'ai besoin de mon salaire actuel pour vivre (charges fixes, famille à charge, peu d'économies)
+- **B)** J'ai au minimum 6-12 mois d'économies qui me permettent de vivre sans revenu
+- **C)** Variable selon les périodes (parfois confortable, parfois tendu)
 
-**Mon rapport :** _______________
-
----
-
-**5. Mon expérience passée avec le changement :**
-
-☐ J'ai déjà tenté une transition similaire et "échoué" (Seuil Spirale probable)
-☐ C'est ma première vraie transition professionnelle/identitaire
-☐ J'ai déjà réussi des transitions par le passé
-
-**Mon expérience :** _______________
+**Ma réponse :** _____
 
 ---
 
-**6. Mon énergie actuelle dans mon monde ordinaire :**
+**QUESTION 3 : Comment te sens-tu dans ton "monde ordinaire" actuellement ?**
 
-☐ Je suis épuisé/en burn-out dans mon monde ordinaire (Brutal recommandé)
-☐ Ça va, je peux tenir encore un peu (Progressif possible)
-☐ Je suis en forme et stable (Tous les types possibles)
+- **A)** C'est acceptable temporairement. Je peux tenir encore quelques mois/années si nécessaire.
+- **B)** C'est insupportable. Je suis en burnout, dépression ou dans un environnement toxique.
+- **C)** Neutre. Ce n'est ni génial ni horrible. Ça peut servir de "base arrière" si besoin.
 
-**Mon niveau d'énergie :** _______________
-
----
-
-### Étape 2 : Analyse et Recommandation (3 min)
-
-**Guide d'interprétation :**
-
-**👉 Tu devrais considérer le SEUIL PROGRESSIF 🚶 si :**
-
-- Profil **Risque** I.C.A.R.E. (besoin de sécurité)
-- Moins de 6 mois de réserve financière
-- Avec enfants à charge OU partenaire inquiet/opposé
-- La pression te paralyse
-- Première transition importante
-- Énergie OK dans ton monde ordinaire
-
-**Principe** : Construire un pont entre ancien et nouveau monde. Garder ton job actuel en lançant ton projet en side project. Transition progressive (80% → 60% → 40% → 0%).
+**Ma réponse :** _____
 
 ---
 
-**👉 Tu devrais considérer le SEUIL BRUTAL ⚡ si :**
+**QUESTION 4 : Quel est ton profil I.C.A.R.E. dominant (identifié en Station 3) ?**
 
-- Profil **Identité** I.C.A.R.E. (besoin d'alignement total, impossible de vivre divisé)
-- 6+ mois de réserve financière
-- Célibataire OU partenaire très soutenant
-- La pression te motive
-- Tu sais que tu procrastines sans pression
-- Tu es épuisé/en burn-out dans ton monde ordinaire (situation toxique)
+- **A)** Risque ou Appartenance → Tendance **Progressif**
+- **B)** Identité ou Estime (besoin de cohérence totale) → Tendance **Brutal**
+- **C)** Capacités ou Estime (apprentissage par l'action) → Tendance **Spirale**
 
-**Principe** : Sauter dans le vide et construire tes ailes en tombant. Démission, annonce publique, investissement total. Brûler les bateaux.
+**Ma réponse :** _____
 
 ---
 
-**👉 Tu devrais considérer le SEUIL SPIRALE 🌀 si :**
+**QUESTION 5 : Dans ta vie passée, comment as-tu géré les grands changements ?**
 
-- Profil **Capacités** I.C.A.R.E. (besoin d'apprendre par l'expérience)
-- Secteur avec opportunités irrégulières (freelance, artistique, créatif)
-- Tu as déjà tenté et "échoué" une fois
-- Tu aimes expérimenter et tester
-- Tu as de la résilience émotionnelle (capacité à rebondir)
+- **A)** J'ai toujours planifié, préparé, sécurisé avant de sauter
+- **B)** J'ai fait des choix radicaux d'un coup (déménagement, rupture, démission...)
+- **C)** J'ai essayé, échoué, réessayé avec de nouveaux apprentissages
 
-**Principe** : Avancer, reculer, avancer plus loin, reculer moins. Alternance entre nouveau et ancien monde avec tendance progressive vers le nouveau. Accepter la non-linéarité.
+**Ma réponse :** _____
 
 ---
 
-**Mon type de seuil recommandé :** _______________
+**QUESTION 6 : Quelle métaphore te parle le plus ?**
 
-**Pourquoi ce type me correspond :**
+- **A)** Le trapèze : tenir les deux barres avant de lâcher l'ancienne
+- **B)** Le saut à l'élastique : sauter et construire le filet en tombant
+- **C)** La vague : entrer progressivement dans l'eau malgré les reflux
 
-__________________________________________________________
+**Ma réponse :** _____
 
-__________________________________________________________
+---
+
+### Étape 2 : Comptabiliser Tes Réponses (2 min)
+
+Compte le nombre de **A**, **B** et **C** :
+
+- Nombre de **A** : _____ → **Seuil Progressif (Le Pont)**
+- Nombre de **B** : _____ → **Seuil Brutal (Le Saut)**
+- Nombre de **C** : _____ → **Seuil Spirale (La Danse)**
+
+**Mon type dominant est :** _____________________
+
+---
+
+### Étape 3 : Comprendre Ton Type (3 min)
+
+Lis la description de ton type dominant :
+
+---
+
+**🚶 Si tu es PROGRESSIF (Le Pont) :**
+
+**Ton approche :** Tu vas franchir pas à pas, en construisant un pont entre ton ancien et ton nouveau monde.
+
+**Stratégie concrète pour toi :**
+
+1. **Phase 1 (Mois 1-3)** : Reste à 100% dans ton job actuel, mais lance un side project 5-10h/semaine
+2. **Phase 2 (Mois 4-6)** : Demande un passage à 80% (4 jours/semaine) si possible
+3. **Phase 3 (Mois 7-9)** : Passage à 60% ou 50% si le nouveau projet génère des revenus
+4. **Phase 4 (Mois 10-12)** : Démission/transition complète quand le nouveau projet est viable
+
+**Ton plus grand risque :** Rester coincé dans "l'entre-deux" indéfiniment (3 ans à 80% sans jamais franchir complètement).
+
+**Ton antidote :** Définis une **date limite** dès maintenant. "Si d'ici [date], je n'ai pas franchi complètement, alors [conséquence]."
+
+**Ta date limite :** _______ / _______ / _______
+
+---
+
+**⚡ Si tu es BRUTAL (Le Saut) :**
+
+**Ton approche :** Tu vas franchir d'un coup. Démission, annonce publique, investissement massif. Brûler les bateaux.
+
+**Stratégie concrète pour toi :**
+
+1. **Semaine 1-2** : Sécurise tes finances (compte tes économies, réduis tes charges fixes)
+2. **Semaine 3** : Prépare ton annonce (lettre de démission, post LinkedIn, conversation famille)
+3. **Semaine 4** : FRANCHIS (signe, envoie, annonce)
+4. **Jour J+1** : Tu es de l'autre côté. 100% focus sur le nouveau monde.
+
+**Ton plus grand risque :** Paniquer si ça ne marche pas dans les 3 premiers mois et te replier dans le regret/la culpabilité.
+
+**Ton antidote :** Accepte AVANT de franchir que les 6 premiers mois seront chaotiques. Ce n'est pas un signe d'échec, c'est normal.
+
+**Ta phrase mantra :** "J'ai choisi le chaos créatif. Je construis en tombant. C'est normal de ne pas savoir."
+
+---
+
+**🌀 Si tu es SPIRALE (La Danse) :**
+
+**Ton approche :** Tu vas franchir plusieurs fois. Essai, apprentissage, recul temporaire, réessai amélioré.
+
+**Stratégie concrète pour toi :**
+
+1. **Cycle 1** : Lance une première version (même imparfaite). Teste 3-6 mois.
+2. **Pause Réflexive** : Qu'est-ce qui a marché ? Qu'est-ce qui n'a pas marché ? Que dois-tu ajuster ?
+3. **Cycle 2** : Relance avec les apprentissages du Cycle 1. Teste 3-6 mois.
+4. **Répète** jusqu'à ce que ça stabilise.
+
+**Ton plus grand risque :** Confondre "spirale d'apprentissage" et "indécision chronique". Te décourager après 2-3 cycles.
+
+**Ton antidote :** Documente chaque cycle. Écris ce que tu as appris. Tu verras que tu progresses, même si ce n'est pas linéaire.
+
+**Mon journal de spirale :**
+
+| Cycle | Dates | Ce que j'ai testé | Ce que j'ai appris | Prochaine itération |
+|-------|-------|-------------------|-------------------|---------------------|
+| 1 |  |  |  |  |
+| 2 |  |  |  |  |
+| 3 |  |  |  |  |
 
 ---
 
@@ -146,181 +171,257 @@ __________________________________________________________
 
 À la fin de cet exercice, tu dois avoir :
 
-- ✅ Répondu aux 6 questions d'auto-évaluation
-- ✅ Identifié ton type de seuil recommandé
-- ✅ Compris POURQUOI ce type te correspond
+- ✅ Identifié ton type de franchissement dominant
+- ✅ Compris ta stratégie concrète
+- ✅ Identifié ton plus grand risque et ton antidote
+- ✅ (Si Progressif) Défini ta date limite
+- ✅ (Si Brutal) Préparé ton mantra anti-panique
+- ✅ (Si Spirale) Créé ton journal de cycles
 
 ---
 
-### Pourquoi c'est important ?
-
-**Erreur fréquente** : Choisir le type de seuil que ton entourage préfère (souvent Progressif car "raisonnable") plutôt que celui qui te correspond vraiment.
-
-Conséquences :
-
-- Si tu es **Identité** et que tu choisis Progressif : épuisement à vivre divisé entre deux mondes
-- Si tu es **Risque** et que tu choisis Brutal : pression insoutenable, paralysie
-- Si tu es **Capacités** et que tu choisis Progressif sans tolérer l'échec : abandon au premier obstacle
-
-**Connais-toi. Choisis TON seuil.**
-
----
-
-## EXERCICE 2 : NOMMER TES GARDIENS
+## EXERCICE 2 : NOMMER TES GARDIENS DU SEUIL
 
 **Niveau** : ⭐⭐ Intermédiaire
 
-**Objectif** : Identifier les gardiens du seuil (extérieurs et intérieurs) et préparer des réponses
+**Objectif** : Identifier et nommer tes gardiens extérieurs et intérieurs pour les désamorcer
 
 **Durée** : 15 minutes
 
-**Matériel** : Feuille et stylo, calme
+**Matériel** : Feuille et stylo
 
 ### Le Concept
 
-Juste avant le seuil, il y a toujours des **gardiens**.
+Juste avant le seuil, des **gardiens** apparaissent toujours.
 
-Ce sont des voix, des peurs, des obstacles, des "tests" qui apparaissent pour demander : "Es-tu vraiment prêt ? Es-tu vraiment sérieux ?"
+Ce ne sont pas des ennemis. Ce sont des **tests de détermination**.
 
-Il existe **deux types de gardiens** :
+S'ils apparaissent, c'est que tu es proche du seuil. C'est bon signe.
 
-1. **Gardiens Extérieurs** : Personnes ou événements qui te freinent
-2. **Gardiens Intérieurs** : Peurs et doutes dans ta tête
+Mais si tu ne les reconnais pas, ils peuvent te bloquer indéfiniment.
 
-**Les gardiens ne sont pas tes ennemis. Ce sont des tests de détermination.**
-
-Cet exercice va te permettre de les nommer, comprendre leur message, et préparer tes réponses.
+Cet exercice va te permettre de les nommer pour les désamorcer.
 
 ---
 
-### Partie 1 : Les Gardiens Extérieurs (7 min)
+### Partie 1 : Identifier Tes Gardiens Extérieurs (7 min)
 
-**Définition** : Personnes ou événements qui apparaissent juste avant que tu franchisses le seuil.
+Les **Gardiens Extérieurs** sont des obstacles dans le monde réel qui apparaissent juste avant que tu franchisses.
 
-**Exemples** :
-
-- Ta famille qui dit : "Tu es fou. Tu as un CDI. Ne fais pas l'enfant."
-- Ton manager qui te propose une promotion pile maintenant
-- Un accident/maladie qui te freine
-- Une opportunité dans ton ancien monde qui apparaît soudainement
-- Ton compte en banque qui baisse au moment où tu veux investir
+**Les 4 Catégories de Gardiens Extérieurs :**
 
 ---
 
-**Exercice :**
+**1. La Famille/Amis Inquiets 👨‍👩‍👧‍👦**
 
-Liste **3 personnes ou événements** qui pourraient te freiner juste avant de franchir le seuil :
+Ils veulent te protéger. Mais leur protection peut te garder coincé.
 
-**1. Gardien Extérieur #1 :**
+**Exemples de phrases :**
 
-- **Qui/Quoi :** _______________________________________________
-- **Leur peur (qu'est-ce qu'ils craignent pour toi ?) :** _______________________
-- **Ta réponse préparée :**
+- "Tu es sûr ? C'est risqué quand même..."
+- "Et si ça ne marche pas ? Tu as pensé à ta retraite ?"
+- "Pourquoi tu ne restes pas encore 2-3 ans pour sécuriser ?"
 
-"Je comprends ta peur de [peur]. Voici comment j'ai préparé ce risque : [ta réponse concrète]."
+**Est-ce que ce gardien est présent dans ta vie ?** ☐ Oui ☐ Non
 
-__________________________________________________________
+**Si oui, qui exactement ?**
 
----
+_______________________________________________
 
-**2. Gardien Extérieur #2 :**
+**Leur peur dominante pour toi :**
 
-- **Qui/Quoi :** _______________________________________________
-- **Leur peur :** _______________________
-- **Ta réponse préparée :**
-
-__________________________________________________________
+_______________________________________________
 
 ---
 
-**3. Gardien Extérieur #3 :**
+**2. L'Opportunité dans l'Ancien Monde 💼**
 
-- **Qui/Quoi :** _______________________________________________
-- **Leur peur :** _______________________
-- **Ta réponse préparée :**
+Ton monde ordinaire te fait une offre juste quand tu allais partir.
 
-__________________________________________________________
+**Exemples :**
 
----
+- Ton manager te propose une promotion soudaine
+- Une augmentation inattendue
+- Un nouveau projet intéressant dans ton job actuel
+- Une mutation dans une autre ville/équipe
 
-**Stratégie avec les Gardiens Extérieurs :**
+**Est-ce que ce gardien est présent (ou pourrait l'être) ?** ☐ Oui ☐ Non
 
-- ✅ **Écoute-les** (ils ont peut-être raison sur certains points)
-- ✅ **Remercie-les** pour leur inquiétude (elle vient souvent de l'amour)
-- ✅ **Montre que tu as préparé** (réponse factuelle, pas émotionnelle)
-- ❌ **Ne les combats pas** (résistance = amplification)
-- ❌ **Ne les laisse pas décider à ta place**
+**Si oui, quelle forme pourrait-il prendre ?**
 
----
-
-### Partie 2 : Les Gardiens Intérieurs (8 min)
-
-**Définition** : Les voix dans ta tête. Tes peurs. Tes doutes. Ton syndrome de l'imposteur.
-
-**Exemples** :
-
-- "Tu n'es pas prêt"
-- "Tu vas échouer"
-- "Tu vas perdre tout ce que tu as construit"
-- "Tu es égoïste de faire ça"
-- "Tu vas décevoir"
-- "Et si je me trompais ?"
+_______________________________________________
 
 ---
 
-**Exercice :**
+**3. L'Accident/La Crise ⚠️**
 
-Liste tes **3 peurs dominantes** avant de franchir le seuil :
+Un événement inattendu arrive pile au mauvais moment.
 
-**1. Peur #1 :**
+**Exemples :**
 
-"J'ai peur de ________________________________________"
+- Maladie (toi ou proche)
+- Perte d'argent soudaine
+- Problème familial urgent (divorce, décès, conflit)
+- Accident
 
-**Dialogue avec cette peur :**
+**Est-ce que ce gardien est présent (ou est déjà apparu) ?** ☐ Oui ☐ Non
 
-- **Cette peur veut me protéger de :** ___________________________
-- **Cette peur est-elle RÉELLE ou IMAGINAIRE ?** ☐ Réelle ☐ Imaginaire
-- **Pour répondre à cette peur, je vais (action concrète) :** __________
+**Si oui, lequel ?**
 
-__________________________________________________________
-
----
-
-**2. Peur #2 :**
-
-"J'ai peur de ________________________________________"
-
-**Dialogue avec cette peur :**
-
-- **Cette peur veut me protéger de :** ___________________________
-- **Cette peur est-elle RÉELLE ou IMAGINAIRE ?** ☐ Réelle ☐ Imaginaire
-- **Pour répondre à cette peur, je vais :** __________
-
-__________________________________________________________
+_______________________________________________
 
 ---
 
-**3. Peur #3 :**
+**4. Les Obstacles Logistiques 🚧**
 
-"J'ai peur de ________________________________________"
+Des blocages techniques/administratifs qui se multiplient.
 
-**Dialogue avec cette peur :**
+**Exemples :**
 
-- **Cette peur veut me protéger de :** ___________________________
-- **Cette peur est-elle RÉELLE ou IMAGINAIRE ?** ☐ Réelle ☐ Imaginaire
-- **Pour répondre à cette peur, je vais :** __________
+- Le site de formation plante quand tu veux t'inscrire
+- Le RDV avec le mentor s'annule 3 fois de suite
+- Le financement tombe à l'eau
+- Les démarches administratives bloquent
 
-__________________________________________________________
+**Est-ce que ce gardien est présent ?** ☐ Oui ☐ Non
+
+**Si oui, lesquels ?**
+
+_______________________________________________
 
 ---
 
-**Stratégie avec les Gardiens Intérieurs :**
+**Synthèse de Mes Gardiens Extérieurs :**
 
-- ✅ **Dialogue avec eux** (comme avec ton Mentor Intérieur - Station 4)
-- ✅ **Nomme la peur** (en la nommant, elle perd de sa puissance)
-- ✅ **Distingue RÉEL vs IMAGINAIRE** (90% des peurs sont imaginaires)
-- ✅ **Réponds factuellement** (action concrète, pas justification)
-- ❌ **Ne les ignore pas** (une peur ignorée grandit)
+Mes 3 principaux gardiens extérieurs sont :
+
+1. _______________________________________________
+2. _______________________________________________
+3. _______________________________________________
+
+---
+
+### Partie 2 : Identifier Tes Gardiens Intérieurs (8 min)
+
+Les **Gardiens Intérieurs** sont tes propres peurs et doutes qui hurlent juste avant que tu franchisses.
+
+Lis chaque voix et coche celles que tu entends ACTUELLEMENT.
+
+---
+
+**☐ 1. La Voix du Syndrome de l'Imposteur**
+
+*"Tu n'es pas légitime. Qui tu es pour faire ça ? Les autres sont meilleurs que toi. Tu n'as pas les diplômes/l'expérience/le réseau."*
+
+**Si cochée, note une phrase exacte que tu te dis :**
+
+_______________________________________________
+
+---
+
+**☐ 2. La Voix de la Catastrophe**
+
+*"Tu vas tout perdre. Tu vas te retrouver à la rue. Ta famille va souffrir. Dans 6 mois, tu vas regretter."*
+
+**Si cochée, quelle catastrophe précise tu imagines ?**
+
+_______________________________________________
+
+---
+
+**☐ 3. La Voix du Ridicule**
+
+*"Les gens vont rire de toi. Tu vas échouer publiquement. Tu vas avoir honte. Tout le monde va voir que tu es un imposteur."*
+
+**Si cochée, qui exactement va rire de toi dans ton imagination ?**
+
+_______________________________________________
+
+---
+
+**☐ 4. La Voix de la Trahison**
+
+*"Tu abandonnes ceux qui comptent sur toi. Tu es égoïste. Tu déçois ta famille/ton manager/tes collègues."*
+
+**Si cochée, qui te dit (ou pense) que tu trahis ?**
+
+_______________________________________________
+
+---
+
+**☐ 5. La Voix de l'Échec Prédestiné**
+
+*"De toute façon, ça ne marchera pas. Tu as toujours échoué dans le passé. Pourquoi ce serait différent cette fois ?"*
+
+**Si cochée, quel échec passé cette voix utilise-t-elle comme "preuve" ?**
+
+_______________________________________________
+
+---
+
+**☐ 6. La Voix du Confort**
+
+*"Reste. C'est bien ici. Tu es en sécurité. Pourquoi risquer ? Tu as un bon salaire, des avantages, de la stabilité."*
+
+**Si cochée, quel confort spécifique tu aurais du mal à lâcher ?**
+
+_______________________________________________
+
+---
+
+**☐ 7. La Voix de l'Illégitimité**
+
+*"Ce n'est pas pour les gens comme toi. C'est pour les autres. Les gens qui ont fait les bonnes écoles/qui viennent des bonnes familles/qui ont de l'argent."*
+
+**Si cochée, "les gens comme toi" = quelle catégorie dans ton esprit ?**
+
+_______________________________________________
+
+---
+
+**Synthèse de Mes Gardiens Intérieurs :**
+
+**J'ai coché _____ voix.**
+
+**Ma voix dominante (celle qui parle le plus fort) est :**
+
+_______________________________________________
+
+---
+
+### Partie 3 : Préparer Ta Réponse aux Gardiens (5 min)
+
+Maintenant que tu as nommé tes gardiens, tu vas préparer ta réponse.
+
+**Principe clé :** Ne lutte pas contre tes gardiens. Remercie-les et passe quand même.
+
+---
+
+**Pour Mes Gardiens Extérieurs :**
+
+Choisis ton gardien extérieur le plus probable et prépare ta réponse :
+
+**Gardien :** _______________________________________________
+
+**Ma réponse préparée :**
+
+"Je comprends ta/ton [inquiétude/offre/situation]. Merci de [me protéger/penser à moi].
+
+ET (pas "mais") : je franchis quand même parce que _____________________."
+
+---
+
+**Pour Mon Gardien Intérieur Dominant :**
+
+**Ma voix dominante :** _______________________________________________
+
+**Ma réponse rituelle (à répéter à voix haute quand elle apparaît) :**
+
+"Merci [nom de la voix], je t'ai entendu(e).
+
+Tu veux me protéger et je respecte ça.
+
+ET : je franchis quand même."
 
 ---
 
@@ -328,25 +429,16 @@ __________________________________________________________
 
 À la fin de cet exercice, tu dois avoir :
 
-- ✅ 3 Gardiens Extérieurs nommés avec réponses préparées
-- ✅ 3 Gardiens Intérieurs nommés avec dialogues complets
-- ✅ Distingué les peurs réelles (à préparer) des peurs imaginaires (à nommer et laisser partir)
+- ✅ Identifié tes 3 principaux gardiens extérieurs
+- ✅ Identifié ta voix intérieure dominante (parmi les 7)
+- ✅ Préparé une réponse pour ton gardien extérieur le plus probable
+- ✅ Créé ta réponse rituelle pour ton gardien intérieur dominant
 
----
+**Pourquoi c'est important ?**
 
-### Pourquoi c'est important ?
+Les gardiens apparaissent TOUJOURS. Si tu ne les as pas préparés, ils vont te bloquer.
 
-Les gardiens apparaissent toujours juste avant le seuil. Toujours.
-
-Si tu ne les as pas anticipés, ils vont te surprendre et potentiellement te faire reculer.
-
-En les nommant à l'avance, tu :
-
-1. Réduis leur pouvoir de surprise
-2. Prépares des réponses claires et ancrées
-3. Distingues les peurs légitimes (à gérer) des peurs parasites (à nommer et laisser passer)
-
-**Les gardiens ne sont pas tes ennemis. Ce sont tes alliés déguisés qui testent ta détermination.**
+Si tu les as nommés et préparés, ils deviennent juste... des passages obligés. Tu les reconnais, tu les remercies, tu passes.
 
 ---
 
@@ -354,173 +446,237 @@ En les nommant à l'avance, tu :
 
 **Niveau** : ⭐⭐⭐ Avancé
 
-**Objectif** : Créer un rituel de passage pour ancrer symboliquement et concrètement ton franchissement du seuil
+**Objectif** : Concevoir un rituel en 3 temps (Adieu, Passage, Accueil) pour sacraliser ton franchissement du seuil
 
-**Durée** : 20 minutes (préparation) + le rituel lui-même (30 min)
+**Durée** : 20 minutes
 
-**Matériel** : Papier, stylo, allumettes ou lieu pour détruire symboliquement, accès à un seuil physique (porte, pont, chemin)
+**Matériel** : Carnet, stylo, accès à ton agenda
 
 ### Le Concept
 
-Franchir le seuil n'est pas juste une décision mentale.
+Le franchissement du seuil n'est pas qu'un acte administratif (signer une démission, publier un post).
 
-C'est une **transition identitaire**. Une **mort et renaissance symbolique**.
+C'est un **passage initiatique**. Une transformation identitaire.
 
-Les cultures anciennes le savaient : Baptême, Bar-Mitzvah, Mariage, Funérailles, Initiations tribales.
+Les cultures traditionnelles le savaient. Elles créaient des rituels pour marquer les passages : naissance, adolescence, mariage, mort.
 
-**Les rituels ancrent les transitions.**
+Nous avons perdu ces rituels. Résultat : on franchit des seuils majeurs... et on se sent vide après.
 
-Ils marquent physiquement, émotionnellement et socialement un changement de statut.
+**Cet exercice va te permettre de créer TON rituel personnel de franchissement.**
 
-Sans rituel, le franchissement reste abstrait. Avec rituel, il devient réel.
+Il aura 3 temps :
 
----
-
-### Le Rituel en 3 Étapes
-
-**ÉTAPE 1 : L'ADIEU** (10 min) — *Tu quittes ton ancienne identité*
-
-**ÉTAPE 2 : LE PASSAGE** (5 min) — *Tu traverses le seuil physiquement*
-
-**ÉTAPE 3 : L'ANNONCE** (5 min) — *Tu déclares publiquement ton franchissement*
-
-Durée totale du rituel : **30 minutes** (à faire en une seule fois, sans interruption)
+1. **L'Adieu** (au monde ordinaire)
+2. **Le Passage** (l'acte de franchissement)
+3. **L'Accueil** (au nouveau monde)
 
 ---
 
-### ÉTAPE 1 : L'ADIEU (10 min)
+### TEMPS 1 : L'ADIEU (Au Monde Ordinaire)
 
-**Principe** : Laisser mourir ton ancienne identité avec gratitude et clarté.
+**Objectif :** Honorer ton monde ordinaire avant de partir. Clore un chapitre avec gratitude.
 
-**Matériel** : Papier, stylo, allumettes/feu (ou lieu pour enterrer/déchirer)
+**Pourquoi c'est important ?**
 
-**Instructions** :
+Si tu pars dans la colère, le ressentiment, le rejet... tu vas traîner ces énergies de l'autre côté.
 
-1. **Trouve un endroit calme** où tu ne seras pas dérangé
-2. **Écris une lettre à ton ancienne identité** (celle que tu quittes)
-
-**Template (à personnaliser absolument) :**
+Si tu pars dans la gratitude, tu pars léger.
 
 ---
 
-*Cher/Chère [Ancienne Identité — ex: "Ingénieur", "Manager", "Salarié"],*
+**Étape 1 : Lister Ce Que Ton Monde Ordinaire T'a Apporté (5 min)**
 
-*Merci pour _______________________________________________________*
+Même si ton monde ordinaire est devenu insupportable, il t'a apporté quelque chose.
 
-*(Liste 2-3 choses concrètes pour lesquelles tu es reconnaissant. Ex: "Merci pour la sécurité financière", "Merci pour les compétences que j'ai développées", "Merci pour les personnes que j'ai rencontrées")*
+**Liste 5 choses que ton monde ordinaire t'a apportées :**
 
-*Tu m'as protégé en _________________________________________________*
+(Exemples : sécurité financière, apprentissages, rencontres, compétences, confiance...)
 
-*(Comment cette identité t'a servi, protégé, donné un statut)*
-
-*Mais maintenant, je dois te laisser partir parce que _____________________*
-
-*(Pourquoi tu ne peux plus rester dans cette identité. Soit honnête.)*
-
-*Adieu.*
-
-*[Ton prénom]*
+1. _______________________________________________
+2. _______________________________________________
+3. _______________________________________________
+4. _______________________________________________
+5. _______________________________________________
 
 ---
 
-3. **Lis la lettre à voix haute** (oui, à voix haute, même seul)
-4. **Détruis la lettre de manière symbolique** :
-    - **Brûle-la** (feu = transformation, purification) — PRÉFÉRENCE
-    - **Enterre-la** (terre = retour à l'origine)
-    - **Déchire-la et jette-la dans l'eau** (eau = dissolution, lâcher-prise)
+**Étape 2 : Créer Ton Rituel d'Adieu (5 min)**
 
-**IMPORTANT** : Ce n'est pas "dramatique". C'est symbolique. Ça te permet de matérialiser le deuil de l'ancienne identité.
+Choisis UNE action symbolique pour dire "Merci et au revoir" à ton monde ordinaire.
 
----
+**Exemples de rituels d'adieu :**
 
-### ÉTAPE 2 : LE PASSAGE (5 min)
+- **Écrire une lettre à ton "ancien moi"** : "Merci pour... Je te libère maintenant."
+- **Faire un dernier tour** : Dans ton bureau, ton quartier, ton lieu habituel
+- **Remercier mentalement les personnes** qui t'ont amené jusqu'ici (même si tu ne leur dis pas)
+- **Créer un "mémorial"** : Une boîte avec des objets/photos de cette période de vie
+- **Brûler symboliquement** : Écrire sur un papier ce que tu laisses derrière, le brûler (en sécurité)
 
-**Principe** : Traverser physiquement un seuil pour ancrer le franchissement dans ton corps.
+**Mon rituel d'adieu sera :**
 
-**Matériel** : Un seuil physique (porte, pont, chemin, ligne tracée au sol)
+_______________________________________________
 
-**Instructions** :
+_______________________________________________
 
-1. **Trouve un seuil physique** :
-    - Une porte de ta maison
-    - Un pont dans un parc
-    - Une ligne que tu traces au sol (craie, corde)
-    - Un chemin dans la nature avec un point de passage clair
-2. **Place-toi devant le seuil** (côté "ancien monde")
-3. **Ferme les yeux**
-4. **Respire profondément 3 fois** (inspire 4 sec, expire 6 sec)
-5. **Ouvre les yeux**
-6. **Traverse le seuil en disant à voix haute** :
+**Je le ferai le (date) :** _______ / _______ / _______
+
+**Lieu :** _______________________________________________
 
 ---
 
-*"Je franchis le seuil.*
+### TEMPS 2 : LE PASSAGE (L'Acte de Franchissement)
 
-*Je quitte [ancien monde — ex: mon job de salarié, mon identité d'ingénieur] pour entrer dans [nouveau monde — ex: ma vie d'entrepreneur, mon identité de formateur].*
-
-*Je suis prêt."*
+**Objectif :** Sacraliser l'acte lui-même pour qu'il s'ancre comme un moment décisif.
 
 ---
 
-7. **Une fois de l'autre côté, NE REVIENS PAS EN ARRIÈRE** (symboliquement)
-8. **Marche 10 pas dans le nouveau monde** (même si c'est juste 10 pas dans ton couloir)
-9. **Sens ce qui change dans ton corps** (posture, respiration, énergie)
+**Étape 1 : Définir Ton Acte de Franchissement (3 min)**
+
+Quel est l'ACTE concret qui représente ton franchissement ?
+
+**Critères :**
+
+- ✅ C'est visible (toi et/ou les autres le voient)
+- ✅ C'est engageant (tu mets argent/réputation/temps en jeu)
+- ✅ C'est (partiellement) irréversible
+
+**Exemples :**
+
+- Signer et envoyer ta lettre de démission
+- Publier ton premier article/vidéo sous ton vrai nom
+- Envoyer ta première facture
+- T'inscrire et payer une formation
+- Acheter un billet d'avion one-way
+- Annoncer publiquement ton projet sur LinkedIn
+
+**Mon acte de franchissement est :**
+
+_______________________________________________
+
+**Je le ferai le (date — MAX 30 jours) :** _______ / _______ / _______
 
 ---
 
-### ÉTAPE 3 : L'ANNONCE (5 min)
+**Étape 2 : Créer Ton Rituel de Passage (7 min)**
 
-**Principe** : Déclarer publiquement ton franchissement pour créer un engagement social (impossible de revenir discrètement en arrière).
+Comment vas-tu **sacraliser** cet acte pour qu'il ne soit pas juste un clic/une signature ?
 
-**Matériel** : Ordinateur/téléphone, accès LinkedIn/réseaux sociaux ou liste de contacts
+**Exemples de rituels de passage :**
 
-**Instructions** :
+- **Allumer une bougie** avant de cliquer sur "Envoyer" / signer
+- **Porter un vêtement spécial** (quelque chose qui représente ton nouveau monde)
+- **Être dans un lieu significatif** (pas ton bureau habituel — un parc, une montagne, un café symbolique)
+- **Prendre 3 respirations profondes** avant d'agir et te dire : "Je choisis. Je franchis."
+- **Écouter une musique spécifique** qui marque ce moment
+- **Être accompagné(e)** : Inviter une personne proche à être présente (physiquement ou en visio)
+- **Prononcer une phrase rituelle** à voix haute avant d'agir
 
-1. **Choisis ton canal d'annonce** :
-    - **Post LinkedIn** (recommandé si transition pro)
-    - **Email à ton réseau proche** (famille, amis, anciens collègues)
-    - **Message à un groupe de soutien** (communauté, mastermind)
-    - **Post sur réseaux sociaux** (si pertinent)
-2. **Rédige ton annonce** (1-3 paragraphes max, authentique, pas corporate)
+**Mon rituel de passage sera :**
 
-**Template (à personnaliser absolument) :**
+**Lieu :** _______________________________________________
+
+**Moment de la journée :** _______________________________________________
+
+**Objets/Symboles :** _______________________________________________
+
+**Phrase rituelle (à prononcer à voix haute) :**
+
+"Aujourd'hui, je franchis. Je quitte [ancien monde] et j'entre dans [nouveau monde].
+
+Je choisis [ta valeur principale]. Je deviens [qui tu veux devenir]."
+
+**Ma phrase :**
+
+_______________________________________________
+
+_______________________________________________
 
 ---
 
-*"Après [X années] en tant que [ancienne identité], je franchis aujourd'hui le seuil vers [nouvelle identité].*
+### TEMPS 3 : L'ACCUEIL (Au Nouveau Monde)
 
-*[Optionnel : 1-2 phrases sur POURQUOI — ton appel, ce qui t'a poussé]*
-
-*Je suis [ému/effrayé/excité/vivant] et prêt.*
-
-*Merci à ceux qui m'ont soutenu jusqu'ici. Le voyage commence.*
-
-*[Si pertinent : comment les gens peuvent te soutenir — "Si vous connaissez des gens dans [secteur]...", "Si vous voulez suivre mon parcours..."]*"
+**Objectif :** Célébrer et ancrer ton franchissement. Marquer physiquement que tu es de l'autre côté.
 
 ---
 
-3. **Publie l'annonce SANS attendre** (pas de "je vais peaufiner demain")
-4. **Accepte les réactions** (certaines seront encourageantes, d'autres inquiètes — c'est normal)
+**Étape 1 : Choisir Comment Tu Vas Célébrer (5 min)**
+
+Le franchissement mérite d'être célébré. Pas de manière superficielle, mais de manière **signifiante**.
+
+**Exemples de rituels d'accueil :**
+
+- **Partager avec une personne proche** (appel, message) : "Aujourd'hui, j'ai franchi."
+- **T'offrir quelque chose de symbolique** (livre, objet, vêtement) qui représente ton nouveau monde
+- **Écrire dans ton journal** : "Aujourd'hui, [date], j'ai franchi le seuil. Je suis devenu(e)..."
+- **Créer un objet/symbole physique** : Une pierre ramassée ce jour-là, un bracelet, un dessin
+- **Planter quelque chose** (si tu as un jardin/balcon) : Un arbre, une plante
+- **Faire une activité symbolique** : Regarder le lever/coucher de soleil, nager, marcher en forêt
+
+**Mon rituel d'accueil sera :**
+
+_______________________________________________
+
+_______________________________________________
+
+**Je le ferai le (même jour ou jour suivant) :** _______ / _______ / _______
 
 ---
 
-### Variantes du Rituel
+**Étape 2 : Créer Ton Objet/Symbole de Franchissement (Optionnel mais puissant)**
 
-**Variante 1 : Rituel Collectif** (si tu as une communauté de soutien)
+**Objectif :** Avoir un objet physique qui te rappelle "J'ai franchi. Je suis de l'autre côté."
 
-Invite 2-3 personnes proches à être témoins de ton rituel. Lis ta lettre devant elles. Traverse le seuil pendant qu'elles te regardent. Fais ton annonce en leur présence.
+**Exemples :**
 
-**Variante 2 : Rituel Intime** (si tu préfères la discrétion)
+- Une pierre ramassée le jour J
+- Un bracelet acheté ce jour-là (que tu portes ensuite)
+- Une photo prise à ce moment précis
+- Un dessin/peinture que tu fais après
+- Une bougie que tu allumes chaque anniversaire du franchissement
 
-Fais toutes les étapes mais remplace l'annonce publique par un engagement écrit à toi-même (lettre à ton Moi Futur que tu ouvriras dans 1 an).
+**Mon objet/symbole sera :**
 
-**Variante 3 : Rituel Progressif** (si tu fais un Seuil Progressif)
+_______________________________________________
 
-Fais le rituel en 3 fois :
+**Où je vais le garder :**
 
-- 1re fois : Quand tu lances ton projet en side (80% ancien monde)
-- 2e fois : Quand tu passes à mi-temps (50% nouveau monde)
-- 3e fois : Quand tu quittes totalement (100% nouveau monde)
+_______________________________________________
+
+---
+
+### SYNTHÈSE : Mon Rituel Complet de Franchissement
+
+**🕯️ ADIEU (Avant le franchissement)**
+
+**Quoi :** _______________________________________________
+
+**Quand :** _______ / _______ / _______
+
+**Où :** _______________________________________________
+
+---
+
+**⚔️ PASSAGE (Le jour du franchissement)**
+
+**Acte concret :** _______________________________________________
+
+**Quand :** _______ / _______ / _______ (MAX 30 jours)
+
+**Où :** _______________________________________________
+
+**Rituel :** _______________________________________________
+
+**Phrase rituelle :** _______________________________________________
+
+---
+
+**🌅 ACCUEIL (Après le franchissement)**
+
+**Quoi :** _______________________________________________
+
+**Quand :** _______ / _______ / _______
+
+**Objet/Symbole :** _______________________________________________
 
 ---
 
@@ -528,43 +684,28 @@ Fais le rituel en 3 fois :
 
 À la fin de cet exercice, tu dois avoir :
 
-- ✅ Écrit et détruit ta lettre d'adieu à ton ancienne identité
-- ✅ Traversé physiquement un seuil en prononçant ton engagement à voix haute
-- ✅ Annoncé publiquement (ou par écrit) ton franchissement
+- ✅ Créé ton rituel d'Adieu (avec date et lieu)
+- ✅ Défini ton acte de franchissement précis (avec date MAX 30 jours)
+- ✅ Créé ton rituel de Passage (lieu, moment, phrase rituelle)
+- ✅ Créé ton rituel d'Accueil (célébration + objet symbole)
+- ✅ Bloqué les 3 dates dans ton agenda
 
----
-
-### Pourquoi c'est important ?
-
-Franchir le seuil sans rituel, c'est comme se marier sans cérémonie.
-
-Techniquement, c'est valide. Mais symboliquement et émotionnellement, il manque quelque chose.
-
-Le rituel te permet de :
-
-1. **Ancrer le changement dans ton corps** (pas juste dans ta tête)
-2. **Marquer une rupture claire** (fin de l'ancien, début du nouveau)
-3. **Créer un engagement public** (plus difficile de revenir en arrière discrètement)
-4. **Honorer l'ancienne identité** (gratitude, pas rejet)
-
-**Les transitions floues créent des identités floues.**
-
-**Les rituels créent des franchissements clairs.**
+**IMPORTANT :** Bloque ces 3 dates dans ton agenda MAINTENANT. Si tu ne les bloques pas, elles ne se feront pas.
 
 ---
 
 ## 📥 PARTAGE TES RÉSULTATS
 
-Partage ton rituel de franchissement :
+Partage ton rituel et ton franchissement :
 
-1. **Dans le groupe privé JobSeek** - Pour ancrer socialement ton engagement
-2. **Avec ton mentor** (Station 4) - Pour qu'il témoigne de ta transition
-3. **Dans ton journal de bord** - Pour te rappeler ce moment de courage
+1. **Dans le groupe privé JobSeek** - Pour recevoir du soutien de la communauté
+2. **Avec ton mentor** - Pour avoir un témoin de ton engagement
+3. **Dans ton journal** - Pour ancrer le passage
 
 ---
 
-**Bravo d'avoir franchi le seuil. 🔥**
+**Bravo d'avoir fait le travail. ⚔️**
 
-**Tu as quitté ton monde ordinaire. Le monde de l'aventure t'attend.**
+**Le seuil t'attend. Tu es prêt(e).**
 
-**Direction : Station 6 - Les Épreuves, Alliés et Ennemis.**
+**Franchis.**
