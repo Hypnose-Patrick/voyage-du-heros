@@ -50,8 +50,12 @@ Chaque station propose des exercices adaptés à ton niveau d'engagement :
 
 #### Station 5 : 🚪 Le Franchissement du Seuil
 > *Passer à l'action*
-- **Statut** : À venir
-- **Focus** : Le premier engagement irrévocable
+- **Document** : [`station-5-exercices-pratiques.md`](./station-5-exercices-pratiques.md)
+- **Exercices** :
+  - ⭐ Exercice 1 : Identifier ton type de seuil
+  - ⭐⭐ Exercice 2 : Nommer tes gardiens
+  - ⭐⭐⭐ Exercice 3 : Créer ton rituel de franchissement
+- **Focus** : Les 3 types de franchissement (Progressif, Brutal, Spirale), les gardiens du seuil et le rituel de passage
 
 ---
 
