@@ -113,11 +113,390 @@ export const stations: Station[] = [
     phaseName: 'Phase 1 : Le Départ',
     description: 'Entendre le signal que quelque chose doit changer dans ta vie professionnelle.',
     objectives: [
-      'Identifier les signaux de changement dans ta vie',
-      'Reconnaître l\'appel à la transformation',
-      'Comprendre ce que ton intuition te dit',
-      'Clarifier la direction qui t\'appelle'
+      'Reconnaître le signal qui t\'appelle au changement',
+      'Comprendre les 4 types d\'appels à l\'aventure',
+      'Distinguer un vrai appel d\'une fausse alerte',
+      'Formuler ton appel en une phrase claire',
+      'Créer un plan d\'exploration sur 90 jours'
     ],
+    pedagogicalContent: {
+      why: `### Le Problème : Le Signal Ignoré
+
+La plupart des gens reçoivent des appels. Tout le temps. Des signaux qui leur disent : "Hé, il y a mieux pour toi. Il y a autre chose."
+
+Mais tu sais quoi ? **La plupart les ignorent.**
+
+Peut-être que toi aussi, tu as déjà ignoré un appel :
+
+**Le message LinkedIn** d'un recruteur que tu as laissé sans réponse.
+
+**La conversation** avec un ami qui a changé de vie et qui t'a inspiré... mais tu as vite oublié.
+
+**Cet article** que tu as lu un dimanche et qui t'a bouleversé... mais le lundi, tu étais déjà retourné à ta routine.
+
+### Les 3 Façons d'Ignorer un Appel
+
+**Façon 1 : Le Sourd Volontaire**
+
+Tu entends le signal. Clairement. Mais tu fais semblant de ne pas l'entendre.
+
+Tu montes le volume de ta routine. Tu te remplis de distractions. Tu évites les conversations qui pourraient raviver cet appel.
+
+Le problème ? Le signal devient de plus en plus fort. Jusqu'à ce qu'il se transforme en crise. Licenciement. Burn-out. Rupture.
+
+**Façon 2 : Le Sceptique Analytique**
+
+Tu entends le signal. Mais tu le sur-analyses.
+
+*"Est-ce vraiment le bon moment ? Il faudrait que j'aie d'abord X, Y, Z. Statistiquement, les chances de succès sont... Je vais faire une liste des pour et des contre."*
+
+Tu passes des mois à analyser. À peser. À hésiter.
+
+Et pendant ce temps, l'opportunité passe. La porte se ferme.
+
+Et tu restes avec ce goût amer de "Et si...?"
+
+**Façon 3 : Le Confuseur Chronique**
+
+Tu entends PLUSIEURS signaux. Contradictoires. En même temps.
+
+Un appel vers l'entrepreneuriat. Un autre vers un master. Un troisième vers l'expatriation.
+
+Tu ne sais plus lequel écouter. Alors tu ne réponds à aucun.
+
+Paralysie par excès de choix.
+
+### L'Impact Émotionnel
+
+Le coût de l'ignorance d'un appel authentique :
+
+**Sur ton énergie** : Cette sensation persistante que tu passes à côté de quelque chose.
+
+**Sur ton estime** : Tu commences à te voir comme quelqu'un qui "n'ose pas".
+
+**Sur ton parcours** : Chaque appel ignoré est une bifurcation non prise. Une version de toi qui n'existera jamais.
+
+**Sur ton âme** : Le sentiment de trahir ton potentiel.
+
+### La Vision Transformée
+
+Mais imagine que tu reconnaisses le signal. Que tu le prennes au sérieux. Que tu explores.
+
+Tu ne dis pas oui immédiatement à tout. Mais tu dis **oui à l'investigation**. À l'exploration. À l'ouverture.
+
+Tous les héros reçoivent un appel :
+
+- **Luke Skywalker** reçoit le message de Leia. Il pourrait l'ignorer. Continuer à nettoyer des condensateurs sur Tatooine. Mais il choisit d'écouter.
+- **Frodon** apprend que l'anneau est l'Anneau Unique. Il pourrait le jeter dans la rivière. Retourner à ses livres. Mais il choisit de répondre.
+- **Harry Potter** reçoit sa lettre de Poudlard. Il pourrait rester sous l'escalier. Mais il choisit le mystère.
+
+C'est le moment du choix. Le moment où tu décides si tu restes dans ton monde ordinaire... ou si tu franchis le seuil.
+
+### Lien avec la Station 1 : Ton Signal I.C.A.R.E. Influence Ton Appel
+
+Tu te souviens de ton signal dominant identifié en Station 1 ? (Identité, Capacités, Appartenance, Risque, Estime)
+
+**Voici comment il influence le TYPE d'appel que tu reçois :**
+
+**Si ton signal est Identité** 🎭 → Tu reçois probablement un **Appel-Révélation**
+- Une conversation, un livre, un événement qui te fait réaliser : "Ce n'est pas moi. Je suis autre chose."
+- C'est souvent un déclic identitaire brutal.
+
+**Si ton signal est Capacités** 💪 → Tu reçois probablement un **Appel-Insatisfaction**
+- Ce sentiment progressif de tourner en sous-régime, de ne pas utiliser tes vrais talents.
+- "Je vaux plus que ça. Je peux faire mieux."
+
+**Si ton signal est Appartenance** 🌍 → Tu reçois probablement un **Appel-Opportunité** ou **Appel-Révélation**
+- Une porte qui s'ouvre vers un environnement où tu te sentirais enfin à ta place.
+- Ou une prise de conscience : "Je ne suis pas fait pour ce monde-là."
+
+**Si ton signal est Risque** ⚠️ → Tu reçois probablement un **Appel-Crise**
+- Un événement externe qui te force à bouger, parce que tu n'aurais jamais bougé volontairement.
+- Le licenciement qui devient une libération.
+
+**Si ton signal est Estime** 🪞 → Tu reçois probablement un **Appel-Opportunité** que tu vas... ignorer
+- Quelqu'un croit en toi plus que toi-même.
+- Mais tu te dis : "Je ne mérite pas ça. C'est trop pour moi."
+
+**Comprendre ce lien est crucial** : ton appel n'arrive pas au hasard. Il répond à ton signal.`,
+
+      what: `### Les 4 Types d'Appels à l'Aventure
+
+Il existe quatre types d'appels à l'aventure professionnelle. Quatre archétypes.
+
+Chacun arrive par un chemin différent. Chacun demande une réponse différente.
+
+### Type 1 : L'Appel-Crise 🌩️
+
+**Le Coup de Tonnerre**
+
+C'est un événement externe qui te force au changement.
+
+**Exemples** : Licenciement. Restructuration. Fermeture de ton département. Problème de santé. Déménagement forcé.
+
+**Caractéristiques** :
+- Soudain et brutal
+- Non choisi
+- Génère anxiété et peur
+- Force à agir
+
+**Réponse appropriée** :
+
+Deux attitudes possibles :
+- **La victime** : "Pourquoi moi ? C'est injuste. Ma vie est finie."
+- **Le héros** : "OK. Ça fait mal. Mais c'était peut-être le signal dont j'avais besoin pour changer enfin."
+
+L'Appel-Crise est un accélérateur de transformation. Douloureux, mais puissant.
+
+### Type 2 : L'Appel-Opportunité 🚪
+
+**La Porte Ouverte**
+
+Une porte qui s'ouvre de manière inattendue.
+
+**Exemples** : Un message d'un recruteur sur LinkedIn. Une proposition de partenariat. Une offre dans une boîte que tu admires. Une recommandation d'un ancien collègue.
+
+**Caractéristiques** :
+- Externe mais positif
+- Apparaît comme un cadeau
+- Fenêtre de temps limitée
+- Génère excitation... et peur
+- Nécessite du discernement
+
+**Questions à te poser** :
+- Est-ce aligné avec mon identité profonde ?
+- Est-ce que je vais VERS quelque chose... ou est-ce que je FUIS mon monde ordinaire ?
+
+L'Appel-Opportunité est un test de clarté. Il révèle si tu sais qui tu es.
+
+### Type 3 : L'Appel-Insatisfaction 💭
+
+**La Voix Intérieure**
+
+Un sentiment progressif que quelque chose ne va pas.
+
+**Exemples** : "Je ne me reconnais plus dans ce que je fais." "Chaque lundi, je dois me forcer." "Je sais que je vaux plus que ça."
+
+**Caractéristiques** :
+- Progressif et cumulatif
+- Interne et subtil
+- S'intensifie avec le temps
+- Génère mélancolie et frustration
+- Appelle à l'introspection
+
+**Vérité** : L'insatisfaction chronique n'est pas de l'ingratitude. C'est ton âme qui te dit : "Il y a mieux pour toi. Tu n'es pas à ta place."
+
+C'est peut-être le signal le plus authentique. Parce qu'il vient de l'intérieur.
+
+### Type 4 : L'Appel-Révélation ⚡
+
+**Le Déclic Soudain**
+
+Un moment de clarté totale qui change ta perception.
+
+**Exemples** : Une conversation qui te bouleverse. Un livre qui te fait voir autrement. Un voyage qui t'ouvre les yeux. Un événement de vie. Un burn-out qui te force à repenser tout.
+
+**Caractéristiques** :
+- Soudain et puissant
+- Crée clarté immédiate
+- Change ta vision du monde
+- Génère émerveillement et certitude
+- Appelle à l'action rapide
+
+**Sagesse** : Respecte l'intensité de la révélation. Mais laisse-toi quelques semaines pour intégrer.
+
+Si après un mois, la clarté est toujours là... c'est un vrai appel.
+
+### Les 5 Critères d'un Vrai Appel
+
+Comment distinguer un vrai appel d'une impulsion passagère ? D'une fuite déguisée ? D'un fantasme irréaliste ?
+
+Il y a cinq critères. Cinq caractéristiques d'un appel authentique.
+
+**Si ton signal a les cinq, c'est un vrai appel. Ne l'ignore pas.**
+
+### Critère 1 : La Persistance ⏰
+
+Un vrai appel ne disparaît pas. Il revient. Encore et encore. Mois après mois.
+
+Ce n'est pas une impulsion d'un dimanche soir déprimé. C'est une présence constante. Un murmure qui ne s'arrête jamais.
+
+**Test** : Depuis combien de temps ce signal est-il présent ?
+- Moins d'1 mois → Peut-être une impulsion
+- 3-6 mois → Signal sérieux
+- Plus d'1 an → C'est un vrai appel que tu ignores
+
+### Critère 2 : La Cohérence Valeurs 💎
+
+Cet appel est-il aligné avec ton identité profonde ?
+
+Relis ton archétype de la Station 1. Ton monde ordinaire. Tes forces naturelles.
+
+**Test** : Cet appel est-il cohérent avec ton identité profonde ?
+- Si tu es un **Créateur** et que l'appel te pousse vers un poste ultra-structuré sans autonomie... c'est probablement pas un vrai appel. C'est peut-être une fuite.
+- Si tu es un **Protecteur** et que l'appel te pousse vers un métier de soin... cohérent.
+
+### Critère 3 : Le Mix Peur + Excitation 🎭
+
+Un vrai appel génère une ambivalence fascinante : **tu as peur ET tu es excité**.
+
+Si tu es JUSTE excité sans peur → peut-être un fantasme.
+
+Si tu as JUSTE peur sans excitation → peut-être une obligation sociale.
+
+**Test** : Imagine que dans cinq ans, tu n'as pas répondu à cet appel. Que ressens-tu ?
+- "Bof, j'aurai autre chose"... pas un vrai appel.
+- "Je vais le regretter toute ma vie"... vrai appel.
+
+### Critère 4 : La Clarté de Direction 🧭
+
+Tu ne sais pas forcément COMMENT tu vas y arriver.
+
+Mais tu sais OÙ tu veux aller.
+
+Tu peux compléter la phrase : "Je suis appelé vers..."
+
+**Test** : Peux-tu formuler une direction claire ?
+- ✅ "Je suis appelé vers l'entrepreneuriat social dans l'éducation"
+- ❌ "Je suis appelé vers... quelque chose de différent"
+
+### Critère 5 : Le Coût du Non 💔
+
+Si tu ignores cet appel, quel sera le coût ?
+
+**Test** : Visualisation
+
+Ferme les yeux. Imagine que tu es dans 5 ans. Tu n'as PAS répondu à cet appel.
+
+Que ressens-tu ?
+- "Je vais le regretter toute ma vie" → Vrai appel
+- "Bof, j'aurai autre chose" → Pas un vrai appel`,
+
+      how: `### Reconnaître TON Signal
+
+**Exercice 1 : Liste Flash (5 minutes)**
+
+Au cours des 6 derniers mois, qu'est-ce qui t'a fait penser "Hmm, intéressant..." ?
+
+Écris TOUT. Ne filtre pas :
+- ✉️ Un message LinkedIn
+- 💬 Une conversation inspirante
+- 📖 Un livre bouleversant
+- 🎙️ Un podcast marquant
+- 💼 Une offre d'emploi attirante
+- 💭 Un sentiment récurrent
+
+Objectif : Minimum 5 signaux.
+
+**Parmi ces signaux, lequel revient le plus souvent ?**
+
+Celui qui persiste. Celui que tu ne peux pas complètement ignorer.
+
+### Valider l'Authenticité
+
+**Exercice 2 : Test des 5 Critères (20 minutes)**
+
+Passe ton signal au filtre des 5 critères :
+
+1. ⏰ **Persistance** : Depuis combien de mois ?
+2. 💎 **Cohérence Valeurs** : Aligné avec ton archétype ?
+3. 🎭 **Mix Peur + Excitation** : Les deux à la fois ?
+4. 🧭 **Clarté Direction** : Tu sais OÙ aller ?
+5. 💔 **Coût du Non** : Regret profond si tu ignores ?
+
+**Score** : ___/5
+
+**Interprétation** :
+- **5/5** : C'est un vrai appel. Ne l'ignore pas.
+- **4/5** : Signal fort qui mérite investigation
+- **3/5** : Explore les critères négatifs
+- **0-2/5** : Probablement pas un vrai appel
+
+### Le Plan d'Exploration 90 Jours
+
+Tu as identifié ton appel. Qu'est-ce que tu fais maintenant ?
+
+**Tu ne démissionnes pas demain. Tu EXPLORES. Pendant 90 jours.**
+
+### Mois 1 : APPRENDRE 📚
+
+**Objectif** : Comprendre le terrain sans engagement.
+
+**Actions** :
+1. Trouve 3 ressources sur ce domaine (livres, podcasts, articles)
+2. Identifie 5 personnes qui font ce métier déjà
+3. Écris 10 questions que tu te poses
+4. Crée une veille (Google Alerts, Feedly)
+
+**Critère de succès** : À la fin du mois, tu comprends le contexte général.
+
+### Mois 2 : CONNECTER 🤝
+
+**Objectif** : Entrer dans l'écosystème.
+
+**Actions** :
+1. Contacte 3 personnes pour des informational interviews
+2. Va à 2 événements du secteur (meetups, conférences)
+3. Rejoins 1 communauté en ligne (Slack, Discord, groupe Facebook)
+
+**Critère de succès** : À la fin du mois, tu as rencontré des humains de ce domaine. Tu as senti la culture.
+
+### Mois 3 : EXPÉRIMENTER 🧪
+
+**Objectif** : Tester concrètement, même à petite échelle.
+
+**Actions** :
+1. Lance un mini-projet (side project, bénévolat, test freelance, formation courte)
+2. Demande à 3 personnes de ton entourage leur ressenti
+3. Réponds à la question ultime : "Est-ce que cet appel résonne encore plus fort qu'au jour 1 ?"
+
+**Critère de succès** :
+- Si **OUI** → C'est un vrai appel. Passe à l'action. Direction Station 5.
+- Si **NON** → Ce n'était pas le bon appel. Ou pas le bon moment. Retourne à l'étape 1.
+
+**90 jours. C'est tout ce que tu as à investir pour savoir.**`,
+
+      whatIf: `### Cas Complexes
+
+**Et si j'ai plusieurs appels simultanés ?**
+
+Si tu as plusieurs signaux qui passent tous les 5 critères, choisis celui avec :
+- Le plus fort Coût du Non
+- La plus grande Persistance
+- Le plus de Peur + Excitation
+
+OU lance 3 plans d'exploration 90 jours en parallèle (mais c'est intense).
+
+**Et si mon appel est flou ?**
+
+C'est normal au début. Commence par explorer la DIRECTION générale.
+
+Exemple : "Je suis appelé vers aider les gens" → Explore coaching, psychologie, formation, médiation.
+
+La clarté viendra en explorant.
+
+**Et si j'ai peur de me tromper ?**
+
+Tu ne te trompes pas en explorant. Tu te trompes en ignorant.
+
+Le plan 90 jours est un investissement minimal pour une décision majeure.
+
+**Et si mon entourage ne comprend pas ?**
+
+Les vrais appels sont souvent incompris. Parce qu'ils sont personnels.
+
+Tu n'as pas besoin de l'approbation de tous pour explorer.
+
+### Prochaine Étape
+
+Maintenant que tu as identifié ton appel...
+
+Tu vas probablement avoir envie de le **refuser**.
+
+C'est normal. C'est humain. C'est la Station 3.
+
+Direction : **Station 3 - Le Refus de l'Appel**`
+    },
     exercises: [
       {
         level: 'explorateur',
