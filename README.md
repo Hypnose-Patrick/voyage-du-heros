@@ -26,7 +26,7 @@ Le **Voyage du Héros** est une application web interactive qui guide les utilis
 9. **🦋 La Chrysalide** - Position de Perception (1ère/3ème/Méta)
 10. **✨ Le Nom Secret** - Identité Professionnelle
 11. **⛰️ La Montagne de la Vision** - Projection Future
-12. **💎 Le Trsor Révélé** - Synthèse & Profil Complet
+12. **💎 Le Trésor Révélé** - Synthèse & Profil Complet
 
 ## 🎨 Fonctionnalités
 
