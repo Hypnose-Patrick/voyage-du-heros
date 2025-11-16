@@ -868,53 +868,501 @@ Direction : **Station 3 - Le Refus de l'Appel**`
     phaseName: 'Phase 1 : Le Départ',
     description: 'Comprendre tes résistances et les dépasser pour avancer.',
     objectives: [
-      'Identifier tes peurs et résistances au changement',
-      'Comprendre d\'où viennent ces blocages',
-      'Reconnaître les excuses que tu te donnes',
-      'Transformer tes résistances en leviers d\'action'
+      'Reconnaître ton profil de refus dominant parmi les 5 profils I.C.A.R.E.',
+      'Comprendre les mécanismes psychologiques qui te retiennent',
+      'Transformer ton refus en tremplin vers l\'action',
+      'Pratiquer l\'Epoché (suspension des jugements) pour créer de l\'espace',
+      'Identifier ton mentor intérieur ou extérieur qui peut t\'accompagner'
     ],
+    pedagogicalContent: {
+      why: `### Le Problème : Le Refus Universel
+
+Tu as identifié ton appel (Station 2). Tu l'as validé avec les 5 critères. C'est un vrai appel.
+
+**Et pourtant...**
+
+Tu ne passes pas à l'action. Tu trouves des raisons. Excellentes raisons. Légitimes. Rationnelles.
+
+**"Ce n'est pas le bon moment."**
+
+**"Je ne suis pas prêt."**
+
+**"J'ai trop à perdre."**
+
+**"Je ne suis pas la bonne personne pour ça."**
+
+**"Et si ça ne marche pas ?"**
+
+Bienvenue dans **la Station 3 : Le Refus de l'Appel**.
+
+C'est l'étape que **100% des héros traversent**. Sans exception.
+
+### La Vérité Inconfortable
+
+Le refus de l'appel n'est pas un échec. **C'est une étape nécessaire du voyage.**
+
+Voici pourquoi :
+
+**Raison 1 : Le refus est un mécanisme de protection**
+
+Ton cerveau limbique (la partie reptilienne) détecte un DANGER : le changement.
+
+Changement = Inconnu = Menace potentielle.
+
+Alors il active tous les systèmes d'alarme. Toutes les résistances. Pour te garder en vie. Pour te garder dans ton monde ordinaire.
+
+**Raison 2 : Le refus révèle tes croyances limitantes**
+
+Ce que tu dis QUAND tu refuses est plus révélateur que l'appel lui-même.
+
+- "Je ne suis pas assez..." révèle un blocage d'Estime
+- "Je ne sais pas comment..." révèle un blocage de Capacités
+- "Je vais perdre..." révèle un blocage de Risque
+- "Je ne suis pas cette personne..." révèle un blocage d'Identité
+- "Personne ne me comprend..." révèle un blocage d'Appartenance
+
+**Raison 3 : Le refus est un test de détermination**
+
+Si tu abandonnes au premier refus (le tien ou celui des autres), c'était peut-être pas un vrai appel.
+
+Les vrais appels survivent au refus. Ils reviennent. Plus forts.
+
+### L'Impact du Refus Prolongé
+
+Refuser une fois, c'est normal. Refuser pendant des mois, des années... c'est toxique.
+
+**Les 4 Conséquences du Refus Chronique :**
+
+**1. L'Amertume Progressive**
+
+Tu commences à devenir cynique. À critiquer ceux qui osent. À te dire que "de toute façon, personne ne réussit vraiment".
+
+**2. L'Auto-Sabotage Actif**
+
+Tu créés inconsciemment des situations qui JUSTIFIENT ton refus.
+
+- "Je ne peux pas changer, j'ai un crédit" → Tu prends un NOUVEAU crédit.
+- "Je changerais si j'avais plus de temps" → Tu t'engages dans 3 nouveaux projets chronophages.
+
+**3. Le Transfert de Regret**
+
+Tu projettes ton refus sur les autres. Surtout tes proches.
+
+- "Mon conjoint ne comprendrait pas" (alors que tu ne lui as jamais vraiment parlé).
+- "Mes enfants ont besoin de stabilité" (alors qu'ils t'ont vu malheureux pendant des années).
+
+**4. L'Effondrement Identitaire Différé**
+
+Un jour, dans 5 ans, 10 ans, 20 ans... tu regardes en arrière.
+
+Et tu réalises que tu as passé ta vie à refuser qui tu étais vraiment.
+
+C'est le regret le plus douloureux qui existe.
+
+### La Vision Transformée : Le Refus Comme Portail
+
+Mais imagine...
+
+Imagine que ton refus n'est pas un MUR. C'est une **PORTE**.
+
+Une porte qui te montre exactement ce sur quoi tu dois travailler avant de franchir le seuil.
+
+**Si tu refuses par peur de l'échec** → Tu dois travailler sur ton Estime.
+
+**Si tu refuses par manque de compétences** → Tu dois travailler sur tes Capacités.
+
+**Si tu refuses par peur de perdre** → Tu dois travailler sur ta relation au Risque.
+
+**Si tu refuses parce que "ce n'est pas toi"** → Tu dois travailler sur ton Identité.
+
+**Si tu refuses par peur du jugement** → Tu dois travailler sur ton Appartenance.
+
+Le refus n'est pas l'ennemi. **Le refus est le diagnostic.**`,
+
+      what: `### Les 5 Profils de Refus selon le Modèle I.C.A.R.E.
+
+Chaque personne refuse pour des raisons différentes. Mais ces raisons se regroupent en **5 profils archétypaux**.
+
+Ces profils correspondent aux **5 dimensions I.C.A.R.E.** — un modèle de compréhension des blocages en transition professionnelle.
+
+### Profil 1 : Le Refus d'Identité (I) 🎭
+
+**Croyance limitante** : *"Je ne suis pas cette personne. Ce n'est pas moi."*
+
+**Manifestations** :
+- "Je ne me vois pas en entrepreneur / en coach / en artiste..."
+- "Les gens comme moi ne font pas ce genre de choses."
+- "Je vais trahir mes origines / ma formation / ma famille."
+- "Si je change, qui vais-je devenir ?"
+
+**Ce qui se passe vraiment** :
+
+Tu as construit une identité sociale (ce que tu fais, ton statut, ton rôle). Et ton appel te demande de la remettre en question.
+
+**Exemple** : Marc, 45 ans, avocat. Son appel : devenir prof de yoga.
+
+Son refus : "Je ne peux pas être la personne qui abandonne le droit pour le yoga. Qu'est-ce que mes parents vont dire ? Mes anciens collègues ? Je vais passer pour un hippie en crise de la quarantaine."
+
+**Le paradoxe** : En refusant de devenir qui tu es vraiment, tu trahis ton identité profonde... pour protéger ton identité sociale.
+
+**La métaphore** : **Le Vilain Petit Canard**
+
+Il refuse de quitter les canards parce qu'il se définit comme "canard laid". Il ne réalise pas qu'il est un cygne. Son refus vient de son identité.
+
+### Profil 2 : Le Refus de Capacités (C) 💪
+
+**Croyance limitante** : *"Je ne sais pas. Je ne peux pas. Je n'ai pas les compétences."*
+
+**Manifestations** :
+- "Il me faudrait d'abord un diplôme / une certification / 5 ans d'expérience..."
+- "Je ne maîtrise pas encore X, Y, Z."
+- "Je ne suis pas assez bon. Les autres sont meilleurs que moi."
+- "Je vais être ridicule. Je vais échouer."
+
+**Ce qui se passe vraiment** :
+
+Tu confonds "je ne sais pas ENCORE" avec "je ne peux pas".
+
+Tu veux maîtriser à 100% avant de commencer. Mais la maîtrise vient de la PRATIQUE, pas de l'attente.
+
+**Exemple** : Sophie, 32 ans, RH. Son appel : devenir coach professionnelle.
+
+Son refus : "Je n'ai pas de formation en coaching. Il faudrait que je fasse une certification ICF. Mais laquelle ? Combien d'heures ? Et si je me trompe de format ? Et puis, je ne suis pas assez bonne en écoute active. Il faudrait d'abord que je..."
+
+**Le paradoxe** : En attendant d'être "prêt", tu ne te donnes jamais l'occasion de le DEVENIR.
+
+**La métaphore** : **Cendrillon**
+
+Elle refuse d'aller au bal parce qu'elle n'a "rien à se mettre" et "ne sait pas danser". Elle se concentre sur ce qu'elle ne peut pas faire, plutôt que sur qui elle est.
+
+### Profil 3 : Le Refus d'Appartenance (A) 🌍
+
+**Croyance limitante** : *"Je vais être rejeté. Personne ne me comprend. Je vais être seul."*
+
+**Manifestations** :
+- "Mon entourage ne va pas comprendre."
+- "Je vais perdre mes amis / mes collègues / mon réseau."
+- "Dans ce nouveau monde, je vais être un étranger."
+- "Les gens vont me juger. Critiquer. Rejeter."
+
+**Ce qui se passe vraiment** :
+
+Tu as peur de quitter ta tribu actuelle (même si elle ne te nourrit plus) pour une tribu inconnue.
+
+Tu préfères l'appartenance toxique à la solitude temporaire.
+
+**Exemple** : Thomas, 38 ans, consultant en finance. Son appel : travailler dans l'écologie.
+
+Son refus : "Mes collègues vont me prendre pour un idéaliste naïf. Ma famille pense que l'écologie, c'est pour les bobos. Et dans le milieu écolo, je vais passer pour un ex-banquier véreux. Je ne serai nulle part chez moi."
+
+**Le paradoxe** : En restant dans un groupe où tu ne te sens pas toi-même, tu es DÉJÀ seul. Juste entouré.
+
+**La métaphore** : **Dumbo**
+
+Il refuse de voler parce que les autres éléphants se moqueraient. Il préfère rester au sol avec eux, même s'il est malheureux, plutôt que de s'envoler seul.
+
+### Profil 4 : Le Refus de Risque (R) ⚠️
+
+**Croyance limitante** : *"J'ai trop à perdre. C'est trop dangereux. Je ne peux pas me permettre."*
+
+**Manifestations** :
+- "J'ai un crédit immobilier / des enfants / des responsabilités."
+- "Si ça ne marche pas, je perds tout."
+- "À mon âge, je ne peux pas prendre ce risque."
+- "Je n'ai pas 6 mois / 1 an / 2 ans de réserve financière."
+
+**Ce qui se passe vraiment** :
+
+Tu surestimes le risque de CHANGER et tu sous-estimes le risque de RESTER.
+
+Rester dans un job qui te détruit a aussi un coût : burn-out, dépression, santé, relations.
+
+**Exemple** : Claire, 40 ans, manager. Son appel : lancer son activité de coaching.
+
+Son refus : "J'ai un salaire de 80K. Deux enfants. Un crédit. Si je démissionne et que ça ne marche pas, on perd la maison. C'est irresponsable. Je ne peux pas faire ça à ma famille."
+
+**Le paradoxe** : En évitant le risque financier à court terme, tu prends le risque existentiel à long terme (regret, santé mentale, modèle pour tes enfants).
+
+**La métaphore** : **Le Lion Peureux** (Oz)
+
+Il refuse d'affronter la sorcière parce qu'il pourrait mourir. Mais en refusant, il reste prisonnier de sa propre lâcheté, ce qui est une mort lente de l'âme.
+
+### Profil 5 : Le Refus d'Estime (E) 🪞
+
+**Croyance limitante** : *"Je ne mérite pas. Je ne vaux pas. C'est trop beau pour moi."*
+
+**Manifestations** :
+- "Qui suis-je pour prétendre à ça ?"
+- "Il y a des gens bien plus talentueux / qualifiés / légitimes que moi."
+- "Je vais être un imposteur."
+- "Je ne MÉRITE pas cette vie. C'est pour les autres, pas pour moi."
+
+**Ce qui se passe vraiment** :
+
+Tu as tellement intériorisé les messages négatifs (famille, société, expériences passées) que tu ne te crois plus DIGNE de répondre à l'appel.
+
+**Exemple** : David, 50 ans, technicien. Son appel : devenir formateur et transmettre son savoir.
+
+Son refus : "Qui voudrait apprendre de moi ? Je n'ai qu'un CAP. Les vrais formateurs ont des masters. Je suis juste un technicien. Je ne vaux rien. C'est trop tard. J'ai raté ma vie."
+
+**Le paradoxe** : En te jugeant indigne, tu prives le monde de ton talent unique. C'est un acte d'orgueil inversé.
+
+**La métaphore** : **Le Vilain Petit Canard** (version estime)
+
+Il refuse de rejoindre les cygnes parce qu'il se croit "trop laid". Il ne mérite pas leur beauté, leur grâce. Alors il reste seul, même quand on l'invite.
+
+### Diagnostic : Quel est TON Profil de Refus Dominant ?
+
+Tu as probablement reconnu plusieurs profils. C'est normal. Mais il y en a souvent UN qui domine.
+
+**Voici un test rapide :**
+
+Complète cette phrase spontanément : **"Je ne peux pas répondre à mon appel parce que..."**
+
+- Si ta réponse commence par "**Je ne suis pas...**" → Profil Identité
+- Si ta réponse commence par "**Je ne sais pas... / Je n'ai pas les compétences...**" → Profil Capacités
+- Si ta réponse commence par "**Les autres vont... / Je vais être rejeté...**" → Profil Appartenance
+- Si ta réponse commence par "**Je vais perdre... / C'est trop risqué...**" → Profil Risque
+- Si ta réponse commence par "**Je ne mérite pas... / Je ne vaux pas...**" → Profil Estime
+
+### Le Concept Clé : L'Epoché (∞)
+
+L'**Epoché** vient de la philosophie grecque (Husserl, phénoménologie) et est au cœur du modèle du Coaching Quantique.
+
+**Définition** : L'Epoché, c'est la **suspension volontaire de tous tes jugements**.
+
+Tu mets entre parenthèses :
+- Tes croyances sur toi-même
+- Tes peurs
+- Tes "je dois" et "je ne peux pas"
+- Les opinions des autres
+- Tes expériences passées
+
+**Pendant quelques instants, tu crées un espace VIDE. Un point zéro. Une réinitialisation.**
+
+Dans le symbole de l'infini (∞) du Coaching Quantique :
+- **Ethos** (boucle gauche) = Ton passé, tes expériences, tes ressources
+- **Epoché** (point central) = L'espace de suspension, le reset
+- **Logos** (boucle droite) = Ton futur, tes possibles
+- **Pathos** = L'énergie émotionnelle qui donne la direction
+
+L'Epoché est le **point de bascule**. Le moment où tu peux choisir de NE PAS laisser ton passé déterminer ton futur.
+
+**Comment pratiquer l'Epoché ?**
+
+Simple. Respirations + Phrase rituelle :
+
+*"Juste pour les prochaines 5 minutes, je mets entre parenthèses toutes mes croyances sur qui je suis, ce que je peux, ce que je mérite. Je me permets d'explorer. Sans jugement. Sans engagement. Juste explorer."*`,
+
+      how: `### Exercice 1 : Identifier Ton Profil de Refus (10 min)
+
+**Étape 1 : Le Test du "Parce que..."** (5 min)
+
+Reprends ton appel identifié en Station 2.
+
+Écris : *"Mon appel : __"*
+
+Maintenant, complète SPONTANÉMENT (sans réfléchir) :
+
+*"Je ne passe pas à l'action parce que... __"*
+
+Écris au moins 5 raisons. TOUT ce qui te vient.
+
+**Étape 2 : Analyse des Profils** (5 min)
+
+Pour chaque raison, identifie le profil I.C.A.R.E. :
+
+Quel profil revient le plus souvent ? → C'est ton **Profil de Refus Dominant**.
+
+### Exercice 2 : L'Antidote Personnalisé selon Ton Profil (20 min)
+
+### Antidote Profil Identité 🎭 : La Question du Cygne
+
+**Recadrage** : "Et si ton identité PROFONDE était déjà celle de ton appel ?"
+
+**Pratique** :
+
+Complète ces deux phrases :
+1. **Mon identité sociale (celle que je montre)** : "Je suis __"
+2. **Mon identité profonde (celle que je ressens au fond)** : "Je suis __"
+
+**Action concrète** :
+
+Choisis un espace-temps où tu peux expérimenter ta nouvelle identité SANS risque social.
+
+Exemples :
+- Tu veux être coach ? Offre 3 sessions gratuites à des inconnus. Teste l'identité "coach" pendant 3h.
+- Tu veux être entrepreneur ? Lance un side project sous pseudo.
+- Tu veux être artiste ? Publie une création sous un autre nom.
+
+### Antidote Profil Capacités 💪 : Le Micro-Prototype
+
+**Recadrage** : "Tu n'as pas besoin de maîtriser à 100% pour commencer à 1%."
+
+**Pratique** :
+
+Identifie LA compétence que tu crois ne pas avoir et qui te bloque.
+
+*"La compétence qui me manque : __"*
+
+Décompose cette compétence en **micro-étapes** de 15 minutes maximum.
+
+**Action concrète** :
+
+Fais la micro-étape 1. Aujourd'hui. Maintenant. 15 minutes. Chronomètre.
+
+### Antidote Profil Appartenance 🌍 : La Tribu des Pionniers
+
+**Recadrage** : "Tu ne quittes pas une tribu pour être seul. Tu quittes une tribu pour en rejoindre une autre."
+
+**Pratique** :
+
+Liste 3 personnes qui ont fait un changement similaire au tien.
+
+**Action concrète** :
+
+Contacte UNE de ces personnes pour un informational interview de 20 minutes.
+
+### Antidote Profil Risque ⚠️ : Le Calcul Inversé
+
+**Recadrage** : "Le vrai risque, c'est de RESTER."
+
+**Pratique** :
+
+**Temps 1 : Le Coût de l'Action**
+
+Liste tous les risques de répondre à ton appel (financier, social, etc.)
+
+**Temps 2 : Le Coût de l'Inaction**
+
+Imagine que tu es dans 5 ans et que tu N'AS PAS répondu à l'appel. Liste tous les coûts.
+
+**Compare** : Quel scénario a le coût le plus élevé ?
+
+**Action concrète** :
+
+Crée un **Plan B de Sécurité**. Le risque devient gérable quand il est **quantifié et planifié**.
+
+### Antidote Profil Estime 🪞 : Le Dossier de Preuves
+
+**Recadrage** : "Tu as déjà surmonté des défis que d'autres trouvent impossibles."
+
+**Pratique** :
+
+Crée un **Dossier de Preuves** :
+
+**Section 1 : Mes Victoires Passées** - Liste 10 défis que tu as surmontés
+
+**Section 2 : Les Témoignages Positifs** - Collecte tous les retours positifs
+
+**Section 3 : Mes Talents Uniques** - Liste 5 choses que tu fais mieux que 90% des gens
+
+**Action concrète** :
+
+Chaque fois que tu doutes, **relis ce dossier**.
+
+### Exercice 3 : La Pratique de l'Epoché (5 min)
+
+**Protocole simple** :
+
+1. **Installe-toi** confortablement. Ferme les yeux.
+2. **Respire** : 3 respirations profondes (inspire 4 sec, expire 6 sec).
+3. **Prononce la phrase rituelle** :
+
+*"Juste pour les prochaines 5 minutes, je mets entre parenthèses toutes mes croyances sur qui je suis, ce que je peux, ce que je mérite, ce que les autres vont penser. Je me permets d'explorer mon appel sans jugement, sans engagement. Juste explorer. Comme si tout était possible."*
+
+4. **Visualise** : Imagine-toi en train de répondre à ton appel. Sans obstacles. Sans peur. Sans jugement.
+
+5. **Reviens** : Ouvre les yeux. Note ce que tu as ressenti.
+
+**À faire** : Pratique l'Epoché chaque matin pendant 5 minutes, pendant 7 jours.`,
+
+      whatIf: `### Et Si Ton Refus Était... un Mentor Déguisé ?
+
+Chaque raison de refuser contient un enseignement.
+
+**Si tu refuses par peur de l'identité** → Ton mentor est celui qui t'aidera à déconstruire ton identité sociale et à embrasser ton identité profonde.
+
+**Si tu refuses par manque de capacités** → Ton mentor est celui qui t'enseignera cette compétence. Ou qui te montrera que tu n'en as pas besoin autant que tu crois.
+
+**Si tu refuses par peur d'appartenance** → Ton mentor est celui qui a traversé la solitude temporaire et trouvé SA tribu.
+
+**Si tu refuses par peur du risque** → Ton mentor est celui qui a pris le risque... et survécu (voire prospéré).
+
+**Si tu refuses par manque d'estime** → Ton mentor est celui qui croit en toi plus que toi-même. Qui te renvoie ta valeur.
+
+**Action** : Identifie qui pourrait être ton mentor pour ton profil de refus dominant.
+
+Il peut être :
+- **Externe** : Un coach, un pair qui a fait le chemin, un ami bienveillant
+- **Interne** : Une partie de toi (ton "toi dans 10 ans", ton "toi sage", ton "toi enfant")
+
+### Et Si Refuser Était... le Dernier Acte de Ton Monde Ordinaire ?
+
+Le refus n'est pas un échec. C'est le **dernier cri de ton ancien moi**.
+
+Celui qui a besoin de sécurité, de contrôle, de validation externe.
+
+Ton appel menace cet ancien moi. Alors il résiste. Avec toute son énergie.
+
+Mais cette résistance est la preuve que **quelque chose de profond est en train de se transformer**.
+
+Les chenilles résistent avant de devenir papillon. C'est dans l'ordre des choses.
+
+### Prochaine Étape
+
+Tu as identifié ton profil de refus. Tu as commencé à travailler sur l'antidote.
+
+Mais un moment va arriver où tu devras choisir : **continuer à refuser, ou rencontrer ton mentor**.
+
+Quelqu'un (ou quelque chose) va apparaître pour te guider. Pour te montrer le chemin. Pour te donner le coup de pouce dont tu as besoin.
+
+C'est la prochaine station.
+
+Direction : **Station 4 - La Rencontre avec le Mentor**`
+    },
     exercises: [
       {
         level: 'explorateur',
-        title: 'Les Freins',
-        description: 'Liste tes principales résistances au changement',
+        title: 'Mon Profil de Refus',
+        description: 'Identifie ton profil de refus dominant',
         questions: [
-          'Quelle est ta plus grande peur face à ce changement ?',
-          'Quelle excuse te donnes-tu le plus souvent pour ne pas agir ?',
-          'Qu\'est-ce qui te retient vraiment ?'
+          'Complète : "Je ne peux pas répondre à mon appel parce que..."',
+          'Quel profil I.C.A.R.E. reconnais-tu le plus ? (Identité/Capacités/Appartenance/Risque/Estime)',
+          'Quelle est ta principale résistance en une phrase ?'
         ],
         duration: '5 min'
       },
       {
         level: 'chercheur',
-        title: 'Anatomie de la Résistance',
-        description: 'Analyse en détail tes mécanismes de résistance',
+        title: 'Analyse de Mes Résistances',
+        description: 'Explore en détail tes mécanismes de refus',
         questions: [
-          'Liste 5 raisons pour lesquelles tu ne peux pas changer maintenant - sont-elles vraies ?',
-          'Quelles peurs concrètes (financières, sociales, identitaires) te paralysent ?',
-          'Qui dans ton entourage pourrait désapprouver ce changement et pourquoi cela t\'affecte ?',
-          'Quel "confort" devrais-tu abandonner pour répondre à l\'appel ?',
-          'Comment te protèges-tu du changement (procrastination, sabotage, rationalisation) ?'
+          'Liste 5 raisons pour lesquelles tu ne passes pas à l\'action',
+          'Pour chaque raison, identifie le profil I.C.A.R.E. correspondant',
+          'Quel est ton profil de refus dominant ?',
+          'Compare le coût de l\'action vs le coût de l\'inaction dans 5 ans',
+          'Quel antidote vas-tu appliquer cette semaine ?'
         ],
         duration: '15 min'
       },
       {
         level: 'plongeur',
-        title: 'Les Racines de la Peur',
-        description: 'Explore les origines profondes de tes résistances',
+        title: 'Transformer le Refus',
+        description: 'Transforme ton refus en tremplin vers l\'action',
         questions: [
-          'D\'où viennent ces peurs - quelle expérience passée les a ancrées en toi ?',
-          'Quelle croyance sur toi-même te fait penser que tu n\'es pas capable de changer ?',
-          'Si tu refuses cet appel, quelle version de toi vas-tu trahir ?',
-          'Quel est le coût réel (émotionnel, spirituel, vital) de ne PAS changer ?',
-          'Quelle conversation difficile évites-tu d\'avoir (avec toi-même ou les autres) ?',
-          'Comment tes résistances reproduisent-elles des schémas familiaux ou culturels ?',
-          'Si tu savais que tu ne peux pas échouer, que ferais-tu différemment ?'
+          'Raconte l\'histoire de ton refus - depuis combien de temps refuses-tu cet appel ?',
+          'Quelle croyance limitante fondamentale se cache derrière ton refus ?',
+          'Si tu refuses cet appel pendant encore 5 ans, quel sera le coût réel (émotionnel, spirituel, vital) ?',
+          'Pratique l\'Epoché : Imagine que pendant 5 minutes, toutes tes croyances sont suspendues. Que ferais-tu ?',
+          'Identifie 3 personnes qui ont surmonté un refus similaire au tien - comment ont-elles fait ?',
+          'Crée ton "Dossier de Preuves" : Liste 10 victoires passées qui prouvent que tu es capable',
+          'Quel est le premier micro-pas concret que tu peux faire aujourd\'hui pour dépasser ton refus ?'
         ],
         duration: '30 min'
       }
     ],
-    duration: '20 min',
+    duration: '25 min',
     color: 'from-red-600 to-rose-700'
   },
   {
