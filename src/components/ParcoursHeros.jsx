@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { stations } from '../data/stationsData';
 import Station from './Station';
+import ProfileSummary from './ProfileSummary';
+import { useProgression } from '../store/profileStore';
 
 /**
  * ParcoursHeros - Composant principal du Voyage du Héros
@@ -13,6 +15,9 @@ const ParcoursHeros = () => {
   const [userAnswers, setUserAnswers] = useState({});
   const [progress, setProgress] = useState(0);
   const [currentStationId, setCurrentStationId] = useState(1);
+
+  // Accès à la progression depuis le store
+  const { completedStations: storeCompletedStations, completion: storeCompletion } = useProgression();
 
   // Sauvegarde automatique dans le localStorage
   useEffect(() => {
@@ -241,9 +246,19 @@ const ParcoursHeros = () => {
                   />
                 </div>
               </div>
-              <button onClick={handleRestart} className="mt-4 text-white/60 hover:text-white transition">
-                ← Changer de niveau
-              </button>
+              <div className="flex gap-4 justify-center mt-4">
+                <button onClick={handleRestart} className="text-white/60 hover:text-white transition">
+                  ← Changer de niveau
+                </button>
+                {completedStations >= 3 && (
+                  <button
+                    onClick={() => setCurrentStep('profile')}
+                    className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transition"
+                  >
+                    🎭 Voir mon profil
+                  </button>
+                )}
+              </div>
             </div>
 
             {/* Phases */}
@@ -331,6 +346,13 @@ const ParcoursHeros = () => {
             level={selectedLevel}
             onComplete={(answers) => handleStationComplete(currentStation.id, answers)}
             onBack={handleBackToDashboard}
+          />
+        )}
+
+        {currentStep === 'profile' && (
+          <ProfileSummary
+            key="profile"
+            onClose={() => setCurrentStep('dashboard')}
           />
         )}
       </AnimatePresence>

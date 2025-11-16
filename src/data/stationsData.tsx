@@ -55,11 +55,125 @@ export const stations: Station[] = [
     phaseName: 'Phase 1 : Le Départ',
     description: 'Reconnaître ton point de départ et identifier ce qui ne fonctionne plus dans ta vie professionnelle actuelle.',
     objectives: [
-      'Faire le bilan de ta situation professionnelle actuelle',
-      'Identifier les éléments qui ne te conviennent plus',
-      'Reconnaître les signes de changement nécessaire',
-      'Prendre conscience de tes insatisfactions'
+      'Identifier précisément ton monde ordinaire professionnel actuel',
+      'Comprendre pourquoi cette reconnaissance est le premier pas du voyage',
+      'Repérer les signaux qui t\'appellent vers le changement',
+      'Cartographier ta zone de confort et ses limites'
     ],
+    pedagogicalContent: {
+      why: `**Le Problème : La Prison Dorée**
+
+Tu es probablement dans une de ces situations :
+
+**Situation A : Le piège du confort**
+Tu as un job. Peut-être même un "bon" job selon les critères externes. Salaire correct. Sécurité. Prestige social.
+Mais au fond... tu t'ennuies. Tu te sens étouffé. Tu as l'impression de passer à côté de quelque chose.
+
+**Situation B : L'entre-deux paralysant**
+Tu es en recherche d'emploi. Tu postules. Tu attends. Tu recommences.
+Mais tu ne sais même pas vraiment ce que tu cherches.
+
+**Situation C : Le déni du changement**
+Tu sens qu'il est temps de bouger. Depuis des mois. Peut-être même des années.
+Mais tu restes. Par peur. Par confort. Par inertie.
+
+**L'Impact**
+Ce malaise a des conséquences sur ton énergie, ta confiance, tes relations, ton potentiel.
+
+**La Vision**
+Mais imagine que tu prennes conscience de ton monde ordinaire. Ce malaise que tu ressens ? Ce n'est pas une faiblesse. C'est un SIGNAL.
+Reconnaître ton monde ordinaire, c'est déjà commencer à en sortir.`,
+
+      what: `**Les 5 Niveaux Logiques de ton Monde Ordinaire**
+
+Ton monde ordinaire s'étend sur plusieurs dimensions (modèle Robert Dilts, PNL) :
+
+**1. Environnement 🌍** - Ton contexte externe
+Où travailles-tu ? Avec qui ? Dans quel secteur ? Quelles contraintes ?
+*Question clé : "OÙ et AVEC QUI je passe mes journées ?"*
+
+**2. Comportements 🏃** - Tes actions quotidiennes
+Qu'est-ce que tu FAIS concrètement ? Quelle routine ? Quel rythme ?
+*Question clé : "QUE FAIS-JE au quotidien ?"*
+
+**3. Capacités 💪** - Tes compétences mobilisées
+Quelles compétences utilises-tu vraiment ? Lesquelles sont en friche ?
+*Question clé : "QUELLES capacités j'utilise (ou pas) ?"*
+
+**4. Croyances & Valeurs 💎** - Tes convictions
+Quelles sont tes croyances sur ce job ? Quelles valeurs sont honorées/trahies ?
+*Question clé : "En quoi je CROIS et qu'est-ce qui COMPTE vraiment ?"*
+
+**5. Identité 🎭** - Qui tu es
+Comment te définisses-tu ? Cette identité est-elle choisie ou héritée ?
+*Question clé : "QUI suis-je dans ce monde ordinaire ?"*
+
+**Les 5 Signaux I.C.A.R.E.**
+
+**Signal Identité** - "Je ne suis pas/plus cette personne"
+Tu ne te reconnais plus dans ton rôle, ton titre, ton statut.
+
+**Signal Capacités** - "Je tourne en sous-régime"
+Syndrome de l'imposteur ou sentiment de sous-exploitation.
+
+**Signal Appartenance** - "Je ne suis pas à ma place"
+Tu te sens étranger dans ton environnement professionnel.
+
+**Signal Risque** - "J'ai trop à perdre"
+Tu restes par peur des risques liés au changement.
+
+**Signal Estime** - "Je ne mérite pas mieux"
+Tu as intériorisé ton monde ordinaire et ne te crois plus capable d'autre chose.`,
+
+      how: `**3 Exercices Pratiques**
+
+**Exercice 1 : Cartographie des 5 Niveaux (15 min)**
+Dessine 5 cercles concentriques. De l'extérieur vers l'intérieur :
+1. Environnement (où, avec qui)
+2. Comportements (3 activités principales)
+3. Capacités (utilisées vs en friche)
+4. Croyances & Valeurs (honorées vs trahies)
+5. Identité (comment je me définis vs qui je suis vraiment)
+
+Entoure en rouge les zones de dissonance.
+
+**Exercice 2 : Signal I.C.A.R.E. Dominant (10 min)**
+Note chaque signal de 0 à 10 :
+- Signal Identité : __/10
+- Signal Capacités : __/10
+- Signal Appartenance : __/10
+- Signal Risque : __/10
+- Signal Estime : __/10
+
+Ton signal dominant = score le plus élevé.
+
+**Exercice 3 : La Phrase Synthèse (5 min)**
+"Mon monde ordinaire, c'est __ (rôle), où je fais __ (comportements),
+en mobilisant __ mais pas __.
+Je ressens un signal de __ qui se manifeste par __."`,
+
+      whatIf: `**Et si ton Monde Ordinaire était parfait... pour quelqu'un d'autre ?**
+
+Ton monde ordinaire n'est pas "mauvais". Il est juste mauvais pour TOI.
+Il y a quelqu'un qui rêverait d'avoir ton job, parce que ça correspond à LEUR identité.
+
+Ce n'est pas une question de "mieux" ou "moins bien".
+C'est une question d'**alignement**.
+
+**Et si reconnaître ton Monde Ordinaire était un acte de gratitude ?**
+
+Avant de partir, reconnais ce que ton monde ordinaire t'a apporté :
+- Compétences apprises
+- Sécurité financière
+- Rencontres importantes
+- Révélation de ce que tu NE veux PAS
+
+**Rituel** : Écris 3 choses pour lesquelles tu es reconnaissant envers ton monde ordinaire actuel.
+
+**Prochaine étape**
+Un appel va arriver. Un signal qui te dit : "Il est temps."
+Direction : Station 2 - L'Appel à l'Aventure.`
+    },
     exercises: [
       {
         level: 'explorateur',

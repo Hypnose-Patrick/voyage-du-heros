@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Station as StationType, Exercise } from '../data/stationsData';
+import { useProfileStore } from '../store/profileStore';
+import PedagogicalContent from './PedagogicalContent';
 
 interface StationProps {
   station: StationType;
@@ -10,9 +12,12 @@ interface StationProps {
 }
 
 export default function Station({ station, level, onComplete, onBack }: StationProps) {
-  const [currentStep, setCurrentStep] = useState<'intro' | 'exercise' | 'summary'>('intro');
+  const [currentStep, setCurrentStep] = useState<'intro' | 'pedagogical' | 'exercise' | 'summary'>('intro');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+
+  // Accès au store de profil
+  const { updateStationAnswers, completeStation } = useProfileStore();
 
   // Récupère l'exercice correspondant au niveau
   const exercise = station.exercises.find(ex => ex.level === level);
@@ -56,6 +61,13 @@ export default function Station({ station, level, onComplete, onBack }: StationP
   };
 
   const handleFinish = () => {
+    // Sauvegarder les réponses dans le store de profil
+    updateStationAnswers(station.id, answers);
+
+    // Marquer la station comme complétée
+    completeStation(station.id);
+
+    // Callback parent
     onComplete(answers);
   };
 
@@ -145,12 +157,20 @@ export default function Station({ station, level, onComplete, onBack }: StationP
                 </div>
 
                 <button
-                  onClick={() => setCurrentStep('exercise')}
+                  onClick={() => setCurrentStep(station.pedagogicalContent ? 'pedagogical' : 'exercise')}
                   className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition"
                 >
-                  Commencer l'exercice
+                  {station.pedagogicalContent ? 'Découvrir le contenu pédagogique' : 'Commencer l\'exercice'}
                 </button>
               </motion.div>
+            )}
+
+            {/* Pedagogical Content */}
+            {currentStep === 'pedagogical' && station.pedagogicalContent && (
+              <PedagogicalContent
+                content={station.pedagogicalContent}
+                onContinue={() => setCurrentStep('exercise')}
+              />
             )}
 
             {/* Exercise - Questions */}
