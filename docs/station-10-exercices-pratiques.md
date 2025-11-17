@@ -1,931 +1,657 @@
 # ✏️ Exercices Pratiques
 
-**Module de formation JobSeek** - 3 exercices adaptés à différents niveaux
-
-**IMPORTANT** : Ces exercices sont à faire dès que tu as traversé ton épreuve (Station 8-9) et que tu es sur le Chemin du Retour.
+**Module de formation JobSeek** - 3 exercices pour maintenir ta transformation
 
 ---
 
-## EXERCICE 1 : IDENTIFIER TES 3 DÉFIS PERSONNELS
+## EXERCICE 1 : MA STRATÉGIE DE RETOUR (Choisir)
 
-**Niveau** : ⭐ Débutant - À faire immédiatement après avoir récolté ta récompense (Station 9)
+**Niveau** : ⭐⭐ Intermédiaire - Essentiel
 
-**Objectif** : Anticiper les défis qui t'attendent sur le Chemin du Retour
-
-**Durée** : 10 minutes
-
-**Moment** : AVANT que les défis n'apparaissent (prévention)
-
-### Pourquoi cet exercice est crucial
-
-Tu viens de traverser ton épreuve. Tu as récolté ta récompense. Tu es dans l'euphorie de la transformation.
-
-**STOP.**
-
-C'est MAINTENANT, pendant que tu es fort, que tu dois identifier les défis qui t'attendent.
-
-Parce que dans 2 semaines, quand ton ancien boss va t'appeler, ou quand tu vas te sentir seul, ou quand tu vas remettre à plus tard pour la première fois... tu ne verras pas le piège arriver.
-
-**Cet exercice te donne une carte des dangers. Pour les anticiper.**
-
----
-
-### Partie 1 : Auto-Diagnostic des 3 Défis (5 min)
-
-Pour chaque défi, réponds honnêtement aux questions. Note ton score.
-
-### DÉFI 1 : La Tentation du Retour en Arrière
-
-**Questions** (réponds par OUI ou NON) :
-
-☐ Ton nouveau monde est encore très incertain financièrement ?
-
-☐ Tu as quitté une situation stable/sécurisante ?
-
-☐ Tu as des responsabilités financières importantes (famille, crédit, etc.) ?
-
-☐ Tu doutes parfois si tu as fait le bon choix ?
-
-☐ Tu as de la nostalgie quand tu penses à "avant" ?
-
-☐ Ta famille/entourage exprime des inquiétudes régulières ?
-
-☐ Tu es fatigué par tout ce que tu as accompli et tu veux "souffler" ?
-
-**Score** : Compte tes OUI. ___/7
-
-**Interprétation** :
-
-- 0-2 OUI : Défi faible. Tu es solide sur ton choix.
-- 3-4 OUI : Défi modéré. Vigilance nécessaire.
-- 5-7 OUI : Défi FORT. C'est ton défi principal. Mets l'antidote en place MAINTENANT.
-
-**Si c'est ton défi principal, note** :
-
-Mon défi principal est : **La Tentation du Retour en Arrière**
-
-Dimensions I.C.A.R.E. testées : Risque + Identité
-
----
-
-### DÉFI 2 : L'Isolement du Héros
-
-**Questions** (réponds par OUI ou NON) :
-
-☐ Quand tu racontes ton voyage, les gens ne comprennent pas vraiment ?
-
-☐ Tu te sens seul malgré ton succès ?
-
-☐ Tu as l'impression d'être un extraterrestre dans ton propre monde ?
-
-☐ Ton entourage proche n'a pas traversé de transformation similaire ?
-
-☐ Tu n'as pas encore trouvé de "tribu" de gens comme toi ?
-
-☐ Tu ressens parfois de la frustration que personne ne "capte" ?
-
-☐ Tu te demandes "Suis-je le seul à vivre ça ?" ?
-
-**Score** : Compte tes OUI. ___/7
-
-**Interprétation** :
-
-- 0-2 OUI : Défi faible. Tu as déjà ta tribu ou tu es à l'aise seul.
-- 3-4 OUI : Défi modéré. Commence à chercher ta tribu.
-- 5-7 OUI : Défi FORT. C'est ton défi principal. Trouver ta tribu est URGENT.
-
-**Si c'est ton défi principal, note** :
-
-Mon défi principal est : **L'Isolement du Héros**
-
-Dimension I.C.A.R.E. testée : Appartenance
-
----
-
-### DÉFI 3 : La Régression Progressive
-
-**Questions** (réponds par OUI ou NON) :
-
-☐ Tu as déjà vécu des transformations dans le passé qui n'ont pas duré ?
-
-☐ Tu as tendance à être très motivé au début puis à perdre l'élan ?
-
-☐ Tu fonctionnes beaucoup à la motivation et peu aux systèmes ?
-
-☐ Tu as du mal à maintenir des rituels/routines sur le long terme ?
-
-☐ Ton environnement (physique, social, digital) n'a pas encore changé ?
-
-☐ Tu n'as pas encore mis en place de structure d'accountability ?
-
-☐ Tu te dis "Je vais juste profiter un peu, je reprendrai après" ?
-
-**Score** : Compte tes OUI. ___/7
-
-**Interprétation** :
-
-- 0-2 OUI : Défi faible. Tu as déjà une bonne discipline de systèmes.
-- 3-4 OUI : Défi modéré. Crée au moins 1 système cette semaine.
-- 5-7 OUI : Défi FORT. C'est ton défi principal. Systèmes = priorité absolue.
-
-**Si c'est ton défi principal, note** :
-
-Mon défi principal est : **La Régression Progressive**
-
-Dimensions I.C.A.R.E. testées : Capacités + Estime
-
----
-
-### Partie 2 : Ta Carte Personnelle du Retour (5 min)
-
-Maintenant que tu as identifié tes scores, remplis ta carte :
-
-**Mon Défi Principal** (score le plus élevé) :
-
----
-
-**Mon Défi Secondaire** (2e score) :
-
----
-
-**Mon Antidote pour le Défi Principal** :
-
-Si **Tentation du Retour** :
-
-→ Je vais créer un document "Pourquoi je suis parti" que je relirai chaque fois que la tentation arrive.
-
-→ J'écris maintenant : Les 3 raisons pour lesquelles je suis parti :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
-Si **Isolement du Héros** :
-
-→ Je vais chercher ma tribu activement cette semaine.
-
-→ J'écris maintenant : 3 endroits où je peux trouver ma tribu :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
-Si **Régression Progressive** :
-
-→ Je vais créer 1 système de maintien cette semaine.
-
-→ J'écris maintenant : Le système que je vais créer :
-
-- Type (Identité / Accountability / Environnement) : ___
-- Action concrète : ___
-- Date de mise en place : ___
-
----
-
-### Livrable Final
-
-À la fin de cet exercice, tu dois avoir :
-
-✅ Tes 3 scores de défis
-
-✅ Ton défi principal identifié
-
-✅ Ton antidote défini
-
-✅ Une action concrète planifiée pour cette semaine
-
-**Tu as maintenant ta carte. Les défis ne te surprendront pas.**
-
----
-
-## EXERCICE 2 : CHOISIR TA STRATÉGIE DE RETOUR
-
-**Niveau** : ⭐⭐ Intermédiaire - À faire après avoir identifié tes défis
-
-**Objectif** : Choisir consciemment ta stratégie de retour selon ton profil I.C.A.R.E. et ta situation
+**Objectif** : Identifier ta stratégie de retour selon ton profil I.C.A.R.E. et tes contraintes
 
 **Durée** : 20 minutes
 
-**Moment** : Dans les 7 jours après avoir traversé ton épreuve
+**Moment** : Dès que tu as traversé l'épreuve (Station 8-9), AVANT les premières pressions de l'ancien monde
 
 ### Pourquoi cet exercice est crucial
 
-Il n'existe pas UNE stratégie de retour. Il y en a 3.
+Si tu ne choisis pas consciemment ta stratégie de retour, tu vas réagir de manière émotionnelle aux situations.
 
-Et choisir la mauvaise stratégie pour ton profil peut te faire échouer.
+Un jour, tu seras diplomate. Le lendemain, radical. Après-demain, tu regretteras tes choix.
 
-**Exemple** :
-
-- Si tu es profil Appartenance et que tu choisis le Retour Radical, tu vas souffrir terriblement de l'isolement.
-- Si tu es profil Identité et que tu choisis le Retour Progressif, tu vas régresser sous la pression de l'ancien monde.
-
-**Cet exercice t'aide à choisir TA stratégie. Consciemment.**
+**Cet exercice te donne une boussole claire pour naviguer ton retour.**
 
 ---
 
-### Partie 1 : Diagnostic de Ton Profil I.C.A.R.E. Dominant (5 min)
+### PARTIE 1 : DIAGNOSTIC DE TON PROFIL (5 min)
 
-Tu as déjà identifié ton profil dans les stations précédentes, mais rappel rapide :
+Relis ton profil I.C.A.R.E. dominant (Station 1 ou 6).
 
-**Profil Identité** : Ta transformation était principalement liée à qui tu ES (reconversion identitaire, coming out professionnel, nouvelle identité assumée)
+**Mon profil I.C.A.R.E. dominant** :
 
-**Profil Capacités** : Ta transformation était principalement liée à ce que tu SAIS FAIRE (nouvelles compétences, performance, expertise)
+☐ Identité (Je dois savoir qui je suis)
+☐ Capacités (Je dois prouver que je peux)
+☐ Appartenance (Je dois me sentir connecté)
+☐ Risque (Je dois gérer l'incertitude)
+☐ Estime (Je dois savoir que j'ai de la valeur)
 
-**Profil Appartenance** : Ta transformation était principalement liée à ta TRIBU (changer de communauté, créer ta tribu, trouver ta place)
-
-**Profil Risque** : Ta transformation était principalement liée à PARIER SUR TOI (investissement, démission, sécurité abandonnée)
-
-**Profil Estime** : Ta transformation était principalement liée à ta VALEUR (augmenter tes prix, te positionner, mériter)
-
-**Mon profil I.C.A.R.E. dominant dans cette transformation** :
+**Ma dimension secondaire** (si applicable) :
 
 ---
 
 ---
 
-### Partie 2 : Analyse de Ta Situation (5 min)
+### PARTIE 2 : ANALYSE DE TON CONTEXTE (7 min)
 
-Pour chaque critère, coche la case qui te correspond :
+Réponds honnêtement à ces questions :
 
-**Critère 1 : Ton ancien monde**
+**Sur ton ancien monde** :
 
-☐ Mon ancien monde était globalement sain, juste pas aligné pour moi
+1. **Ton ancien monde était-il toxique ou juste limitant ?**
 
-☐ Mon ancien monde était toxique ou très limitant
+   ☐ Toxique (relations destructrices, environnement nocif)
+   ☐ Limitant (juste pas aligné avec qui tu veux devenir)
+   ☐ Mixte (certaines parties toxiques, d'autres ok)
 
-☐ Mon ancien monde était mixte (bonnes et mauvaises parties)
+2. **Y a-t-il des relations importantes que tu veux absolument préserver ?**
 
-**Critère 2 : Tes relations importantes**
+   ☐ Oui, plusieurs (famille proche, amis d'enfance, etc.)
+   ☐ Quelques-unes seulement (2-3 personnes max)
+   ☐ Non, je suis prêt à tout reconstruire
 
-☐ J'ai des relations familiales/amicales très importantes que je ne veux pas perdre
+3. **Ton entourage est-il ouvert ou fermé au changement ?**
 
-☐ J'ai peu de relations importantes dans mon ancien monde
+   ☐ Ouvert (ils peuvent comprendre, avec de la pédagogie)
+   ☐ Fermé (ils sont bloqués dans leurs croyances)
+   ☐ Mixte (certains ouverts, d'autres fermés)
 
-☐ J'ai des relations importantes mais je suis prêt à les risquer
+**Sur ton nouveau monde** :
 
-**Critère 3 : Ton environnement**
+4. **As-tu déjà identifié des communautés/tribues potentielles ?**
 
-☐ Mon environnement est potentiellement ouvert au changement
+   ☐ Oui, je sais exactement où chercher
+   ☐ J'ai quelques pistes
+   ☐ Non, je ne sais pas encore où chercher
 
-☐ Mon environnement est fermé, sceptique ou jaloux
+5. **As-tu l'énergie de construction (active) ou de maintien (passive) ?**
 
-☐ Mon environnement est mixte
+   ☐ Construction (je veux CRÉER mon écosystème)
+   ☐ Maintien (je veux juste préserver ma transformation)
+   ☐ Les deux (selon les domaines)
 
-**Critère 4 : Ton énergie disponible**
+**Sur toi-même** :
 
-☐ J'ai beaucoup d'énergie pour communiquer, éduquer, expliquer
+6. **Peux-tu gérer l'isolement temporaire si nécessaire ?**
 
-☐ J'ai peu d'énergie, je veux juste avancer
-
-☐ J'ai de l'énergie pour construire mais pas pour convaincre
-
-**Critère 5 : Ta timeline**
-
-☐ Je peux prendre mon temps, je ne suis pas pressé
-
-☐ Je veux avancer vite, je ne veux pas ralentir
-
-☐ Je veux construire sur le long terme
+   ☐ Oui, je peux être seul 3-6 mois pour trouver ma vraie tribu
+   ☐ Non, j'ai besoin de connexion immédiate
+   ☐ Peut-être, selon le support que j'ai
 
 ---
 
-### Partie 3 : Matching Stratégie (10 min)
+### PARTIE 3 : CHOIX DE TA STRATÉGIE (8 min)
 
-Maintenant, lis les 3 stratégies et identifie celle qui résonne le plus avec ton profil + ta situation.
+Selon ton profil et tes réponses, quelle stratégie correspond le mieux ?
 
-### Stratégie 1 : Le Retour Progressif (Le Diplomate)
+---
 
-**Résumé** : Tu réintègres progressivement en éduquant ton entourage.
+**STRATÉGIE 1 : LE RETOUR PROGRESSIF (Le Diplomate)**
 
-**Approche** : Communication, patience, démonstration par l'exemple, transition douce.
+**Tu choisis cette stratégie si** :
 
-**Profil idéal** : Appartenance I.C.A.R.E.
+- Profil Appartenance I.C.A.R.E.
+- Relations importantes à préserver (Q2 : Oui, plusieurs)
+- Ancien monde limitant, pas toxique (Q1 : Limitant)
+- Entourage potentiellement ouvert (Q3 : Ouvert ou Mixte)
+- Tu as la patience de communiquer beaucoup
 
-**Situation idéale** :
+**Tes conditions de succès** :
 
-- Ancien monde globalement sain
-- Relations importantes à préserver
-- Environnement potentiellement ouvert
-- Énergie pour communiquer
-- Temps disponible
+1. Créer des systèmes de maintien TRÈS solides (pour résister à la pression)
+2. Trouver quand même une nouvelle tribu (pour ne pas être seul dans ta transformation)
+3. Accepter que tout le monde ne va pas te suivre (lâcher prise)
 
-**Avantages** : Moins de conflits, maintien des relations, transition douce.
+**Tes actions prioritaires** (cette semaine) :
 
-**Inconvénients** : Plus lent, risque de compromis excessifs, danger de régression.
+1. Identifier 3-5 personnes de ton ancien monde avec qui tu veux avoir une conversation honnête
+2. Préparer comment tu vas expliquer ta transformation (storytelling clair)
+3. Mettre en place au moins 1 système d'accountability externe (pour ne pas céder à la pression)
 
-**Conditions de succès** :
+---
 
-- Systèmes de maintien TRÈS solides (pour résister pression)
-- Trouver quand même une nouvelle tribu
-- Accepter que tout le monde ne te suivra pas
+**STRATÉGIE 2 : LE RETOUR RADICAL (Le Révolutionnaire)**
 
-**Cette stratégie te correspond ?**
+**Tu choisis cette stratégie si** :
 
-☐ OUI, totalement
+- Profil Identité I.C.A.R.E.
+- Ancien monde toxique (Q1 : Toxique)
+- Peu de relations à préserver absolument (Q2 : Quelques-unes ou Non)
+- Entourage fermé au changement (Q3 : Fermé)
+- Tu peux gérer l'isolement temporaire (Q6 : Oui)
 
-☐ PEUT-ÊTRE
+**Tes conditions de succès** :
 
-☐ NON
+1. Trouver RAPIDEMENT ta nouvelle tribu (pour ne pas sombrer dans l'isolement amer)
+2. Rester humble (ce n'est pas de l'arrogance, c'est de l'affirmation)
+3. Garder quelques ponts sélectifs (ne coupe pas TOUT, juste le toxique)
 
-**Si OUI, note 3 personnes de ton ancien monde que tu veux éduquer** :
+**Tes actions prioritaires** (cette semaine) :
+
+1. Identifier 3 communautés/événements où tu peux rencontrer ta nouvelle tribu
+2. Clarifier tes boundaries (ce qui est négociable et non-négociable)
+3. Préparer une communication claire pour ceux que tu vas "couper" (avec respect)
+
+---
+
+**STRATÉGIE 3 : LE RETOUR HYBRIDE (Le Bâtisseur)**
+
+**Tu choisis cette stratégie si** :
+
+- Profil Capacités ou Risque I.C.A.R.E.
+- Tu as une vision à long terme
+- Tu as l'énergie de construction (Q5 : Construction ou Les deux)
+- Tu es capable de faire du tri sélectif (maturité émotionnelle)
+- Situation mixte (ancien monde ni totalement toxique ni totalement sain)
+
+**Tes conditions de succès** :
+
+1. Clarté sur qui tu gardes et pourquoi (critères explicites)
+2. Investissement actif dans la construction de ta tribu
+3. Systèmes de maintien pour ne pas régresser
+4. Patience (c'est une stratégie de long terme)
+
+**Tes actions prioritaires** (cette semaine) :
+
+1. Créer tes critères de tri pour l'ancien monde (qui je garde, qui je laisse partir)
+2. Identifier 2-3 actions de construction de communauté (créer, pas juste rejoindre)
+3. Planifier ton temps entre les 2 mondes (% ancien monde vs nouveau monde)
+
+---
+
+### PARTIE 4 : MON ENGAGEMENT (3 min)
+
+**Je choisis la stratégie** : ☐ Progressif ☐ Radical ☐ Hybride
+
+**Pourquoi cette stratégie me correspond** :
+
+---
+
+**Mes 3 actions prioritaires pour cette semaine** :
 
 1.
 
-    ---
+---
 
 2.
 
-    ---
+---
 
 3.
 
-    ---
+---
 
+**Mon plus grand risque avec cette stratégie** :
 
 ---
 
-### Stratégie 2 : Le Retour Radical (Le Révolutionnaire)
-
-**Résumé** : Tu assumes pleinement et acceptes que certains ne suivront pas.
-
-**Approche** : Affirmation claire, boundaries fortes, sélection active, transition brutale.
-
-**Profil idéal** : Identité I.C.A.R.E.
-
-**Situation idéale** :
-
-- Ancien monde toxique ou très limitant
-- Peu de relations importantes
-- Transformation majeure
-- Énergie préservée pour avancer
-- Courage d'assumer les ruptures
-
-**Avantages** : Rapide, authentique, énergie préservée, clarté identitaire forte.
-
-**Inconvénients** : Ruptures relationnelles, isolement temporaire, perçu comme arrogant.
-
-**Conditions de succès** :
-
-- Trouver RAPIDEMENT ta nouvelle tribu (pour ne pas sombrer)
-- Rester humble (affirmation ≠ arrogance)
-- Garder quelques ponts sélectifs (ne coupe pas TOUT)
-
-**Cette stratégie te correspond ?**
-
-☐ OUI, totalement
-
-☐ PEUT-ÊTRE
-
-☐ NON
-
-**Si OUI, note 3 personnes/situations toxiques que tu vas couper** :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
+**Comment je vais mitiger ce risque** :
 
 ---
 
-### Stratégie 3 : Le Retour Hybride (Le Bâtisseur)
-
-**Résumé** : Tu construis activement ton nouveau monde + ponts sélectifs avec l'ancien.
-
-**Approche** : Focus sur nouvelle tribu, tri sélectif, communication au cas par cas, construction de communauté.
-
-**Profil idéal** : Capacités + Risque I.C.A.R.E.
-
-**Situation idéale** :
-
-- Ancien monde mixte
-- Relations à trier (pas tout garder, pas tout couper)
-- Vision long terme
-- Énergie de construction
-- Veux bâtir un écosystème
-
-**Avantages** : Équilibre authenticité/connexion, construction de communauté, moins de regrets.
-
-**Inconvénients** : Demande clarté sur qui garder, gestion 2 mondes simultanés, énergie de construction.
-
-**Conditions de succès** :
-
-- Clarté sur qui tu gardes et pourquoi (critères explicites)
-- Investissement actif dans construction de ta tribu
-- Systèmes de maintien
-- Patience (long terme)
-
-**Cette stratégie te correspond ?**
-
-☐ OUI, totalement
-
-☐ PEUT-ÊTRE
-
-☐ NON
-
-**Si OUI, crée tes critères de tri** :
-
-Je GARDE les personnes qui :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
-Je COUPE les personnes qui :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
 ---
 
-### Partie 4 : Ta Décision Finale
+## EXERCICE 2 : MES 3 SYSTÈMES DE MAINTIEN (Construire)
 
-**Ma stratégie de retour choisie** :
+**Niveau** : ⭐⭐⭐ Avancé - Critique
 
-☐ Le Retour Progressif (Le Diplomate)
-
-☐ Le Retour Radical (Le Révolutionnaire)
-
-☐ Le Retour Hybride (Le Bâtisseur)
-
-**Pourquoi cette stratégie correspond à mon profil + ma situation** :
-
----
-
-**Les 3 actions concrètes que je vais faire cette semaine selon ma stratégie** :
-
-1.
-
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
----
-
-### Livrable Final
-
-À la fin de cet exercice, tu dois avoir :
-
-✅ Ton profil I.C.A.R.E. dominant identifié
-
-✅ Ta situation analysée (5 critères)
-
-✅ Ta stratégie de retour choisie consciemment
-
-✅ 3 actions concrètes planifiées pour cette semaine
-
-**Tu as maintenant ta stratégie. Pas celle des autres. LA TIENNE.**
-
----
-
-## EXERCICE 3 : CRÉER TES SYSTÈMES DE MAINTIEN DE TRANSFORMATION
-
-**Niveau** : ⭐⭐⭐ Avancé - À faire dans les 14 jours après avoir traversé
-
-**Objectif** : Créer des systèmes concrets qui vont maintenir ta transformation sur le long terme
+**Objectif** : Créer tes 3 systèmes concrets pour maintenir ta transformation face aux anciennes forces
 
 **Durée** : 30 minutes
 
-**Moment** : Une fois que tu as choisi ta stratégie (Exercice 2)
+**Moment** : Dans les 7 jours après l'épreuve (pas plus tard, sinon la régression commence)
 
-### Pourquoi cet exercice est crucial
+### Pourquoi cet exercice est critique
 
-**La motivation fluctue. La volonté s'épuise. Mais les systèmes fonctionnent.**
+70% des gens qui traversent une transformation retournent à leurs anciens comportements dans les 6 mois.
 
-70% des gens qui traversent une transformation retournent à l'ancien en 6 mois.
+**Pourquoi ? Parce qu'ils n'ont pas de systèmes.**
 
-Pourquoi ? Parce qu'ils n'ont pas créé de systèmes.
+Ils comptent sur la motivation (qui fluctue).
+Ils comptent sur la volonté (qui s'épuise).
+Ils ne créent pas de systèmes (qui fonctionnent automatiquement).
 
-Ils comptent sur leur motivation. Sur leur volonté. Sur leur discipline.
-
-Et ça marche... pendant 2 mois. Puis ça s'effondre.
-
-**Cet exercice te fait créer 3 systèmes qui fonctionnent même quand tu n'as pas envie.**
+**Cet exercice transforme ta transformation temporaire en identité permanente.**
 
 ---
 
-### Partie 1 : Système d'Identité (10 min)
+### SYSTÈME 1 : SYSTÈME D'IDENTITÉ (10 min)
 
-**Objectif** : Actions quotidiennes qui renforcent "Je suis X".
+**Objectif** : Actions quotidiennes qui renforcent "Je suis X"
 
-### Étape 1 : Définis Ta Nouvelle Identité
+**ÉTAPE 1 : Nomme ta nouvelle identité**
 
-Complète cette phrase en une ligne :
+**Je suis** [ta nouvelle identité professionnelle]
 
-**"Je suis  *qui* "**
+Exemple : "Je suis coach en reconversion" / "Je suis entrepreneur" / "Je suis développeur freelance"
 
-Exemples :
-
-- "Je suis un entrepreneur qui aide les freelances à structurer leur activité"
-- "Je suis un coach qui accompagne les cadres en reconversion"
-- "Je suis un créateur de contenu qui partage sur le développement personnel"
-
-**Ma nouvelle identité** :
-
----
-
----
-
-### Étape 2 : Identifie 5 Actions Quotidiennes
+**ÉTAPE 2 : Identifie les actions identitaires quotidiennes**
 
 Demande-toi : "Qu'est-ce qu'un [ta nouvelle identité] fait TOUS LES JOURS ?"
 
-Liste 5 actions quotidiennes qui définissent cette identité :
+Liste 5 actions qui définissent cette identité :
 
-1.
+1. Un [ta nouvelle identité] ___
+2. Un [ta nouvelle identité] ___
+3. Un [ta nouvelle identité] ___
+4. Un [ta nouvelle identité] ___
+5. Un [ta nouvelle identité] ___
 
-    ---
+**ÉTAPE 3 : Transforme en rituels non-négociables**
 
-2.
-
-    ---
-
-3.
-
-    ---
-
-4.
-
-    ---
-
-5.
-
-    ---
-
-
-**Exemples** pour "entrepreneur" :
-
-- Travaille sur son projet (pas pour un client)
-- Prospecte ou crée du contenu
-- Apprend quelque chose de nouveau
-- Networke avec d'autres entrepreneurs
-- Prend soin de sa santé (énergie = capital)
-
----
-
-### Étape 3 : Transforme 2 Actions en Rituels Non-Négociables
-
-Choisis les 2 actions les PLUS importantes. Transforme-les en rituels précis.
-
-**Rituel = Déclencheur + Action + Moment précis + Non-négociable**
+Choisis 3 actions de la liste ci-dessus et transforme-les en rituels précis.
 
 **Rituel 1** :
 
-**Déclencheur** : ___
-
-(Exemple : "Quand je termine mon café du matin")
-
-**Action** : ___
-
-(Exemple : "Je vais à mon bureau et j'ouvre mon document de projet")
-
-**Moment précis** : ___
-
-(Exemple : "Tous les jours de 8h à 9h")
-
-**Non-négociable** : ☐ Je m'engage à faire ce rituel même les jours où je n'ai pas envie
+- Action : ___
+- Fréquence : ☐ Quotidien ☐ Hebdomadaire (x fois/semaine : ___)
+- Moment précis : ___ (jour + heure)
+- Durée : ___
+- Déclencheur : ___ (ex: "Après mon café du matin")
 
 **Rituel 2** :
 
-**Déclencheur** : ___
+- Action : ___
+- Fréquence : ☐ Quotidien ☐ Hebdomadaire (x fois/semaine : ___)
+- Moment précis : ___ (jour + heure)
+- Durée : ___
+- Déclencheur : ___ (ex: "Tous les lundis à 9h")
 
-**Action** : ___
+**Rituel 3** :
 
-**Moment précis** : ___
+- Action : ___
+- Fréquence : ☐ Quotidien ☐ Hebdomadaire (x fois/semaine : ___)
+- Moment précis : ___ (jour + heure)
+- Durée : ___
+- Déclencheur : ___ (ex: "Avant de quitter le bureau")
 
-**Non-négociable** : ☐ Je m'engage à faire ce rituel même les jours où je n'ai pas envie
+**Engagement** :
 
----
+Je m'engage à maintenir ces 3 rituels pendant 90 jours minimum (temps nécessaire pour ancrer une nouvelle identité).
 
-### Partie 2 : Système d'Accountability (10 min)
+**Ma phrase d'identité** (à répéter quotidiennement) :
 
-**Objectif** : Structure externe qui te garde aligné.
-
-Tu vas créer UNE structure d'accountability cette semaine. Choisis ton type.
-
-### Type A : Accountability Sociale (Gratuit)
-
-Tu annonces publiquement ce que tu vas faire.
-
-**Template LinkedIn/Facebook** :
-
-"Je m'engage publiquement à [action concrète] pendant [durée].
-
-Pourquoi ? Parce que [raison profonde].
-
-Accountability : Je posterai un update tous les [fréquence].
-
-Vous pouvez me challenger en commentaires. 👊"
-
-**Mon engagement public** (écris-le maintenant) :
+"Je suis ___ parce que je ___ [rituel 1], je ___ [rituel 2], et je ___ [rituel 3]."
 
 ---
 
-**Date de publication** : ___
+### SYSTÈME 2 : SYSTÈME D'ACCOUNTABILITY (10 min)
+
+**Objectif** : Structure externe qui te garde aligné sur ton nouveau moi
+
+**ÉTAPE 1 : Choisis ton type d'accountability**
+
+Sélectionne AU MOINS 2 types parmi les 3 :
+
+☐ **Type A : Accountability Sociale** (engagement public)
+☐ **Type B : Accountability de Pair** (partenaire de transformation)
+☐ **Type C : Accountability de Mentor/Coach** (structure payante)
+
+**ÉTAPE 2 : Crée ton accountability concret**
+
+**Si Type A (Accountability Sociale)** :
+
+- Plateforme : ☐ LinkedIn ☐ Twitter ☐ Newsletter ☐ Communauté en ligne ☐ Autre : ___
+- Mon engagement public : "Je m'engage à ___ pendant ___ (durée)"
+- Date de publication : ___
+
+**Si Type B (Accountability de Pair)** :
+
+- Nom du pair/buddy : ___
+- Comment on se connaît : ___
+- Fréquence de contact : ☐ Hebdomadaire ☐ Bi-mensuel ☐ Mensuel
+- Format : ☐ Appel ☐ Visio ☐ Message ☐ Rencontre physique
+- Jour et heure fixes : ___
+- Questions qu'on se pose mutuellement :
+  1. Qu'est-ce que tu t'étais engagé à faire ? L'as-tu fait ?
+  2. Qu'est-ce qui t'a bloqué ?
+  3. Quel est ton engagement pour la prochaine session ?
+
+**Si Type C (Accountability de Mentor/Coach)** :
+
+- Nom du mentor/coach : ___
+- Fréquence : ☐ Hebdomadaire ☐ Bi-mensuel ☐ Mensuel
+- Format et durée : ___
+- Investissement financier : ___
+- Début : ___
+
+**ÉTAPE 3 : Mets en place CETTE SEMAINE**
+
+**Action concrète que je fais cette semaine pour activer mon accountability** :
 
 ---
 
-### Type B : Accountability de Pair (Gratuit)
-
-Tu trouves 1-2 personnes au même stade. Vous vous tenez mutuellement accountable.
-
-**Format recommandé** :
-
-- Appel hebdomadaire de 30 min
-- Chacun partage : "Cette semaine, je m'étais engagé à ***. Je l'ai fait / Je ne l'ai pas fait. Raison :*** "
-- Pas de jugement. Juste des faits.
-- Engagement suivant : "La semaine prochaine, je m'engage à ___"
-
-**Mes 2 pairs potentiels** (personnes qui ont fait un voyage similaire) :
-
-1. Nom :  ***/ Comment je vais le contacter :***
-2. Nom :  ***/ Comment je vais le contacter :***
-
-**Date du premier appel** : ___
+**Date limite** : ___ (dans les 7 jours maximum)
 
 ---
 
-### Type C : Accountability de Mentor/Coach (Payant)
+### SYSTÈME 3 : SYSTÈME D'ENVIRONNEMENT (10 min)
 
-Tu payes quelqu'un pour te tenir accountable.
+**Objectif** : Modifier ton environnement pour que le nouveau comportement soit le plus facile
 
-**Budget mensuel que je suis prêt à investir** : ___
+**Principe** : Rendre le nouveau comportement FACILE et l'ancien comportement DIFFICILE.
 
-**Type de suivi** :
+**ÉTAPE 1 : Environnement Physique**
 
-☐ Coach individuel (session mensuelle)
+**Modifications à faire** :
 
-☐ Mastermind payant
+1. Pour faciliter [nouveau comportement 1] :
+   - J'ajoute : ___
+   - J'enlève : ___
 
-☐ Programme avec suivi
+2. Pour faciliter [nouveau comportement 2] :
+   - J'ajoute : ___
+   - J'enlève : ___
 
-**Recherche et contact** : Je vais chercher et contacter 3 options avant le ___
+3. Pour rendre difficile [ancien comportement à éviter] :
+   - J'ajoute : ___ (friction)
+   - J'enlève : ___ (tentation)
 
----
+**ÉTAPE 2 : Environnement Social**
 
-### Partie 3 : Système d'Environnement (10 min)
+**Communautés à rejoindre** (nouveau monde) :
 
-**Objectif** : Modifier ton environnement pour rendre le nouveau comportement facile.
+1. ___ (où ? quand ?)
+2. ___ (où ? quand ?)
+3. ___ (où ? quand ?)
 
-Tu vas modifier 3 aspects de ton environnement : Physique, Social, Digital.
+**Relations à limiter/couper** (ancien monde toxique) :
 
-### Modification A : Environnement Physique
+1. ___ (action : ___)
+2. ___ (action : ___)
+3. ___ (action : ___)
 
-**Principe** : Rends le nouveau comportement FACILE et l'ancien DIFFICILE.
+**Temps alloué** :
 
-**Ma nouvelle identité demande que je fasse** : ___
+- Nouveau monde : ___% de mon temps social
+- Ancien monde (sélectif) : ___% de mon temps social
+- (Total doit faire 100%)
 
-(Exemple : "Écrire tous les matins")
+**ÉTAPE 3 : Environnement Digital**
 
-**Modification physique que je vais faire** :
+**Modifications à faire cette semaine** :
 
-☐ Créer un espace dédié (bureau, coin, pièce)
+☐ Mettre à jour ma bio LinkedIn/Twitter pour refléter ma nouvelle identité
+☐ Nettoyer mes feeds (unfollow ancien monde, follow nouveau monde)
+  - Unfollow : ___ personnes/comptes
+  - Follow : ___ personnes/comptes dans mon nouveau domaine
+☐ Mettre des rappels automatiques pour mes rituels
+  - Outil utilisé : ☐ Google Calendar ☐ Todoist ☐ Notion ☐ Autre : ___
+  - Rappels créés : ___
+☐ Créer un espace digital dédié (dossier, app, notion page) pour mon nouveau monde
+☐ Désactiver notifications toxiques (ancien monde)
 
-☐ Préparer mon environnement la veille (tout prêt au réveil)
-
-☐ Enlever les distractions (téléphone dans autre pièce, bloquer sites, etc.)
-
-☐ Afficher des rappels visuels (post-it, photo, objet symbolique)
-
-☐ Autre : ___
-
-**Action concrète que je fais cette semaine** :
-
----
-
----
-
-### Modification B : Environnement Social
-
-**Principe** : Passe plus de temps avec le nouveau monde que l'ancien.
-
-**Calcul actuel** :
-
-Temps passé par semaine avec ancien monde : ___ heures
-
-Temps passé par semaine avec nouveau monde (ta tribu) : ___ heures
-
-**Ratio actuel** : Ancien  ***% / Nouveau***  %
-
-**Ratio cible dans 3 mois** : Ancien  ***% / Nouveau***  %
-
-**Actions concrètes pour inverser le ratio** :
-
-1. **Rejoindre** (augmenter temps nouveau monde) :
-    - Communauté / Lieu : ___
-    - Fréquence : ___
-    - Date d'inscription : ___
-2. **Limiter** (diminuer temps ancien monde) :
-    - Activité / Personne à limiter : ___
-    - De  ***fois/semaine à***  fois/mois
-3. **Remplacer** :
-    - Ancien : ___
-    - Par nouveau : ___
+**Date de mise en place** : ___ (cette semaine)
 
 ---
 
-### Modification C : Environnement Digital
+### RÉCAPITULATIF : MES 3 SYSTÈMES EN ACTION
 
-**Principe** : Ton environnement digital doit refléter ta nouvelle identité.
+**Système d'Identité** :
+- Mes 3 rituels : 1) ___ 2) ___ 3) ___
+- Fréquence : ___
+- Statut : ☐ En place ☐ À mettre en place
 
-**Audit digital actuel** :
+**Système d'Accountability** :
+- Type choisi : ___
+- Personne/plateforme : ___
+- Fréquence : ___
+- Statut : ☐ En place ☐ À mettre en place
 
-Ma bio LinkedIn actuelle : ___
+**Système d'Environnement** :
+- Modification principale : ___
+- Nouvelle communauté à rejoindre : ___
+- Statut : ☐ En place ☐ À mettre en place
 
-→ Reflète-t-elle ma nouvelle identité ? ☐ OUI ☐ NON
+**Engagement final** :
 
-Mes feeds (LinkedIn, IG, Twitter, etc.) : Je suis principalement des contenus sur :
+Je m'engage à mettre en place ces 3 systèmes d'ici le ___ [date dans 7 jours max].
 
-1.
+Je comprends que sans ces systèmes, je risque de régresser vers mes anciens comportements dans les 6 mois.
 
-    ---
-
-2.
-
-    ---
-
-3.
-
-    ---
-
-
-→ Est-ce aligné avec mon nouveau monde ? ☐ OUI ☐ NON
-
-**Modifications digitales que je vais faire** :
-
-**Bio LinkedIn/IG** :
-
-Nouvelle bio (écris-la maintenant) : ___
-
-Date de mise à jour : ___
-
-**Nettoyage feeds** :
-
-- Je vais unfollow : ___ personnes/pages de l'ancien monde
-- Je vais follow : ___ personnes/pages du nouveau monde
-- Liste de 5 comptes à follow dès maintenant :
-    1.
-
-        ---
-
-    2.
-
-        ---
-
-    3.
-
-        ---
-
-    4.
-
-        ---
-
-    5.
-
-        ---
-
-
-**Rappels automatiques** :
-
-- Je vais mettre un rappel quotidien pour : ___
-- Outil utilisé : ☐ Google Calendar ☐ Notion ☐ Todoist ☐ Autre : ___
+**Signature (symbolique)** : ___ Date : ___
 
 ---
 
-### Partie 4 : Checklist Mensuelle de Maintien (Bonus)
+## EXERCICE 3 : CARTOGRAPHIE DES 2 MONDES (Naviguer)
 
-Copie cette checklist et fais-la le 1er de chaque mois pendant 6 mois minimum.
+**Niveau** : ⭐⭐ Intermédiaire - Important
 
-**CHECKLIST MENSUELLE - Mois de : ___**
+**Objectif** : Cartographier clairement tes 2 mondes et planifier comment tu vas naviguer entre eux
 
-**Identité** :
+**Durée** : 25 minutes
 
-☐ J'ai maintenu mes 2 rituels d'identité au moins 80% du temps ce mois
+**Moment** : Après avoir créé tes systèmes de maintien (Exercice 2)
 
-☐ J'ai agi selon ma nouvelle identité, pas mon ancienne
+### Pourquoi cet exercice est important
 
-**Accountability** :
+Tu vas vivre dans 2 mondes simultanément : l'Ancien et le Nouveau.
 
-☐ J'ai honoré mes engagements publics (si Type A)
+Si tu ne cartographies pas clairement ces 2 mondes, tu vas :
+- T'épuiser à gérer les transitions
+- Faire des erreurs relationnelles (dire la mauvaise chose au mauvais moment)
+- Perdre ton énergie dans l'ancien monde au lieu de construire le nouveau
 
-☐ J'ai eu mes sessions avec mes pairs/mentor/coach
-
-☐ Je me suis tenu accountable honnêtement
-
-**Environnement** :
-
-☐ Mon environnement physique soutient ma nouvelle identité
-
-☐ J'ai passé plus de temps avec nouveau monde qu'ancien monde
-
-☐ Mon environnement digital reflète mon nouveau moi
-
-**Défis du Retour** :
-
-☐ J'ai résisté à la tentation de retour en arrière (si tentations)
-
-☐ J'ai maintenu/trouvé ma connexion avec ma nouvelle tribu
-
-☐ Je n'ai pas régressé vers mes anciens patterns
-
-**SCORE TOTAL** : ___/10
-
-**Interprétation** :
-
-- 9-10 : Excellent maintien 🌟 Continue !
-- 7-8 : Bon maintien ✅ Petits ajustements nécessaires
-- 5-6 : Attention ⚠️ Risque de régression - Renforce tes systèmes
-- < 5 : Danger ❌ Régression en cours - Action corrective IMMÉDIATE
-
-**Si score < 7, action corrective** :
-
-Quel système est faible ? ___
-
-Comment je le renforce cette semaine ? ___
+**Cet exercice te donne une carte claire pour naviguer consciemment.**
 
 ---
 
-### Livrable Final
+### PARTIE 1 : CARTOGRAPHIE DU MONDE ORDINAIRE (ANCIEN) (8 min)
 
-À la fin de cet exercice, tu dois avoir :
+**ÉTAPE 1 : Les Personnes**
 
-✅ Ta nouvelle identité définie en une phrase
+Liste les personnes importantes de ton ancien monde.
 
-✅ 2 rituels d'identité créés et planifiés
+Pour chacune, indique :
+- Nom
+- Relation (famille, ami, collègue, etc.)
+- Réaction à ta transformation : ☐ Supportive ☐ Neutre ☐ Résistante ☐ Toxique
+- Décision : ☐ Garder ☐ Limiter ☐ Couper
 
-✅ 1 structure d'accountability mise en place
+**Personnes à GARDER** (supportives, importantes pour toi) :
 
-✅ 3 modifications d'environnement (physique, social, digital) planifiées
+1. ___ | Relation : ___ | Pourquoi garder : ___
+2. ___ | Relation : ___ | Pourquoi garder : ___
+3. ___ | Relation : ___ | Pourquoi garder : ___
 
-✅ Ta checklist mensuelle prête à utiliser
+**Personnes à LIMITER** (neutres ou légèrement résistantes) :
 
-**Tu as maintenant tes systèmes. Maintiens-les. Ta transformation va durer.**
+1. ___ | Relation : ___ | Comment limiter : ___
+2. ___ | Relation : ___ | Comment limiter : ___
+3. ___ | Relation : ___ | Comment limiter : ___
+
+**Personnes à COUPER** (toxiques, destructrices) :
+
+1. ___ | Relation : ___ | Comment couper : ___
+2. ___ | Relation : ___ | Comment couper : ___
+
+**ÉTAPE 2 : Les Environnements**
+
+**Lieux de l'ancien monde où je vais encore aller** :
+
+1. ___ (fréquence : ___)
+2. ___ (fréquence : ___)
+3. ___ (fréquence : ___)
+
+**Lieux de l'ancien monde que j'évite maintenant** :
+
+1. ___ (pourquoi : ___)
+2. ___ (pourquoi : ___)
+
+**ÉTAPE 3 : Les Règles de Navigation**
+
+**Dans mon Monde Ordinaire, je m'engage à** :
+
+☐ Être présent mais pas absorbé
+☐ Participer aux rituels qui comptent vraiment (lesquels : ___)
+☐ Ne pas me justifier (je n'ai rien à prouver)
+☐ Rester humble (pas de sentiment de supériorité)
+☐ Partager mon expérience seulement avec ceux qui demandent
+
+**Je ne vais PAS** :
+
+☐ Essayer de convaincre ceux qui ne sont pas prêts
+☐ Me laisser absorber par leurs drames/patterns
+☐ Remettre en question ma transformation pour leur faire plaisir
+
+---
+
+### PARTIE 2 : CARTOGRAPHIE DU MONDE DE L'AVENTURE (NOUVEAU) (8 min)
+
+**ÉTAPE 1 : Les Personnes**
+
+**Ma nouvelle tribu (déjà identifiée)** :
+
+1. ___ | Comment je l'ai rencontré : ___ | Pourquoi c'est ma tribu : ___
+2. ___ | Comment je l'ai rencontré : ___ | Pourquoi c'est ma tribu : ___
+3. ___ | Comment je l'ai rencontré : ___ | Pourquoi c'est ma tribu : ___
+
+**Personnes que je veux rencontrer** (nouvelle tribu potentielle) :
+
+1. ___ | Où les trouver : ___
+2. ___ | Où les trouver : ___
+3. ___ | Où les trouver : ___
+
+**ÉTAPE 2 : Les Environnements**
+
+**Lieux du nouveau monde où je vais aller régulièrement** :
+
+1. ___ (fréquence : ___ | première visite : ___)
+2. ___ (fréquence : ___ | première visite : ___)
+3. ___ (fréquence : ___ | première visite : ___)
+
+Exemples : coworking, événements, conférences, communautés, masterminds, etc.
+
+**Communautés en ligne que je rejoins** :
+
+1. ___ (plateforme : ___ | date d'inscription : ___)
+2. ___ (plateforme : ___ | date d'inscription : ___)
+
+**ÉTAPE 3 : Les Règles de Navigation**
+
+**Dans mon Monde de l'Aventure, je m'engage à** :
+
+☐ Vivre pleinement ma nouvelle identité (pas de compromis)
+☐ Créer et construire activement (pas juste consommer)
+☐ M'entourer de gens qui me tirent vers le haut
+☐ Partager mon élixir avec ceux qui sont prêts
+☐ Continuer à grandir (ne pas stagner)
+
+**Je ne vais PAS** :
+
+☐ Stagner dans le confort
+☐ Me comparer aux autres (chacun son voyage)
+☐ Garder mon élixir pour moi (je partage avec ceux qui ont soif)
+
+---
+
+### PARTIE 3 : ALLOCATION DU TEMPS ET DE L'ÉNERGIE (5 min)
+
+**Répartition cible entre mes 2 mondes** :
+
+**Monde Ordinaire (Ancien)** :
+- Temps : ___% de mon temps social/professionnel
+- Énergie : ☐ Minimale ☐ Modérée ☐ Significative
+- Objectif : ___ (ex: "Maintenir les relations importantes")
+
+**Monde de l'Aventure (Nouveau)** :
+- Temps : ___% de mon temps social/professionnel
+- Énergie : ☐ Minimale ☐ Modérée ☐ Maximale
+- Objectif : ___ (ex: "Construire mon nouveau monde")
+
+**Total** : 100%
+
+**Ajustements nécessaires** :
+
+Pour atteindre cette répartition, je dois :
+- Augmenter : ___
+- Diminuer : ___
+
+---
+
+### PARTIE 4 : LE PONT ENTRE LES 2 MONDES (4 min)
+
+**Personnes de l'ancien monde qui pourraient rejoindre le nouveau** :
+
+Ces personnes ont montré de l'ouverture. Elles sont peut-être prêtes.
+
+1. ___ | Signes qu'elle est prête : ___
+2. ___ | Signes qu'elle est prête : ___
+3. ___ | Signes qu'elle est prête : ___
+
+**Comment je vais les accueillir** (sans forcer) :
+
+- Action 1 : ___
+- Action 2 : ___
+
+**Ma posture de "pont"** :
+
+Je comprends que je suis un passage entre les 2 mondes.
+
+☐ Je ne force personne à traverser
+☐ Je suis disponible pour ceux qui demandent
+☐ Je partage mon histoire avec humilité
+☐ J'accepte que la majorité ne suivra pas (et c'est ok)
+
+---
+
+### RÉCAPITULATIF : MES 2 MONDES EN UN COUP D'ŒIL
+
+**Monde Ordinaire** :
+- Personnes à garder : ___
+- Temps alloué : ___%
+- Règle principale : ___
+
+**Monde de l'Aventure** :
+- Nouvelle tribu : ___
+- Temps alloué : ___%
+- Règle principale : ___
+
+**Le Pont** :
+- Personnes potentielles : ___
+- Ma posture : ___
+
+**Action immédiate** (cette semaine) :
+
+Pour renforcer mon Monde de l'Aventure, je vais :
+
+---
+
+---
+
+## 🎯 VALIDATION DE TES EXERCICES
+
+**Checklist de validation** :
+
+☐ Exercice 1 complété : J'ai choisi ma stratégie de retour
+☐ Exercice 2 complété : J'ai créé mes 3 systèmes de maintien
+☐ Exercice 3 complété : J'ai cartographié mes 2 mondes
+
+**Si les 3 sont cochés** : Tu es prêt pour le Chemin du Retour. Tu as une carte, une stratégie, et des systèmes.
+
+**Si moins de 3 sont cochés** : DANGER. Tu risques la régression. Retourne aux exercices non complétés.
 
 ---
 
 ## 🎯 PROCHAINE ÉTAPE
 
-Tu as identifié tes défis.
+Tu as :
+- Choisi ta stratégie de retour
+- Créé tes systèmes de maintien
+- Cartographié tes 2 mondes
 
-Tu as choisi ta stratégie.
+**Maintenant, tu vas affronter le dernier test.**
 
-Tu as créé tes systèmes.
-
-**Maintenant, il reste un dernier test.**
-
-Sur le chemin du retour, quelque chose va arriver. Un dernier défi public qui va te demander de prouver que tu es vraiment transformé(e).
-
-C'est la Résurrection. Le moment où tout le monde VOIT que tu n'es plus la même personne.
+Le test qui va te demander de prouver publiquement que tu es vraiment transformé(e).
 
 **Continue vers Station 11 - La Résurrection** 👉
