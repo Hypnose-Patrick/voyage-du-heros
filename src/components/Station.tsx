@@ -12,7 +12,7 @@ interface StationProps {
 }
 
 export default function Station({ station, level, onComplete, onBack }: StationProps) {
-  const [currentStep, setCurrentStep] = useState<'intro' | 'pedagogical' | 'exercise' | 'summary'>('intro');
+  const [currentStep, setCurrentStep] = useState<'intro' | 'pedagogical' | 'instructions' | 'exercise' | 'summary'>('intro');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
@@ -40,6 +40,84 @@ export default function Station({ station, level, onComplete, onBack }: StationP
 
   const totalQuestions = exercise.questions.length;
   const progress = (currentQuestionIndex / totalQuestions) * 100;
+
+  // Formater le texte markdown pour richContent
+  const formatRichContent = (text: string) => {
+    return text.split('\n').map((line, index) => {
+      // Titres niveau 2 (##)
+      if (line.startsWith('## ')) {
+        return (
+          <h2 key={index} className="text-2xl font-bold mb-4 mt-6 text-gray-800">
+            {line.substring(3)}
+          </h2>
+        );
+      }
+      // Titres niveau 3 (###)
+      if (line.startsWith('### ')) {
+        return (
+          <h3 key={index} className="text-xl font-bold mb-3 mt-5 text-gray-800">
+            {line.substring(4)}
+          </h3>
+        );
+      }
+      // Gras (**text**)
+      if (line.includes('**')) {
+        const parts = line.split('**');
+        return (
+          <p key={index} className="mb-2 text-gray-700">
+            {parts.map((part, i) => (i % 2 === 1 ? <strong key={i}>{part}</strong> : part))}
+          </p>
+        );
+      }
+      // Liste avec tirets (-)
+      if (line.trim().startsWith('- ')) {
+        return (
+          <li key={index} className="ml-6 mb-1 text-gray-700">
+            {line.trim().substring(2)}
+          </li>
+        );
+      }
+      // Checkbox (☐)
+      if (line.includes('☐')) {
+        return (
+          <div key={index} className="flex items-start gap-2 mb-2">
+            <span className="text-gray-500">☐</span>
+            <span className="text-gray-700">{line.replace('☐', '').trim()}</span>
+          </div>
+        );
+      }
+      // Checkmark (✅)
+      if (line.includes('✅')) {
+        return (
+          <div key={index} className="flex items-start gap-2 mb-2">
+            <span>✅</span>
+            <span className="text-gray-700">{line.replace('✅', '').trim()}</span>
+          </div>
+        );
+      }
+      // Séparateur (---)
+      if (line.trim() === '---') {
+        return <hr key={index} className="my-6 border-gray-300" />;
+      }
+      // Ligne de tableau
+      if (line.includes('|')) {
+        return (
+          <div key={index} className="font-mono text-sm text-gray-600 mb-1">
+            {line}
+          </div>
+        );
+      }
+      // Paragraphe normal
+      if (line.trim()) {
+        return (
+          <p key={index} className="mb-3 text-gray-700 leading-relaxed">
+            {line}
+          </p>
+        );
+      }
+      return <br key={index} />;
+    });
+  };
 
   const handleAnswer = (answer: string) => {
     const questionKey = `q${currentQuestionIndex}`;
@@ -157,10 +235,18 @@ export default function Station({ station, level, onComplete, onBack }: StationP
                 </div>
 
                 <button
-                  onClick={() => setCurrentStep(station.pedagogicalContent ? 'pedagogical' : 'exercise')}
+                  onClick={() => {
+                    if (station.pedagogicalContent) {
+                      setCurrentStep('pedagogical');
+                    } else if (exercise.richContent) {
+                      setCurrentStep('instructions');
+                    } else {
+                      setCurrentStep('exercise');
+                    }
+                  }}
                   className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition"
                 >
-                  {station.pedagogicalContent ? 'Découvrir le contenu pédagogique' : 'Commencer l\'exercice'}
+                  {station.pedagogicalContent ? 'Découvrir le contenu pédagogique' : exercise.richContent ? 'Découvrir les instructions' : 'Commencer l\'exercice'}
                 </button>
               </motion.div>
             )}
@@ -169,8 +255,53 @@ export default function Station({ station, level, onComplete, onBack }: StationP
             {currentStep === 'pedagogical' && station.pedagogicalContent && (
               <PedagogicalContent
                 content={station.pedagogicalContent}
-                onContinue={() => setCurrentStep('exercise')}
+                onContinue={() => {
+                  if (exercise.richContent) {
+                    setCurrentStep('instructions');
+                  } else {
+                    setCurrentStep('exercise');
+                  }
+                }}
               />
+            )}
+
+            {/* Rich Content Instructions */}
+            {currentStep === 'instructions' && exercise.richContent && (
+              <motion.div
+                key="instructions"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                className="p-8"
+              >
+                <div className="mb-6">
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                    📝 Instructions de l'exercice
+                  </h2>
+                  <p className="text-gray-600">
+                    Prends le temps de lire attentivement ces instructions avant de commencer.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 mb-6 max-h-[65vh] overflow-y-auto">
+                  <div className="prose max-w-none">
+                    {formatRichContent(exercise.richContent)}
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                  <p className="text-yellow-900">
+                    💡 <strong>Conseil:</strong> Tu peux utiliser une feuille de papier ou un fichier texte pour répondre aux questions pendant l'exercice, puis reporter tes réponses dans l'application.
+                  </p>
+                </div>
+
+                <button
+                  onClick={() => setCurrentStep('exercise')}
+                  className="w-full py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg transform hover:scale-105 transition"
+                >
+                  Commencer l'exercice →
+                </button>
+              </motion.div>
             )}
 
             {/* Exercise - Questions */}

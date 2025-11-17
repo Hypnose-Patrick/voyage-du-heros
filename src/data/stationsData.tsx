@@ -9,6 +9,7 @@ export interface Exercise {
   description: string;
   questions: string[];
   duration: string;
+  richContent?: string; // Contenu markdown structuré pour les exercices pratiques détaillés
 }
 
 export interface QuizQuestion {
@@ -2567,42 +2568,485 @@ Et dans la prochaine station... tu vas y entrer.
     exercises: [
       {
         level: 'explorateur',
-        title: 'La Grande Épreuve',
-        description: 'Identifie ce qui t\'attend',
+        title: 'Identifier et Nommer Ta Caverne',
+        description: 'Identifier précisément ta caverne personnelle et son type I.C.A.R.E.',
         questions: [
-          'Quelle est la plus grande épreuve qui t\'attend dans ta transformation ?',
-          'Qu\'est-ce qui te fait le plus peur dans cette épreuve ?',
-          'De quoi as-tu besoin pour être prêt(e) ?'
+          'Ma caverne précise (complète : "Mon plus grand défi professionnel en ce moment, celui que je redoute le plus, c\'est :")',
+          'Combien de caractéristiques de caverne as-tu cochées ? (entre 0 et 5)',
+          'Mon type de caverne I.C.A.R.E.',
+          'Ma peur centrale (complète : "J\'ai peur de ___ et c\'est normal parce que ___")'
         ],
-        duration: '5 min'
+        duration: '10 min',
+        richContent: `## EXERCICE 1 : IDENTIFIER ET NOMMER TA CAVERNE
+
+**Niveau** : ⭐ Débutant
+
+**Objectif** : Identifier précisément ta caverne personnelle et son type I.C.A.R.E.
+
+**Durée** : 10 minutes
+
+**Matériel** : Feuille et stylo (ou fichier texte)
+
+### Instructions
+
+### Étape 1 : La Question de la Peur (3 min)
+
+Complète spontanément cette phrase :
+
+**"Mon plus grand défi professionnel en ce moment, celui que je redoute le plus, c'est :"**
+
+---
+
+Sois PRÉCIS. Pas "me lancer" ou "changer de carrière". Mais :
+
+- "Publier un post LinkedIn annonçant ma reconversion en coach avec mon vrai nom et ma photo"
+- "Appeler 50 prospects pour vendre mes services de formateur"
+- "Annoncer à ma famille que je quitte l'entreprise familiale pour devenir artiste"
+- "Démissionner de mon CDI sans avoir de clients"
+- "Facturer 1500€ au lieu de 500€ pour mes prestations"
+
+**Ma caverne précise** : ___
+
+### Étape 2 : Le Test des Caractéristiques (3 min)
+
+Vérifie que c'est bien une CAVERNE (pas juste une tâche difficile) :
+
+☐ **Je sais que je DOIS le faire pour réussir** (sinon ma quête échoue)
+
+☐ **Je l'ai évité jusqu'ici** (j'ai trouvé plein de façons de le contourner)
+
+☐ **Je ne peux pas déléguer** (c'est moi qui dois le faire, personne d'autre)
+
+☐ **Ça me fait physiquement peur** (estomac noué, pensées la nuit)
+
+☐ **Après, je serai transformé** (je ne serai plus la même personne)
+
+**Combien de cases cochées ?** ___/5
+
+Si tu as coché **4-5 cases** → C'est ta caverne. Continue.
+
+Si tu as coché **2-3 cases** → C'est probablement une épreuve importante, mais peut-être pas TA caverne principale. Cherche plus profond.
+
+Si tu as coché **0-1 case** → Ce n'est pas une caverne. Reprends l'Étape 1 et creuse.
+
+### Étape 3 : Identification du Type I.C.A.R.E. (4 min)
+
+Analyse ta peur dominante. Complète :
+
+**"J'ai peur de ___"**
+
+Maintenant, identifie le profil selon cette clé :
+
+**Si tu as peur de :**
+
+- "...être jugé" / "...perdre mon image" / "...être un imposteur visible" → **Caverne IDENTITÉ** 🎭
+- "...échouer" / "...ne pas savoir faire" / "...être incompétent" → **Caverne CAPACITÉS** 💪
+- "...être rejeté" / "...être seul" / "...perdre mes amis/famille" → **Caverne APPARTENANCE** 🌍
+- "...tout perdre" / "...me retrouver à la rue" / "...ruiner ma famille" → **Caverne RISQUE** ⚠️
+- "...ne pas mériter" / "...être trop cher" / "...ne pas valoir ça" → **Caverne ESTIME** 🪞
+
+**Mon type de caverne I.C.A.R.E.** : ___
+
+**Ma peur centrale** : "J'ai peur de ___ et c'est normal parce que ___"
+
+### Livrables
+
+À la fin de cet exercice, tu dois avoir :
+
+- ✅ Ta caverne nommée précisément
+- ✅ Validation que c'est bien une caverne (4-5/5)
+- ✅ Ton type I.C.A.R.E. identifié
+- ✅ Ta peur centrale reconnue et normalisée`
       },
       {
         level: 'chercheur',
-        title: 'Préparation Stratégique',
-        description: 'Construis ton plan de préparation',
+        title: 'Inventaire Ressources vs Besoins',
+        description: 'Évaluer honnêtement tes ressources actuelles vs ce qui te manque',
         questions: [
-          'Décris précisément l\'épreuve majeure qui se profile (entretien crucial, changement majeur, etc.)',
-          'Quelles sont tes 3 plus grandes peurs face à cette épreuve ?',
-          'Quelles ressources (compétences, personnes, outils) dois-tu rassembler ?',
-          'Comment peux-tu te préparer mentalement et émotionnellement ?',
-          'Quel est ton plan B si les choses ne se passent pas comme prévu ?'
+          'Liste 5 compétences acquises dans les Stations 1-6 avec leurs preuves',
+          'Liste 3 alliés identifiés qui peuvent t\'aider spécifiquement pour ta caverne',
+          'Liste 2 épreuves similaires que tu as déjà surmontées',
+          'Qu\'est-ce qui te manque vraiment pour entrer dans ta caverne ? (compétence, outil, allié, temps, argent)',
+          'Quels sont tes 3 besoins ESSENTIELS avec leurs dates limites ?',
+          'Date d\'entrée dans la caverne (après avoir obtenu ces 3 besoins)'
         ],
-        duration: '15 min'
+        duration: '20 min',
+        richContent: `## EXERCICE 2 : INVENTAIRE RESSOURCES VS BESOINS
+
+**Niveau** : ⭐⭐ Intermédiaire
+
+**Objectif** : Évaluer honnêtement tes ressources actuelles vs ce qui te manque
+
+**Durée** : 20 minutes
+
+**Matériel** : Résultat de l'Exercice 1 + feuille/fichier
+
+### Instructions
+
+### Partie 1 : Ce Que Tu AS Déjà (8 min)
+
+Tu as déjà des ressources. Plus que tu ne le penses. Inventorie-les.
+
+**A. Compétences Acquises (3 min)**
+
+Liste 5 compétences que tu as développées dans les Stations 1-6 :
+
+1. **Compétence 1** : ___
+   Preuve : ___ (situation où tu l'as utilisée)
+
+2. **Compétence 2** : ___
+   Preuve : ___
+
+3. **Compétence 3** : ___
+   Preuve : ___
+
+4. **Compétence 4** : ___
+   Preuve : ___
+
+5. **Compétence 5** : ___
+   Preuve : ___
+
+**B. Alliés Identifiés (3 min)**
+
+Liste 3 personnes qui peuvent t'aider spécifiquement pour TA caverne :
+
+| Nom/Prénom | Relation | Comment il/elle peut m'aider |
+|------------|----------|------------------------------|
+|            |          |                              |
+|            |          |                              |
+|            |          |                              |
+
+**C. Épreuves Surmontées (2 min)**
+
+Liste 2 épreuves similaires (même plus petites) que tu as déjà surmontées :
+
+1. **Épreuve 1** : ___
+   Résultat : ___
+
+2. **Épreuve 2** : ___
+   Résultat : ___
+
+**Ces épreuves prouvent que** : ___
+
+### Partie 2 : Ce Qui Te MANQUE (7 min)
+
+Sois honnête. Qu'est-ce qui te manque vraiment pour entrer dans ta caverne ?
+
+Coche les catégories qui s'appliquent et détaille :
+
+☐ **Une compétence spécifique**
+
+Laquelle : ___
+
+Niveau actuel (0-10) : ___
+
+Niveau nécessaire pour entrer dans la caverne (0-10) : ___
+
+☐ **Un outil/équipement**
+
+Lequel : ___
+
+Coût/Temps pour l'obtenir : ___
+
+☐ **Un allié supplémentaire**
+
+Type d'allié : ___ (ex : "quelqu'un qui a déjà vendu 100 clients")
+
+Où le trouver : ___
+
+☐ **Du temps**
+
+Combien : ___ (ex : "3 semaines pour préparer mon script")
+
+Pour faire quoi : ___
+
+☐ **De l'argent**
+
+Combien : ___
+
+Pour quoi : ___
+
+☐ **Autre**
+
+Quoi : ___
+
+### Partie 3 : Plan de Préparation Minimum (5 min)
+
+**RÈGLE D'OR** : Maximum 3 besoins. Si tu en as plus, tu tombes dans l'Erreur #2 (se préparer éternellement).
+
+Sélectionne les 3 besoins ESSENTIELS (sans lesquels tu ne peux vraiment pas entrer dans la caverne) :
+
+**Pour être prêt à entrer dans ma caverne, j'ai besoin de :**
+
+1. ___
+
+   **Action concrète** : ___
+
+   **Date limite** : ___
+
+2. ___
+
+   **Action concrète** : ___
+
+   **Date limite** : ___
+
+3. ___
+
+   **Action concrète** : ___
+
+   **Date limite** : ___
+
+**Date d'entrée dans la caverne (après avoir obtenu ces 3 besoins)** : ___
+
+### Auto-Diagnostic
+
+Réponds honnêtement :
+
+**Mes 3 besoins sont-ils vraiment ESSENTIELS ?**
+
+☐ OUI - Sans eux, je ne peux vraiment pas y aller
+
+☐ NON - En vérité, je pourrais y aller sans certains d'entre eux → Signe d'Erreur #2, réduis à 1-2 besoins
+
+**Mes dates limites sont-elles dans les 7-30 jours ?**
+
+☐ OUI - C'est raisonnable et urgent
+
+☐ NON - Elles sont trop lointaines → Signe d'Erreur #2, rapproche-les
+
+### Livrables
+
+À la fin de cet exercice, tu dois avoir :
+
+- ✅ 5 compétences acquises listées avec preuves
+- ✅ 3 alliés identifiés avec rôles
+- ✅ 2 épreuves similaires surmontées
+- ✅ Tes besoins manquants identifiés
+- ✅ Plan de préparation minimum (max 3 besoins) avec dates`
       },
       {
         level: 'plongeur',
-        title: 'La Descente Consciente',
-        description: 'Prépare-toi en profondeur pour la transformation',
+        title: 'Créer Ta Stratégie Complète des 4R',
+        description: 'Créer ta stratégie complète et fixer ta date d\'entrée avec engagement public',
         questions: [
-          'Pourquoi cette épreuve est-elle absolument nécessaire à ta transformation ?',
-          'Quelle version de toi doit "mourir" pour que tu puisses traverser cette épreuve ?',
-          'Comment cette épreuve s\'inscrit-elle dans les schémas récurrents de ta vie ?',
-          'Si tu devais traverser cette épreuve avec courage et grâce, comment t\'y prendrais-tu ?',
-          'Quelle sagesse intérieure possèdes-tu déjà pour affronter cela ?',
-          'Comment peux-tu transformer cette peur en force motrice ?',
-          'Quel rituel ou pratique peut t\'aider à entrer dans cette épreuve avec présence ?'
+          'R1 - RECONNAÎTRE : Synthèse de ta caverne, ton type I.C.A.R.E., et ta peur centrale',
+          'R2 - RESSOURCES : Tes 3 ressources principales et tes 3 besoins essentiels avec dates',
+          'R3 - RÉPÉTITION : Ton micro-test planifié, tes 5 visualisations, et ton rituel de courage',
+          'R4 - RENDEZ-VOUS : Ta date d\'entrée dans la caverne',
+          'R4 - RENDEZ-VOUS : Ton allié informé (nom et date d\'envoi du message)',
+          'R4 - RENDEZ-VOUS : Ton rituel de passage défini',
+          'Engagement final : Es-tu prêt à entrer dans ta caverne à la date fixée ?'
         ],
-        duration: '30 min'
+        duration: '30 min',
+        richContent: `## EXERCICE 3 : CRÉER TA STRATÉGIE COMPLÈTE DES 4R
+
+**Niveau** : ⭐⭐⭐ Avancé
+
+**Objectif** : Créer ta stratégie complète et fixer ta date d'entrée avec engagement public
+
+**Durée** : 30 minutes
+
+**Matériel** : Résultats Exercices 1 & 2 + accès téléphone/email pour engagement
+
+### Instructions
+
+Tu vas maintenant créer ta stratégie complète des **4R : Reconnaître, Ressources, Répétition, Rendez-vous**
+
+---
+
+### R1 : RECONNAÎTRE (Synthèse - 5 min)
+
+Résume ce que tu as identifié dans l'Exercice 1 :
+
+**Ma caverne** : ___
+
+**Mon type I.C.A.R.E.** : ___
+
+**Ma peur centrale** : "J'ai peur de ___ et c'est normal parce que ___"
+
+**Je reconnais que** : (coche)
+
+☐ Cette peur est légitime
+
+☐ Je ne suis pas faible d'avoir peur
+
+☐ Tous les héros ont peur avant leur caverne
+
+☐ Reconnaître ma peur, c'est la désarmer à 50%
+
+---
+
+### R2 : RESSOURCES (Synthèse - 5 min)
+
+Résume ce que tu as dans l'Exercice 2 :
+
+**Mes 3 ressources principales** :
+
+1. ___
+
+2. ___
+
+3. ___
+
+**Mes 3 besoins essentiels** :
+
+1. ___ (date limite : ___)
+2. ___ (date limite : ___)
+3. ___ (date limite : ___)
+
+---
+
+### R3 : RÉPÉTITION (Planification - 10 min)
+
+Tu vas maintenant planifier tes répétitions.
+
+**A. Micro-Test (5 min de planification)**
+
+Définis une version RÉDUITE de ta caverne que tu peux tester sans risque :
+
+**Ma caverne complète** : ___
+
+**Mon micro-test (version réduite)** : ___
+
+Exemples :
+
+- Caverne = "Vendre à 50 prospects" → Micro-test = "Pitcher à 3 amis"
+- Caverne = "Post LinkedIn public" → Micro-test = "Post dans groupe Facebook anonyme"
+- Caverne = "Démissionner" → Micro-test = "Side project 5h/semaine pendant 1 mois"
+
+**Date du micro-test** : ___
+
+**B. Simulation Mentale (5 min de planification)**
+
+Tu vas visualiser ta caverne pendant 5 jours.
+
+**Je m'engage à visualiser ma caverne 5 minutes par jour pendant 5 jours** : ☐ OUI
+
+**Protocole de visualisation** (à suivre chaque jour) :
+
+1. Fermer les yeux
+2. Visualiser AVANT (nerveux mais déterminé)
+3. Visualiser PENDANT (en action, gérant difficultés)
+4. Visualiser APRÈS (soulagé, fier, transformé)
+
+**Dates de mes 5 visualisations** :
+
+- Jour 1 : ___
+- Jour 2 : ___
+- Jour 3 : ___
+- Jour 4 : ___
+- Jour 5 : ___
+
+**C. Rituel de Courage**
+
+Crée ton ancrage émotionnel de confiance :
+
+Mon rituel de courage sera : (coche un ou plusieurs)
+
+☐ **Une phrase rituelle** : "___"
+
+☐ **Une chanson** : ___ (titre + artiste)
+
+☐ **Un objet symbolique** : ___ (lequel ?)
+
+☐ **Un souvenir de victoire** : ___ (quelle victoire passée ?)
+
+---
+
+### R4 : RENDEZ-VOUS (Engagement - 10 min)
+
+C'est le moment de la décision.
+
+**A. Fixe Ta Date (2 min)**
+
+Calcule :
+
+- Date du dernier besoin obtenu : ___
+- + 2-7 jours de préparation finale : ___
+
+**J'entre dans ma caverne le : __/__/2025**
+
+**Auto-vérification** :
+
+☐ Ma date est dans 7-30 jours (ni demain = Erreur #1, ni "un jour" = Erreur #2)
+
+☐ Ma date est APRÈS avoir obtenu mes 3 besoins essentiels
+
+☐ Ma date est PRÉCISE (jour/mois/année)
+
+**B. Engagement Public (5 min)**
+
+**IMPORTANT** : L'engagement public multiplie ta détermination par 10.
+
+Choisis UN allié de confiance : ___
+
+Envoie-lui ce message MAINTENANT (adapte-le à ton style) :
+
+**Template de message** :
+
+"Salut [Prénom],
+
+Je voulais te dire quelque chose d'important.
+
+Le [DATE], je vais [TA CAVERNE].
+
+J'ai un peu peur, mais je suis prêt(e). J'ai identifié ce qui me manquait et je suis en train de me préparer.
+
+Je voulais juste que tu le saches. Ça m'aide de le dire à voix haute à quelqu'un en qui j'ai confiance.
+
+Merci d'être là.
+
+[Ton prénom]"
+
+☐ **Message envoyé le __/__/2025 à ___ (nom de l'allié)**
+
+**C. Rituel de Passage (3 min de planification)**
+
+Le jour J, avant d'entrer dans la caverne, tu feras un rituel :
+
+**Mon rituel de passage sera** : (choisis-en UN minimum)
+
+☐ **Écrire une lettre à mon moi futur** (après avoir traversé la caverne)
+
+Temps prévu : 10 min avant
+
+☐ **Respirer 3 minutes en silence** (protocole 4-6)
+
+Temps prévu : juste avant
+
+☐ **Écouter une chanson spécifique**
+
+Laquelle : ___
+
+Temps prévu : ___
+
+☐ **Porter un vêtement symbolique**
+
+Lequel : ___
+
+☐ **Autre rituel personnel** : ___
+
+---
+
+### Livrable Final : Ta Stratégie Complète
+
+À la fin de cet exercice, tu dois avoir :
+
+✅ **R1 - RECONNAÎTRE** : Ta caverne nommée, ton type identifié, ta peur reconnue
+
+✅ **R2 - RESSOURCES** : Tes 3 ressources + 3 besoins avec dates limites
+
+✅ **R3 - RÉPÉTITION** : Micro-test planifié, 5 visualisations planifiées, rituel de courage créé
+
+✅ **R4 - RENDEZ-VOUS** : Date fixée, engagement envoyé à un allié, rituel de passage défini
+
+**Ta date d'entrée dans la caverne** : __/__/2025
+
+**Ton allié informé** : ___
+
+**Tu es prêt.**
+
+**Prochaine étape : Station 8 - L'Épreuve Suprême** 👉`
       }
     ],
     quiz: [
