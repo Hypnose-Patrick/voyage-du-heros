@@ -69,8 +69,12 @@ Chaque station propose des exercices adaptés à ton niveau d'engagement :
 
 #### Station 8 : 🔥 L'Épreuve Suprême
 > *Affronter ta plus grande peur*
-- **Statut** : À venir
-- **Focus** : La transformation profonde
+- **Document** : [`station-8-exercices-pratiques.md`](./station-8-exercices-pratiques.md)
+- **Exercices** :
+  - ⭐ Exercice 1 : Protocole SOS (à utiliser PENDANT l'épreuve)
+  - ⭐⭐ Exercice 2 : Débriefing post-épreuve (immédiatement après)
+  - ⭐⭐⭐ Exercice 3 : Reconnaître ton nouveau moi (7 jours après)
+- **Focus** : Traverser l'épreuve avec le Protocole SOS, ancrer la transformation, intégrer ta nouvelle identité
 
 #### Station 9 : 🏆 La Récompense
 > *Récolter les fruits de ta transformation*
