@@ -87,8 +87,12 @@ Chaque station propose des exercices adaptés à ton niveau d'engagement :
 
 #### Station 10 : 🚶 Le Chemin du Retour
 > *Revenir avec ta nouvelle identité*
-- **Statut** : À venir
-- **Focus** : Intégration dans le quotidien
+- **Document** : [`station-10-exercices-pratiques.md`](./station-10-exercices-pratiques.md)
+- **Exercices** :
+  - ⭐ Exercice 1 : Identifier tes 3 défis personnels (immédiatement après Station 9)
+  - ⭐⭐ Exercice 2 : Choisir ta stratégie de retour (dans les 7 jours)
+  - ⭐⭐⭐ Exercice 3 : Créer tes systèmes de maintien de transformation (dans les 14 jours)
+- **Focus** : Anticiper les défis du retour, choisir sa stratégie (Progressif/Radical/Hybride), créer des systèmes durables (Identité, Accountability, Environnement)
 
 #### Station 11 : 🦋 La Résurrection
 > *Prouver ta transformation*
