@@ -5,3 +5,4 @@
 
 export * from './journeyService';
 export * from './stationService';
+export * from './icareEvolutionService';
