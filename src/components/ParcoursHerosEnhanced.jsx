@@ -29,30 +29,44 @@ const ParcoursHerosEnhanced = () => {
 
   // Sauvegarde automatique dans le localStorage
   useEffect(() => {
-    const savedData = localStorage.getItem('voyage-du-heros');
-    if (savedData) {
-      const { level, answers, step, prog, stationId, achievements, viewedProfile } = JSON.parse(savedData);
-      setSelectedLevel(level);
-      setUserAnswers(answers);
-      setCurrentStep(step);
-      setProgress(prog);
-      setCurrentStationId(stationId || 1);
-      setUnlockedAchievements(achievements || []);
-      setHasViewedProfile(viewedProfile || false);
+    try {
+      const savedData = localStorage.getItem('voyage-du-heros');
+      if (savedData) {
+        const { level, answers, step, prog, stationId, achievements, viewedProfile } = JSON.parse(savedData);
+        setSelectedLevel(level);
+        setUserAnswers(answers || {});
+        setCurrentStep(step || 'welcome');
+        setProgress(prog || 0);
+        setCurrentStationId(stationId || 1);
+        setUnlockedAchievements(achievements || []);
+        setHasViewedProfile(viewedProfile || false);
+      }
+    } catch (error) {
+      console.error('Error loading saved data from localStorage:', error);
+      // En cas d'erreur, effacer les données corrompues et redémarrer
+      try {
+        localStorage.removeItem('voyage-du-heros');
+      } catch (e) {
+        console.error('Failed to clear corrupted localStorage:', e);
+      }
     }
   }, []);
 
   useEffect(() => {
     if (selectedLevel) {
-      localStorage.setItem('voyage-du-heros', JSON.stringify({
-        level: selectedLevel,
-        answers: userAnswers,
-        step: currentStep,
-        prog: progress,
-        stationId: currentStationId,
-        achievements: unlockedAchievements,
-        viewedProfile: hasViewedProfile
-      }));
+      try {
+        localStorage.setItem('voyage-du-heros', JSON.stringify({
+          level: selectedLevel,
+          answers: userAnswers,
+          step: currentStep,
+          prog: progress,
+          stationId: currentStationId,
+          achievements: unlockedAchievements,
+          viewedProfile: hasViewedProfile
+        }));
+      } catch (error) {
+        console.error('Error saving data to localStorage:', error);
+      }
     }
   }, [selectedLevel, userAnswers, currentStep, progress, currentStationId, unlockedAchievements, hasViewedProfile]);
 

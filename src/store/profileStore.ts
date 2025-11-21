@@ -204,6 +204,19 @@ ${getMetaProgrammesDescription(profile.metaProgrammes)}
         profile: state.profile,
         allAnswers: state.allAnswers,
       }), // Ne persister que ce qui est nécessaire
+      onRehydrateStorage: () => {
+        return (state, error) => {
+          if (error) {
+            console.error('Error rehydrating profile store:', error);
+            // En cas d'erreur, effacer le localStorage corrompu
+            try {
+              localStorage.removeItem('voyage-du-heros-profile');
+            } catch (e) {
+              console.error('Failed to clear corrupted localStorage:', e);
+            }
+          }
+        };
+      },
     }
   )
 );
