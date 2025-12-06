@@ -37,10 +37,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y lftp
           
-          # Deploy dist folder to Bunny Storage
+          # Deploy dist folder to Bunny Storage via FTPS
           lftp -e "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
             set ssl:verify-certificate no;
             open -u $BUNNY_STORAGE_USERNAME,$BUNNY_STORAGE_PASSWORD $BUNNY_STORAGE_HOSTNAME;
-            mirror -Rev dist $BUNNY_FOLDER --ignore-time --parallel=10;
+            mirror -Rev dist $BUNNY_FOLDER --ignore-time --parallel=10 --verbose;
             bye
           "
