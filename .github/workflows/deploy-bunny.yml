@@ -31,7 +31,6 @@ jobs:
           BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
           BUNNY_STORAGE_USERNAME: voyage-du-heros
           BUNNY_STORAGE_HOSTNAME: storage.bunnycdn.com
-          BUNNY_FOLDER: /
         run: |
           # Install lftp for FTP deployment
           sudo apt-get update
@@ -39,8 +38,9 @@ jobs:
           
           # Deploy dist folder to Bunny Storage
           lftp -e "
-            set ssl:verify-certificate no;
-            open -u $BUNNY_STORAGE_USERNAME,$BUNNY_STORAGE_PASSWORD $BUNNY_STORAGE_HOSTNAME;
-            mirror -Rev dist $BUNNY_FOLDER --ignore-time --parallel=10 --verbose;
-            bye
+          set ssl:verify-certificate no;
+          open -u $BUNNY_STORAGE_USERNAME,$BUNNY_STORAGE_PASSWORD $BUNNY_STORAGE_HOSTNAME;
+          cd /voyage-du-heros;
+          mirror -Rev dist . --ignore-time --parallel=10 --verbose;
+          bye
           "
