@@ -1,0 +1,46 @@
+name: Deploy to Bunny CDN
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build application
+        run: npm run build
+      
+      - name: Deploy to Bunny Storage
+        env:
+          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          BUNNY_STORAGE_USERNAME: editeur-livre-quantique
+          BUNNY_STORAGE_HOSTNAME: storage.bunnycdn.com
+          BUNNY_FOLDER: voyage-du-heros
+        run: |
+          # Install lftp for FTP deployment
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          
+          # Deploy dist folder to Bunny Storage
+          lftp -e "
+            set ssl:verify-certificate no;
+            open -u $BUNNY_STORAGE_USERNAME,$BUNNY_STORAGE_PASSWORD $BUNNY_STORAGE_HOSTNAME;
+            mirror -Rev dist $BUNNY_FOLDER --ignore-time --parallel=10;
+            bye
+          "
