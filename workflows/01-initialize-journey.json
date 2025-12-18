@@ -1,0 +1,182 @@
+{
+  "name": "JobSeek Hero Journey - Initialize Journey",
+  "description": "Workflow 1: Initialise un nouveau parcours du héros pour un utilisateur",
+  "version": "1.0",
+  "nodes": [
+    {
+      "name": "Webhook Start",
+      "type": "n8n-nodes-base.webhook",
+      "parameters": {
+        "path": "api/journey/start",
+        "httpMethod": "POST",
+        "responseMode": "responseNode",
+        "authentication": "headerAuth",
+        "headerAuth": {
+          "name": "Authorization",
+          "value": "Bearer {{$json.token}}"
+        }
+      },
+      "description": "Point d'entrée: POST /api/journey/start"
+    },
+    {
+      "name": "Verify Supabase JWT",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "// Vérifier le token JWT Supabase\nconst token = $input.item.json.headers.authorization?.split('Bearer ')[1];\n\nif (!token) {\n  return [{ json: { error: 'Missing authorization token', status: 401 } }];\n}\n\n// Décoder le JWT (utiliser une lib comme jsonwebtoken)\nconst decoded = jwt.decode(token);\n\nif (!decoded || !decoded.sub) {\n  return [{ json: { error: 'Invalid token', status: 401 } }];\n}\n\nreturn [{ json: { userId: decoded.sub, token } }];"
+      },
+      "description": "Valide le token JWT et extrait l'userId"
+    },
+    {
+      "name": "Check User Credits",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "user_subscriptions",
+        "filterType": "manual",
+        "matchType": "anyFilter",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "user_id",
+              "keyValue": "={{$json.userId}}",
+              "condition": "equals"
+            }
+          ]
+        }
+      },
+      "description": "Récupère les crédits de l'utilisateur"
+    },
+    {
+      "name": "Check Credits Sufficient",
+      "type": "n8n-nodes-base.if",
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.credits_remaining}}",
+              "operation": "largerEqual",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "description": "Vérifie si l'utilisateur a au moins 1 crédit"
+    },
+    {
+      "name": "Create Hero Journey",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "insert",
+        "table": "hero_journeys",
+        "data": {
+          "user_id": "={{$json.userId}}",
+          "current_stage": 1,
+          "status": "in_progress",
+          "total_xp": 0
+        }
+      },
+      "description": "Crée un nouveau parcours"
+    },
+    {
+      "name": "Create ICARE Profile",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "insert",
+        "table": "icare_profiles",
+        "data": {
+          "journey_id": "={{$json.id}}",
+          "identite": 50,
+          "capacites": 50,
+          "appartenance": 50,
+          "risque": 50,
+          "estime": 50
+        }
+      },
+      "description": "Crée le profil ICARE initial (50 partout)"
+    },
+    {
+      "name": "Decrement Credits",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "update",
+        "table": "user_subscriptions",
+        "updateKey": "user_id",
+        "data": {
+          "user_id": "={{$json.userId}}",
+          "credits_remaining": "={{$json.credits_remaining - 1}}"
+        }
+      },
+      "description": "Retire 1 crédit"
+    },
+    {
+      "name": "Return Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"journeyId\": \"{{$json.id}}\",\n  \"currentStage\": 1,\n  \"icareProfile\": {\n    \"identite\": 50,\n    \"capacites\": 50,\n    \"appartenance\": 50,\n    \"risque\": 50,\n    \"estime\": 50\n  },\n  \"message\": \"Journey initialized successfully\"\n}",
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "Return Error - No Credits",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"Insufficient credits\",\n  \"creditsRemaining\": {{$json.credits_remaining}}\n}",
+        "responseCode": 402
+      }
+    },
+    {
+      "name": "Return Error - Auth",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"Unauthorized\"\n}",
+        "responseCode": 401
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Start": {
+      "main": [[{ "node": "Verify Supabase JWT", "type": "main", "index": 0 }]]
+    },
+    "Verify Supabase JWT": {
+      "main": [[{ "node": "Check User Credits", "type": "main", "index": 0 }]]
+    },
+    "Check User Credits": {
+      "main": [[{ "node": "Check Credits Sufficient", "type": "main", "index": 0 }]]
+    },
+    "Check Credits Sufficient": {
+      "main": [
+        [{ "node": "Create Hero Journey", "type": "main", "index": 0 }],
+        [{ "node": "Return Error - No Credits", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create Hero Journey": {
+      "main": [[{ "node": "Create ICARE Profile", "type": "main", "index": 0 }]]
+    },
+    "Create ICARE Profile": {
+      "main": [[{ "node": "Decrement Credits", "type": "main", "index": 0 }]]
+    },
+    "Decrement Credits": {
+      "main": [[{ "node": "Return Success", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "credentials": {
+    "supabaseApi": {
+      "url": "https://[your-project].supabase.co",
+      "serviceRole": "[your-service-role-key]"
+    }
+  },
+  "implementation_notes": [
+    "1. Créer ce workflow dans n8n",
+    "2. Configurer les credentials Supabase avec la SERVICE_ROLE_KEY (pas anon key)",
+    "3. Activer le webhook en mode Production",
+    "4. Noter l'URL du webhook pour config.js",
+    "5. Tester avec un token JWT Supabase valide"
+  ],
+  "test_curl": "curl -X POST https://[your-n8n].app.n8n.cloud/api/journey/start \\\n  -H 'Content-Type: application/json' \\\n  -H 'Authorization: Bearer [your-jwt-token]' \\\n  -d '{\"userId\": \"[user-uuid]\"}'"
+}

@@ -1,0 +1,253 @@
+{
+  "name": "Hero Journey - 4. Get Journey",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hero-journey-get",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "hero-journey-get"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\n\nif (!body.journeyId) {\n  throw new Error('journeyId manquant');\n}\n\nreturn [{ json: { journeyId: body.journeyId } }];"
+      },
+      "id": "extract",
+      "name": "Extract Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "hero_journeys"
+        },
+        "filterType": "string",
+        "filterString": "=id=eq.{{ $json.journeyId }}"
+      },
+      "id": "get-journey",
+      "name": "Get Journey",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [690, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "journey_stages"
+        },
+        "filterType": "string",
+        "filterString": "=journey_id=eq.{{ $('Extract Data').item.json.journeyId }}&order=stage_number.asc"
+      },
+      "id": "get-stages",
+      "name": "Get Stages",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [910, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "icare_profiles"
+        },
+        "filterType": "string",
+        "filterString": "=journey_id=eq.{{ $('Extract Data').item.json.journeyId }}"
+      },
+      "id": "get-icare",
+      "name": "Get ICARE",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1130, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "pro_insights"
+        },
+        "filterType": "string",
+        "filterString": "=journey_id=eq.{{ $('Extract Data').item.json.journeyId }}"
+      },
+      "id": "get-insights",
+      "name": "Get Insights",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1350, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const journey = $('Get Journey').first().json;\nconst stages = $('Get Stages').all().map(item => item.json);\nconst icare = $('Get ICARE').first()?.json || { identite: 50, capacites: 50, appartenance: 50, risque: 50, estime: 50 };\nconst insights = $('Get Insights').first()?.json || null;\n\nconst response = {\n  journey: {\n    id: journey.id,\n    userId: journey.user_id,\n    status: journey.status,\n    currentStage: journey.current_stage,\n    totalXP: journey.total_xp,\n    startedAt: journey.started_at,\n    completedAt: journey.completed_at\n  },\n  stages: stages.map(s => ({\n    number: s.stage_number,\n    title: s.stage_title,\n    userInput: s.user_input,\n    aiNarrative: s.ai_narrative,\n    aiInsight: s.ai_insight,\n    xpGained: s.xp_gained,\n    completedAt: s.completed_at\n  })),\n  icareProfile: {\n    identite: icare.identite,\n    capacites: icare.capacites,\n    appartenance: icare.appartenance,\n    risque: icare.risque,\n    estime: icare.estime\n  },\n  proInsights: insights ? {\n    pitch: insights.pitch,\n    tagline: insights.tagline,\n    softSkills: typeof insights.soft_skills === 'string' ? JSON.parse(insights.soft_skills) : insights.soft_skills,\n    accomplishments: typeof insights.accomplishments === 'string' ? JSON.parse(insights.accomplishments) : insights.accomplishments,\n    environment: insights.environment\n  } : null\n};\n\nreturn [{ json: response }];"
+      },
+      "id": "build-response",
+      "name": "Build Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1570, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "options": {}
+      },
+      "id": "respond",
+      "name": "Return Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1790, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Data": {
+      "main": [
+        [
+          {
+            "node": "Get Journey",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Journey": {
+      "main": [
+        [
+          {
+            "node": "Get Stages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Stages": {
+      "main": [
+        [
+          {
+            "node": "Get ICARE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get ICARE": {
+      "main": [
+        [
+          {
+            "node": "Get Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Insights": {
+      "main": [
+        [
+          {
+            "node": "Build Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Response": {
+      "main": [
+        [
+          {
+            "node": "Return Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "JobSeek Hero Journey"
+    }
+  ],
+  "triggerCount": 1,
+  "pinData": {}
+}

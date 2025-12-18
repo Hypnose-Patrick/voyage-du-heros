@@ -1,0 +1,249 @@
+{
+  "name": "JobSeek Hero Journey - Generate Final Insights",
+  "description": "Workflow 3: Génère la synthèse stratégique finale après les 12 stations",
+  "version": "1.0",
+  "nodes": [
+    {
+      "name": "Webhook Start",
+      "type": "n8n-nodes-base.webhook",
+      "parameters": {
+        "path": "api/journey/:journeyId/insights",
+        "httpMethod": "POST",
+        "responseMode": "responseNode"
+      }
+    },
+    {
+      "name": "Extract Journey ID",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const journeyId = $input.item.json.params.journeyId;\nconst token = $input.item.json.headers.authorization?.split('Bearer ')[1];\n\nreturn [{ json: { journeyId, token } }];"
+      }
+    },
+    {
+      "name": "Get All Journey Stages",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "journey_stages",
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "journey_id",
+              "keyValue": "={{$json.journeyId}}",
+              "condition": "equals"
+            }
+          ]
+        },
+        "sort": {
+          "field": "stage_number",
+          "direction": "ASC"
+        }
+      },
+      "description": "Récupère les 12 réponses"
+    },
+    {
+      "name": "Verify 12 Stages Completed",
+      "type": "n8n-nodes-base.if",
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.length}}",
+              "operation": "equals",
+              "value2": 12
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get ICARE Profile",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "icare_profiles",
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "journey_id",
+              "keyValue": "={{$json.journeyId}}",
+              "condition": "equals"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Build Synthesis Prompt",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const stages = $json.stages; // Array des 12 stages\nconst icare = $json.icare;\n\n// Construire le contexte avec toutes les réponses\nlet stagesText = '';\nstages.forEach((stage, idx) => {\n  stagesText += `\\n\\n### ${stage.stage_title}\\n`;\n  stagesText += `Réponse utilisateur: ${stage.user_input}\\n`;\n  stagesText += `Feedback IA: ${stage.ai_narrative}\\n`;\n  stagesText += `Insight: ${stage.ai_insight}`;\n});\n\nconst prompt = `Tu es un expert RH et coach carrière. Voici les 12 réponses d'un candidat en transition professionnelle:\n\n${stagesText}\n\n**Profil ICARE final:**\n- Identité: ${icare.identite}/100\n- Capacités: ${icare.capacites}/100\n- Appartenance: ${icare.appartenance}/100\n- Risque: ${icare.risque}/100\n- Estime: ${icare.estime}/100\n\n**Mission**: Génère une synthèse stratégique complète pour optimiser sa recherche d'emploi.\n\n**Livrables requis:**\n\n1. **Pitch professionnel** (3 phrases percutantes)\n   - Qui je suis (identité pro)\n   - Ce que j'apporte (valeur ajoutée)\n   - Ce que je cherche (objectif)\n\n2. **Tagline** (1 phrase signature mémorable)\n   - Doit résumer l'essence du candidat en <15 mots\n   - Style: inspirant mais professionnel\n\n3. **4 Soft Skills clés**\n   - Déduites des réponses et du profil ICARE\n   - Formulées pour un CV (ex: \"Leadership bienveillant\", \"Adaptabilité stratégique\")\n\n4. **2 Accomplissements majeurs**\n   - Format CV bullet points\n   - Structure: [{\"title\": \"Titre impactant\", \"narrative\": \"Description orientée résultats mesurables\"}]\n\n5. **Environnement de travail idéal**\n   - Description précise du contexte professionnel optimal\n   - Basé sur les valeurs, peurs et aspirations exprimées\n\n**Format de sortie JSON strict:**\n\\`\\`\\`json\n{\n  \"pitch\": \"[3 phrases professionnelles]\",\n  \"tagline\": \"[1 phrase signature]\",\n  \"softSkills\": [\"Compétence 1\", \"Compétence 2\", \"Compétence 3\", \"Compétence 4\"],\n  \"accomplishments\": [\n    {\"title\": \"Titre 1\", \"narrative\": \"Description mesurable\"},\n    {\"title\": \"Titre 2\", \"narrative\": \"Description mesurable\"}\n  ],\n  \"environment\": \"Description détaillée de l'environnement idéal\"\n}\n\\`\\`\\`\n\n**Règles:**\n- Ton: professionnel mais humain\n- Éviter le jargon vide\n- Privilégier les faits et résultats concrets\n- La synthèse doit être utilisable immédiatement (CV, LinkedIn, entretiens)`;\n\nreturn [{ json: { ...json, prompt } }];"
+      }
+    },
+    {
+      "name": "Call OpenRouter AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{$credentials.openRouterApi.apiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "anthropic/claude-3.5-sonnet"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\": \"user\", \"content\": \"{{$json.prompt}}\"}]"
+            },
+            {
+              "name": "temperature",
+              "value": "0.8"
+            },
+            {
+              "name": "max_tokens",
+              "value": "2000"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Parse AI Response",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const content = $json.choices[0].message.content;\n// Extraire le JSON (peut être entouré de ```json```)\nconst jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\nconst parsed = JSON.parse(jsonMatch[0]);\n\nreturn [{ json: { ...json, insights: parsed } }];"
+      }
+    },
+    {
+      "name": "Insert Pro Insights",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "insert",
+        "table": "pro_insights",
+        "data": {
+          "journey_id": "={{$json.journeyId}}",
+          "pitch": "={{$json.insights.pitch}}",
+          "tagline": "={{$json.insights.tagline}}",
+          "soft_skills": "={{JSON.stringify($json.insights.softSkills)}}",
+          "accomplishments": "={{JSON.stringify($json.insights.accomplishments)}}",
+          "environment": "={{$json.insights.environment}}"
+        }
+      }
+    },
+    {
+      "name": "Update Journey Status",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "update",
+        "table": "hero_journeys",
+        "updateKey": "id",
+        "data": {
+          "id": "={{$json.journeyId}}",
+          "status": "completed",
+          "completed_at": "={{new Date().toISOString()}}"
+        }
+      }
+    },
+    {
+      "name": "Decrement Credits",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "update",
+        "table": "user_subscriptions",
+        "updateKey": "user_id",
+        "data": {
+          "user_id": "={{$json.user_id}}",
+          "credits_remaining": "={{$json.credits_remaining - 1}}"
+        }
+      }
+    },
+    {
+      "name": "Return Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json.insights}}",
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "Error - Not Completed",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"Journey not completed\",\n  \"stagesCompleted\": {{$json.length}},\n  \"stagesRequired\": 12\n}",
+        "responseCode": 400
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Start": {
+      "main": [[{ "node": "Extract Journey ID" }]]
+    },
+    "Extract Journey ID": {
+      "main": [[{ "node": "Get All Journey Stages" }]]
+    },
+    "Get All Journey Stages": {
+      "main": [[{ "node": "Verify 12 Stages Completed" }]]
+    },
+    "Verify 12 Stages Completed": {
+      "main": [
+        [{ "node": "Get ICARE Profile" }],
+        [{ "node": "Error - Not Completed" }]
+      ]
+    },
+    "Get ICARE Profile": {
+      "main": [[{ "node": "Build Synthesis Prompt" }]]
+    },
+    "Build Synthesis Prompt": {
+      "main": [[{ "node": "Call OpenRouter AI" }]]
+    },
+    "Call OpenRouter AI": {
+      "main": [[{ "node": "Parse AI Response" }]]
+    },
+    "Parse AI Response": {
+      "main": [[{ "node": "Insert Pro Insights" }]]
+    },
+    "Insert Pro Insights": {
+      "main": [[{ "node": "Update Journey Status" }]]
+    },
+    "Update Journey Status": {
+      "main": [[{ "node": "Decrement Credits" }]]
+    },
+    "Decrement Credits": {
+      "main": [[{ "node": "Return Success" }]]
+    }
+  },
+  "credentials": {
+    "supabaseApi": {
+      "url": "https://[your-project].supabase.co",
+      "serviceRole": "[your-service-role-key]"
+    },
+    "openRouterApi": {
+      "apiKey": "[your-openrouter-api-key]"
+    }
+  },
+  "implementation_notes": [
+    "1. Ce workflow génère la synthèse finale après les 12 stations",
+    "2. Utilise un prompt complexe qui agrège toutes les réponses",
+    "3. La génération prend ~10-15 secondes (modèle puissant)",
+    "4. Le JSON retourné doit être parfaitement structuré",
+    "5. Prévoir un parsing robuste (retries si format incorrect)"
+  ],
+  "test_curl": "curl -X POST https://[your-n8n].app.n8n.cloud/api/journey/[journey-id]/insights \\\n  -H 'Content-Type: application/json' \\\n  -H 'Authorization: Bearer [jwt-token]'"
+}

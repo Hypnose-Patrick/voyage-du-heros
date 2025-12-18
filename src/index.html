@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours du Héros - JobSeek</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <p>Chargement de votre parcours...</p>
+    </div>
+
+    <!-- Main Container -->
+    <div id="app-container" class="app-container hidden">
+        
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="hero-header">
+                <h1 class="title-gradient">Votre Parcours du Héros Professionnel</h1>
+                <p class="subtitle">12 stations pour transformer votre recherche d'emploi</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Diagnostic ICARE</h3>
+                    <p>Identifiez vos blocages sur 5 dimensions psychologiques</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Coach IA Expert</h3>
+                    <p>Feedback personnalisé à chaque étape</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Synthèse Stratégique</h3>
+                    <p>Pitch, soft skills et plan d'action 90 jours</p>
+                </div>
+            </div>
+
+            <div class="credits-info">
+                <p>Crédits disponibles : <strong id="credits-count">-</strong></p>
+                <p class="credits-note">1 crédit = 1 génération IA (environ 13 crédits pour le parcours complet)</p>
+            </div>
+
+            <button id="start-journey-btn" class="btn-primary">
+                Commencer le Parcours
+            </button>
+
+            <button id="resume-journey-btn" class="btn-secondary hidden">
+                Reprendre mon Parcours
+            </button>
+        </div>
+
+        <!-- Journey Progress Screen -->
+        <div id="journey-screen" class="screen">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <p class="progress-text">Station <span id="current-stage">1</span> / 12</p>
+            </div>
+
+            <!-- ICARE Radar Chart -->
+            <div class="icare-container">
+                <h3>Votre Profil ICARE</h3>
+                <div class="icare-radar">
+                    <canvas id="icare-chart" width="300" height="300"></canvas>
+                </div>
+                <div class="icare-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #FF6B6B"></span>
+                        <span>Identité</span>
+                        <strong id="score-identite">50</strong>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #4ECDC4"></span>
+                        <span>Capacités</span>
+                        <strong id="score-capacites">50</strong>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #45B7D1"></span>
+                        <span>Appartenance</span>
+                        <strong id="score-appartenance">50</strong>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #FFA07A"></span>
+                        <span>Risque</span>
+                        <strong id="score-risque">50</strong>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #98D8C8"></span>
+                        <span>Estime</span>
+                        <strong id="score-estime">50</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Stage Card -->
+            <div class="stage-card">
+                <div class="stage-header">
+                    <h2 id="stage-title">Station 1 : Votre situation professionnelle actuelle</h2>
+                    <span class="stage-badge">Question</span>
+                </div>
+
+                <div id="stage-prompt" class="stage-prompt">
+                    Décrivez votre poste actuel (ou dernier poste) et ce qui ne vous convient plus. Soyez concret : missions, environnement, ce qui vous frustre.
+                </div>
+
+                <div id="stage-input-container">
+                    <textarea 
+                        id="user-input" 
+                        class="user-input" 
+                        placeholder="Écrivez votre réponse ici... (minimum 50 caractères)"
+                        rows="6"
+                    ></textarea>
+                    <div class="char-counter">
+                        <span id="char-count">0</span> / 50 minimum
+                    </div>
+                    <button id="submit-answer-btn" class="btn-primary" disabled>
+                        Soumettre ma réponse
+                    </button>
+                </div>
+
+                <!-- AI Feedback (hidden by default) -->
+                <div id="ai-feedback-container" class="ai-feedback hidden">
+                    <div class="feedback-header">
+                        <h3>💡 Analyse de votre réponse</h3>
+                    </div>
+                    <div id="ai-narrative" class="ai-narrative"></div>
+                    <div class="insight-box">
+                        <strong>🎯 Insight stratégique :</strong>
+                        <p id="ai-insight"></p>
+                    </div>
+                    <div class="xp-gained">
+                        <span class="xp-badge">+125 XP</span>
+                    </div>
+                    <button id="next-stage-btn" class="btn-primary">
+                        Station Suivante →
+                    </button>
+                </div>
+            </div>
+
+            <!-- XP Counter -->
+            <div class="xp-counter">
+                <span class="xp-icon">⭐</span>
+                <span id="total-xp">0</span> XP
+            </div>
+        </div>
+
+        <!-- Final Insights Screen -->
+        <div id="insights-screen" class="screen">
+            <div class="completion-header">
+                <div class="completion-badge">🏆</div>
+                <h1>Parcours Complété !</h1>
+                <p class="completion-subtitle">Voici votre synthèse stratégique pour la recherche d'emploi</p>
+            </div>
+
+            <div class="insights-container">
+                <!-- Pitch Professionnel -->
+                <div class="insight-card">
+                    <h3>🎤 Votre Pitch Professionnel</h3>
+                    <p id="final-pitch" class="insight-content"></p>
+                </div>
+
+                <!-- Tagline -->
+                <div class="insight-card">
+                    <h3>✨ Votre Phrase Signature</h3>
+                    <p id="final-tagline" class="insight-tagline"></p>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="insight-card">
+                    <h3>💪 Vos Soft Skills Clés</h3>
+                    <div id="final-soft-skills" class="skills-grid"></div>
+                </div>
+
+                <!-- Accomplissements -->
+                <div class="insight-card">
+                    <h3>🏅 Accomplissements Majeurs</h3>
+                    <div id="final-accomplishments" class="accomplishments-list"></div>
+                </div>
+
+                <!-- Environnement Idéal -->
+                <div class="insight-card">
+                    <h3>🌟 Votre Environnement de Travail Idéal</h3>
+                    <p id="final-environment" class="insight-content"></p>
+                </div>
+
+                <!-- ICARE Final -->
+                <div class="insight-card">
+                    <h3>📊 Votre Profil ICARE Final</h3>
+                    <div class="icare-radar">
+                        <canvas id="final-icare-chart" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="download-pdf-btn" class="btn-primary">
+                    📥 Télécharger en PDF
+                </button>
+                <button id="restart-journey-btn" class="btn-secondary">
+                    🔄 Nouveau Parcours
+                </button>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div id="error-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>⚠️ Erreur</h3>
+                <p id="error-message"></p>
+                <button class="btn-primary" onclick="closeErrorModal()">OK</button>
+            </div>
+        </div>
+
+        <!-- Credits Warning Modal -->
+        <div id="credits-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>💳 Crédits Insuffisants</h3>
+                <p>Vous n'avez plus de crédits disponibles. Rechargez votre compte pour continuer.</p>
+                <button class="btn-primary" onclick="window.location.href='/pricing'">
+                    Voir les Plans
+                </button>
+                <button class="btn-secondary" onclick="closeCreditsModal()">
+                    Annuler
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

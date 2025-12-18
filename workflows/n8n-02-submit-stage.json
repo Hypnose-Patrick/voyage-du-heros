@@ -1,0 +1,468 @@
+{
+  "name": "Hero Journey - 2. Submit Stage",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hero-journey-stage",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "hero-journey-stage"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extraire les données\nconst body = $input.first().json.body || $input.first().json;\n\nif (!body.journeyId || !body.stageNumber || !body.userInput) {\n  throw new Error('Paramètres manquants: journeyId, stageNumber, userInput requis');\n}\n\n// Définition des 12 stations\nconst STAGES = [\n  { number: 1, title: 'Station 1 : Votre situation professionnelle actuelle', goal: 'Diagnostic de départ', focus: ['identite'] },\n  { number: 2, title: 'Station 2 : Pourquoi changer maintenant ?', goal: \"Valider l'intention\", focus: ['identite', 'estime'] },\n  { number: 3, title: 'Station 3 : Vos freins au changement', goal: 'Identifier les blocages', focus: ['risque', 'estime'] },\n  { number: 4, title: 'Station 4 : Vos ressources disponibles', goal: 'Inventaire des atouts', focus: ['capacites', 'appartenance'] },\n  { number: 5, title: 'Station 5 : Votre premier engagement', goal: \"Passage à l'action\", focus: ['identite', 'risque'] },\n  { number: 6, title: 'Station 6 : Votre écosystème professionnel', goal: 'Cartographie sociale', focus: ['capacites', 'appartenance', 'estime'] },\n  { number: 7, title: 'Station 7 : Votre stratégie de recherche', goal: 'Définir la cible', focus: ['identite', 'capacites'] },\n  { number: 8, title: 'Station 8 : Votre plus grande peur professionnelle', goal: 'Affronter le blocage principal', focus: ['identite', 'risque', 'estime'] },\n  { number: 9, title: 'Station 9 : Vos premiers résultats', goal: 'Ancrer les gains', focus: ['identite', 'capacites', 'appartenance'] },\n  { number: 10, title: 'Station 10 : Comment tenir sur la durée', goal: 'Résilience', focus: ['risque', 'identite'] },\n  { number: 11, title: 'Station 11 : Votre nouveau positionnement', goal: 'Affirmation identitaire', focus: ['identite', 'appartenance'] },\n  { number: 12, title: 'Station 12 : Votre plan d\\'action 90 jours', goal: \"Plan d'action structuré\", focus: ['appartenance'] }\n];\n\nconst stage = STAGES.find(s => s.number === body.stageNumber);\n\nreturn [{\n  json: {\n    journeyId: body.journeyId,\n    stageNumber: body.stageNumber,\n    userInput: body.userInput,\n    stageName: stage?.title || `Station ${body.stageNumber}`,\n    stageGoal: stage?.goal || '',\n    stageFocus: stage?.focus || []\n  }\n}];"
+      },
+      "id": "extract-data",
+      "name": "Extract & Get Stage Info",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "hero_journeys"
+        },
+        "filterType": "string",
+        "filterString": "=id=eq.{{ $json.journeyId }}"
+      },
+      "id": "get-journey",
+      "name": "Get Journey",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [690, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "icare_profiles"
+        },
+        "filterType": "string",
+        "filterString": "=journey_id=eq.{{ $('Extract & Get Stage Info').item.json.journeyId }}"
+      },
+      "id": "get-icare",
+      "name": "Get ICARE Profile",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [910, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "user_subscriptions"
+        },
+        "filterType": "string",
+        "filterString": "=user_id=eq.{{ $('Get Journey').item.json.user_id }}"
+      },
+      "id": "get-credits",
+      "name": "Get Credits",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1130, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const stageData = $('Extract & Get Stage Info').item.json;\nconst icare = $('Get ICARE Profile').item.json;\n\nconst prompt = `Tu es un coach emploi spécialisé en reconversion professionnelle. Tu utilises le modèle ICARE (Identité, Capacités, Appartenance, Risque, Estime).\n\n**Station actuelle:** ${stageData.stageName}\n**Objectif:** ${stageData.stageGoal}\n**Dimensions ICARE ciblées:** ${stageData.stageFocus.join(', ')}\n\n**Réponse du candidat:**\n\"${stageData.userInput}\"\n\n**Profil ICARE actuel:**\n- Identité: ${icare.identite}/100\n- Capacités: ${icare.capacites}/100  \n- Appartenance: ${icare.appartenance}/100\n- Risque: ${icare.risque}/100\n- Estime: ${icare.estime}/100\n\n**Ta mission:**\n1. Analyse la réponse du candidat\n2. Génère un feedback concret et bienveillant (3-4 phrases)\n3. Propose 1 insight stratégique actionnable pour sa recherche d'emploi\n4. Ajuste les scores ICARE selon la réponse (delta de -10 à +10 par dimension)\n\n**Règles:**\n- Reste factuel et pragmatique\n- Sois bienveillant mais exigeant\n- Pas de langue de bois\n- Focus sur l'employabilité\n\n**Format de réponse JSON strict (pas de markdown):**\n{\n  \"narrative\": \"Ton feedback en 3-4 phrases...\",\n  \"insight\": \"Un conseil concret et actionnable...\",\n  \"icare_deltas\": {\n    \"identite\": 0,\n    \"capacites\": 0,\n    \"appartenance\": 0,\n    \"risque\": 0,\n    \"estime\": 0\n  }\n}`;\n\nreturn [{\n  json: {\n    ...stageData,\n    icare: icare,\n    prompt: prompt,\n    userId: $('Get Journey').item.json.user_id,\n    totalXp: $('Get Journey').item.json.total_xp,\n    creditsRemaining: $('Get Credits').item.json.credits_remaining\n  }\n}];"
+      },
+      "id": "build-prompt",
+      "name": "Build AI Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1350, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer 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"
+            },
+            {
+              "name": "HTTP-Referer",
+              "value": "https://jobseek.online"
+            },
+            {
+              "name": "X-Title",
+              "value": "JobSeek Hero Journey"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"anthropic/claude-3.5-sonnet\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": {{ JSON.stringify($json.prompt) }}\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 800\n}",
+        "options": {}
+      },
+      "id": "call-ai",
+      "name": "Call OpenRouter AI",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1570, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const prevData = $('Build AI Prompt').item.json;\nconst aiResponse = $input.first().json;\n\n// Extraire le contenu de la réponse\nconst content = aiResponse.choices[0].message.content;\n\n// Parser le JSON (peut être entouré de ```json```)\nlet parsed;\ntry {\n  // Essayer de parser directement\n  parsed = JSON.parse(content);\n} catch (e) {\n  // Sinon extraire le JSON du markdown\n  const jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\n  if (jsonMatch) {\n    parsed = JSON.parse(jsonMatch[0]);\n  } else {\n    throw new Error('Impossible de parser la réponse IA: ' + content);\n  }\n}\n\n// Calculer les nouveaux scores ICARE\nconst clamp = (val) => Math.max(0, Math.min(100, val));\nconst deltas = parsed.icare_deltas || {};\n\nconst newIcare = {\n  identite: clamp(prevData.icare.identite + (deltas.identite || 0)),\n  capacites: clamp(prevData.icare.capacites + (deltas.capacites || 0)),\n  appartenance: clamp(prevData.icare.appartenance + (deltas.appartenance || 0)),\n  risque: clamp(prevData.icare.risque + (deltas.risque || 0)),\n  estime: clamp(prevData.icare.estime + (deltas.estime || 0))\n};\n\nreturn [{\n  json: {\n    ...prevData,\n    narrative: parsed.narrative,\n    insight: parsed.insight,\n    icareDeltas: deltas,\n    newIcare: newIcare,\n    nextStage: prevData.stageNumber < 12 ? prevData.stageNumber + 1 : 12\n  }\n}];"
+      },
+      "id": "parse-ai",
+      "name": "Parse AI Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1790, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "journey_stages"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "journey_id": "={{ $json.journeyId }}",
+            "stage_number": "={{ $json.stageNumber }}",
+            "stage_title": "={{ $json.stageName }}",
+            "user_input": "={{ $json.userInput }}",
+            "ai_narrative": "={{ $json.narrative }}",
+            "ai_insight": "={{ $json.insight }}",
+            "xp_gained": 125
+          }
+        },
+        "options": {}
+      },
+      "id": "insert-stage",
+      "name": "Save Stage Response",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2010, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "icare_profiles"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "identite": "={{ $('Parse AI Response').item.json.newIcare.identite }}",
+            "capacites": "={{ $('Parse AI Response').item.json.newIcare.capacites }}",
+            "appartenance": "={{ $('Parse AI Response').item.json.newIcare.appartenance }}",
+            "risque": "={{ $('Parse AI Response').item.json.newIcare.risque }}",
+            "estime": "={{ $('Parse AI Response').item.json.newIcare.estime }}"
+          }
+        },
+        "filterType": "string",
+        "filterString": "=journey_id=eq.{{ $('Parse AI Response').item.json.journeyId }}"
+      },
+      "id": "update-icare",
+      "name": "Update ICARE",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2230, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "hero_journeys"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "current_stage": "={{ $('Parse AI Response').item.json.nextStage }}",
+            "total_xp": "={{ $('Parse AI Response').item.json.totalXp + 125 }}"
+          }
+        },
+        "filterType": "string",
+        "filterString": "=id=eq.{{ $('Parse AI Response').item.json.journeyId }}"
+      },
+      "id": "update-journey",
+      "name": "Update Journey",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2450, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "user_subscriptions"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "credits_remaining": "={{ $('Parse AI Response').item.json.creditsRemaining - 1 }}"
+          }
+        },
+        "filterType": "string",
+        "filterString": "=user_id=eq.{{ $('Parse AI Response').item.json.userId }}"
+      },
+      "id": "decrement-credits",
+      "name": "Decrement Credits",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [2670, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"narrative\": {{ JSON.stringify($('Parse AI Response').item.json.narrative) }},\n  \"insight\": {{ JSON.stringify($('Parse AI Response').item.json.insight) }},\n  \"newIcareProfile\": {{ JSON.stringify($('Parse AI Response').item.json.newIcare) }},\n  \"nextStage\": {{ $('Parse AI Response').item.json.nextStage }},\n  \"xpGained\": 125,\n  \"totalXp\": {{ $('Parse AI Response').item.json.totalXp + 125 }},\n  \"creditsRemaining\": {{ $('Parse AI Response').item.json.creditsRemaining - 1 }}\n}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Return Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2890, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract & Get Stage Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract & Get Stage Info": {
+      "main": [
+        [
+          {
+            "node": "Get Journey",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Journey": {
+      "main": [
+        [
+          {
+            "node": "Get ICARE Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get ICARE Profile": {
+      "main": [
+        [
+          {
+            "node": "Get Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Credits": {
+      "main": [
+        [
+          {
+            "node": "Build AI Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build AI Prompt": {
+      "main": [
+        [
+          {
+            "node": "Call OpenRouter AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call OpenRouter AI": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Response": {
+      "main": [
+        [
+          {
+            "node": "Save Stage Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Stage Response": {
+      "main": [
+        [
+          {
+            "node": "Update ICARE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update ICARE": {
+      "main": [
+        [
+          {
+            "node": "Update Journey",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Journey": {
+      "main": [
+        [
+          {
+            "node": "Decrement Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decrement Credits": {
+      "main": [
+        [
+          {
+            "node": "Return Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "JobSeek Hero Journey"
+    }
+  ],
+  "triggerCount": 1,
+  "pinData": {}
+}

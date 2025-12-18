@@ -1,0 +1,229 @@
+{
+  "name": "JobSeek Hero Journey - Get Journey State",
+  "description": "Workflow 4: Récupère l'état complet d'un parcours",
+  "version": "1.0",
+  "nodes": [
+    {
+      "name": "Webhook Start",
+      "type": "n8n-nodes-base.webhook",
+      "parameters": {
+        "path": "api/journey/:journeyId",
+        "httpMethod": "GET",
+        "responseMode": "responseNode"
+      }
+    },
+    {
+      "name": "Extract Journey ID",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const journeyId = $input.item.json.params.journeyId;\nconst token = $input.item.json.headers.authorization?.split('Bearer ')[1];\n\nreturn [{ json: { journeyId, token } }];"
+      }
+    },
+    {
+      "name": "Verify Auth",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "// Vérifier JWT et extraire userId\nconst token = $json.token;\n\nif (!token) {\n  throw new Error('Unauthorized');\n}\n\n// Décoder le token (utiliser jsonwebtoken)\nconst decoded = jwt.decode(token);\nconst userId = decoded.sub;\n\nreturn [{ json: { ...json, userId } }];"
+      }
+    },
+    {
+      "name": "Get Hero Journey",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "get",
+        "table": "hero_journeys",
+        "id": "={{$json.journeyId}}"
+      },
+      "description": "Récupère le parcours principal"
+    },
+    {
+      "name": "Verify Ownership",
+      "type": "n8n-nodes-base.if",
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.user_id}}",
+              "operation": "equals",
+              "value2": "={{$json.userId}}"
+            }
+          ]
+        }
+      },
+      "description": "Vérifie que le journey appartient à l'utilisateur"
+    },
+    {
+      "name": "Get Journey Stages",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "journey_stages",
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "journey_id",
+              "keyValue": "={{$json.journeyId}}",
+              "condition": "equals"
+            }
+          ]
+        },
+        "sort": {
+          "field": "stage_number",
+          "direction": "ASC"
+        }
+      },
+      "description": "Récupère toutes les réponses"
+    },
+    {
+      "name": "Get ICARE Profile",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "icare_profiles",
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "journey_id",
+              "keyValue": "={{$json.journeyId}}",
+              "condition": "equals"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Pro Insights (if completed)",
+      "type": "n8n-nodes-base.supabase",
+      "parameters": {
+        "operation": "getAll",
+        "table": "pro_insights",
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "journey_id",
+              "keyValue": "={{$json.journeyId}}",
+              "condition": "equals"
+            }
+          ]
+        }
+      },
+      "description": "Optionnel si le parcours est complété"
+    },
+    {
+      "name": "Build Response",
+      "type": "n8n-nodes-base.function",
+      "parameters": {
+        "functionCode": "const journey = $json.journey;\nconst stages = $json.stages || [];\nconst icare = $json.icare[0] || {};\nconst insights = $json.insights[0] || null;\n\nconst response = {\n  journey: {\n    id: journey.id,\n    userId: journey.user_id,\n    status: journey.status,\n    currentStage: journey.current_stage,\n    totalXP: journey.total_xp,\n    startedAt: journey.started_at,\n    completedAt: journey.completed_at\n  },\n  stages: stages.map(s => ({\n    number: s.stage_number,\n    title: s.stage_title,\n    userInput: s.user_input,\n    aiNarrative: s.ai_narrative,\n    aiInsight: s.ai_insight,\n    xpGained: s.xp_gained,\n    completedAt: s.completed_at\n  })),\n  icareProfile: {\n    identite: icare.identite,\n    capacites: icare.capacites,\n    appartenance: icare.appartenance,\n    risque: icare.risque,\n    estime: icare.estime\n  },\n  proInsights: insights ? {\n    pitch: insights.pitch,\n    tagline: insights.tagline,\n    softSkills: typeof insights.soft_skills === 'string' \n      ? JSON.parse(insights.soft_skills) \n      : insights.soft_skills,\n    accomplishments: typeof insights.accomplishments === 'string'\n      ? JSON.parse(insights.accomplishments)\n      : insights.accomplishments,\n    environment: insights.environment\n  } : null\n};\n\nreturn [{ json: response }];"
+      }
+    },
+    {
+      "name": "Return Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "responseCode": 200
+      }
+    },
+    {
+      "name": "Return Error - Unauthorized",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"Unauthorized - journey does not belong to user\"\n}",
+        "responseCode": 403
+      }
+    },
+    {
+      "name": "Return Error - Not Found",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"Journey not found\"\n}",
+        "responseCode": 404
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Start": {
+      "main": [[{ "node": "Extract Journey ID" }]]
+    },
+    "Extract Journey ID": {
+      "main": [[{ "node": "Verify Auth" }]]
+    },
+    "Verify Auth": {
+      "main": [[{ "node": "Get Hero Journey" }]]
+    },
+    "Get Hero Journey": {
+      "main": [
+        [{ "node": "Verify Ownership" }],
+        [{ "node": "Return Error - Not Found" }]
+      ]
+    },
+    "Verify Ownership": {
+      "main": [
+        [{ "node": "Get Journey Stages" }],
+        [{ "node": "Return Error - Unauthorized" }]
+      ]
+    },
+    "Get Journey Stages": {
+      "main": [[{ "node": "Get ICARE Profile" }]]
+    },
+    "Get ICARE Profile": {
+      "main": [[{ "node": "Get Pro Insights (if completed)" }]]
+    },
+    "Get Pro Insights (if completed)": {
+      "main": [[{ "node": "Build Response" }]]
+    },
+    "Build Response": {
+      "main": [[{ "node": "Return Success" }]]
+    }
+  },
+  "credentials": {
+    "supabaseApi": {
+      "url": "https://[your-project].supabase.co",
+      "serviceRole": "[your-service-role-key]"
+    }
+  },
+  "implementation_notes": [
+    "1. Ce workflow est utilisé pour charger un parcours existant",
+    "2. Utile au chargement initial de l'app",
+    "3. Retourne toutes les données en une seule requête",
+    "4. Peut être mis en cache côté client",
+    "5. Pas de déduction de crédits (lecture seule)"
+  ],
+  "test_curl": "curl -X GET https://[your-n8n].app.n8n.cloud/api/journey/[journey-id] \\\n  -H 'Authorization: Bearer [jwt-token]'",
+  "example_response": {
+    "journey": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "userId": "user-uuid",
+      "status": "in_progress",
+      "currentStage": 5,
+      "totalXP": 500,
+      "startedAt": "2025-01-15T10:30:00Z",
+      "completedAt": null
+    },
+    "stages": [
+      {
+        "number": 1,
+        "title": "Station 1 : Votre situation professionnelle actuelle",
+        "userInput": "Je travaille comme...",
+        "aiNarrative": "Vous décrivez clairement...",
+        "aiInsight": "Votre principale force...",
+        "xpGained": 125,
+        "completedAt": "2025-01-15T10:45:00Z"
+      }
+    ],
+    "icareProfile": {
+      "identite": 55,
+      "capacites": 48,
+      "appartenance": 52,
+      "risque": 60,
+      "estime": 45
+    },
+    "proInsights": null
+  }
+}

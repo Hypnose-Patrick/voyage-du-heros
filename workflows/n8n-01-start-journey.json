@@ -1,0 +1,319 @@
+{
+  "name": "Hero Journey - 1. Start Journey",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hero-journey-start",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-start",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300],
+      "webhookId": "hero-journey-start"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extraire les données de la requête\nconst body = $input.first().json.body || $input.first().json;\nconst headers = $input.first().json.headers || {};\n\n// Extraire le token JWT du header Authorization\nconst authHeader = headers.authorization || headers.Authorization || '';\nconst token = authHeader.replace('Bearer ', '');\n\nif (!body.userId) {\n  throw new Error('userId manquant dans la requête');\n}\n\nreturn [{\n  json: {\n    userId: body.userId,\n    token: token\n  }\n}];"
+      },
+      "id": "extract-data",
+      "name": "Extract Request Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "user_subscriptions"
+        },
+        "filterType": "string",
+        "filterString": "=user_id=eq.{{ $json.userId }}"
+      },
+      "id": "check-credits",
+      "name": "Check Credits",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [690, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "credits-check",
+              "leftValue": "={{ $json.credits_remaining }}",
+              "rightValue": 1,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-has-credits",
+      "name": "Has Credits?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [910, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "hero_journeys"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "={{ $('Extract Request Data').item.json.userId }}",
+            "current_stage": 1,
+            "status": "in_progress",
+            "total_xp": 0
+          }
+        },
+        "options": {}
+      },
+      "id": "create-journey",
+      "name": "Create Journey",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1130, 200],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "icare_profiles"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "journey_id": "={{ $json.id }}",
+            "identite": 50,
+            "capacites": 50,
+            "appartenance": 50,
+            "risque": 50,
+            "estime": 50
+          }
+        },
+        "options": {}
+      },
+      "id": "create-icare",
+      "name": "Create ICARE Profile",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1350, 200],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": "user_subscriptions"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "credits_remaining": "={{ $('Check Credits').item.json.credits_remaining - 1 }}"
+          }
+        },
+        "filterType": "string",
+        "filterString": "=user_id=eq.{{ $('Extract Request Data').item.json.userId }}"
+      },
+      "id": "decrement-credits",
+      "name": "Decrement Credits",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1570, 200],
+      "credentials": {
+        "supabaseApi": {
+          "id": "supabase-creds",
+          "name": "Supabase account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"journeyId\": \"{{ $('Create Journey').item.json.id }}\",\n  \"currentStage\": 1,\n  \"icareProfile\": {\n    \"identite\": 50,\n    \"capacites\": 50,\n    \"appartenance\": 50,\n    \"risque\": 50,\n    \"estime\": 50\n  },\n  \"creditsRemaining\": {{ $('Check Credits').item.json.credits_remaining - 1 }},\n  \"message\": \"Journey started successfully\"\n}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Return Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1790, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"error\": \"INSUFFICIENT_CREDITS\",\n  \"message\": \"Crédits insuffisants pour démarrer un parcours\",\n  \"creditsRemaining\": {{ $json.credits_remaining || 0 }}\n}",
+        "options": {
+          "responseCode": 402
+        }
+      },
+      "id": "respond-no-credits",
+      "name": "Return No Credits",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1130, 400]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Extract Request Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Request Data": {
+      "main": [
+        [
+          {
+            "node": "Check Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Credits": {
+      "main": [
+        [
+          {
+            "node": "Has Credits?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Credits?": {
+      "main": [
+        [
+          {
+            "node": "Create Journey",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Return No Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Journey": {
+      "main": [
+        [
+          {
+            "node": "Create ICARE Profile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create ICARE Profile": {
+      "main": [
+        [
+          {
+            "node": "Decrement Credits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decrement Credits": {
+      "main": [
+        [
+          {
+            "node": "Return Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "JobSeek Hero Journey"
+    }
+  ],
+  "triggerCount": 1,
+  "pinData": {}
+}

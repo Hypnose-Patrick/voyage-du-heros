@@ -1,0 +1,22 @@
+{
+  "name": "jobseek-hero-journey",
+  "version": "1.0.0",
+  "description": "Parcours du Héros JobSeek - Application de reconversion professionnelle",
+  "scripts": {
+    "dev": "npx http-server src -p 8000 -c-1 -o",
+    "deploy": "node deploy/deploy.js",
+    "deploy:bash": "bash deploy/deploy-hero.sh",
+    "deploy:powershell": "powershell -ExecutionPolicy Bypass -File deploy/deploy-hero.ps1"
+  },
+  "keywords": [
+    "jobseek",
+    "coaching",
+    "icare",
+    "hero-journey"
+  ],
+  "author": "Patrick - DDC Coaching",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
