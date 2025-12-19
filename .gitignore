@@ -8,9 +8,9 @@ yarn-error.log*
 /build
 /dist
 
-# Configuration
-src/config.js
-src/config.bundle.js
+# Configuration (NEVER commit these files - they contain sensitive keys)
+src/config.js          # Dev local config - created from config.example.js
+src/config.bundle.js   # Production CDN config - created from config.bundle.example.js
 .env
 .env.local
 .env.production
