@@ -24,7 +24,16 @@ export const CONFIG = {
     MIN_INPUT_LENGTH: 50, // Minimum caractères pour une réponse
     XP_PER_STAGE: 125,
     CREDITS_PER_GENERATION: 1,
-    
+
+    // API Endpoints (n8n webhooks)
+    API_ENDPOINTS: {
+        START_JOURNEY: '/webhook/hero-journey-start',
+        SUBMIT_STAGE: '/webhook/hero-journey-stage',
+        GENERATE_INSIGHTS: '/webhook/hero-journey-insights',
+        GET_JOURNEY: '/webhook/hero-journey-get',
+        EXTRACT_STAR: '/webhook/jobseed-extract-star-v2'
+    },
+
     // Feature Flags
     ENABLE_DEBUG: false,
     ENABLE_ANALYTICS: true
@@ -45,6 +54,13 @@ export const CONFIG = {
     MIN_INPUT_LENGTH: 50,
     XP_PER_STAGE: 125,
     CREDITS_PER_GENERATION: 1,
+    API_ENDPOINTS: {
+        START_JOURNEY: '/webhook/hero-journey-start',
+        SUBMIT_STAGE: '/webhook/hero-journey-stage',
+        GENERATE_INSIGHTS: '/webhook/hero-journey-insights',
+        GET_JOURNEY: '/webhook/hero-journey-get',
+        EXTRACT_STAR: '/webhook/jobseed-extract-star-v2'
+    },
     ENABLE_DEBUG: false,
     ENABLE_ANALYTICS: true
 };

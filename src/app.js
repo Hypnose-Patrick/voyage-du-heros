@@ -158,9 +158,14 @@ async function fetchCredits() {
 // =====================================================
 
 async function callN8N(endpoint, method = 'POST', body = null) {
+    // Validate endpoint exists
+    if (!endpoint) {
+        throw new Error('Endpoint non défini. Vérifiez votre fichier config.js');
+    }
+
     const url = `${CONFIG.N8N_BASE_URL}${endpoint}`;
     const token = state.session?.access_token;
-    
+
     const options = {
         method,
         headers: {
@@ -168,25 +173,49 @@ async function callN8N(endpoint, method = 'POST', body = null) {
             'Authorization': `Bearer ${token}`
         }
     };
-    
+
     if (body && method !== 'GET') {
         options.body = JSON.stringify(body);
     }
-    
+
     try {
         const response = await fetch(url, options);
-        
+
         if (response.status === 402) {
             showCreditsModal();
             throw new Error('Insufficient credits');
         }
-        
+
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'API error');
+            // Try to parse error response, but handle cases where it's not JSON
+            let errorMessage = 'API error';
+            try {
+                const error = await response.json();
+                errorMessage = error.message || errorMessage;
+            } catch (jsonError) {
+                const textError = await response.text();
+                errorMessage = textError || `Erreur HTTP ${response.status}`;
+            }
+            throw new Error(errorMessage);
         }
-        
-        return await response.json();
+
+        // Check if response has content
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            throw new Error('Réponse invalide du serveur (pas de JSON)');
+        }
+
+        const text = await response.text();
+        if (!text || text.trim() === '') {
+            throw new Error('Réponse vide du serveur');
+        }
+
+        try {
+            return JSON.parse(text);
+        } catch (parseError) {
+            console.error('JSON Parse Error:', parseError, 'Response:', text);
+            throw new Error('Réponse JSON invalide du serveur');
+        }
     } catch (error) {
         console.error('n8n API Error:', error);
         throw error;
@@ -920,25 +949,37 @@ window.closeCreditsModal = closeCreditsModal;
 
 async function init() {
     showLoading(true);
-    
+
     try {
+        // Validate configuration
+        if (!CONFIG.API_ENDPOINTS) {
+            throw new Error('Configuration incomplète : API_ENDPOINTS manquant. Veuillez copier config.example.js vers config.js et compléter les valeurs.');
+        }
+
+        const requiredEndpoints = ['START_JOURNEY', 'SUBMIT_STAGE', 'GENERATE_INSIGHTS', 'EXTRACT_STAR'];
+        const missingEndpoints = requiredEndpoints.filter(ep => !CONFIG.API_ENDPOINTS[ep]);
+
+        if (missingEndpoints.length > 0) {
+            throw new Error(`Configuration incomplète : endpoints manquants : ${missingEndpoints.join(', ')}`);
+        }
+
         // Initialize Supabase
         await initSupabase();
-        
+
         // Check authentication
         const isAuthenticated = await checkAuth();
         if (!isAuthenticated) return;
-        
+
         // Fetch credits
         await fetchCredits();
-        
+
         // Check for existing journey
         const hasJourney = await loadExistingJourney();
-        
+
         if (!hasJourney) {
             // Show welcome screen
             showScreen('welcome-screen');
-            
+
             // Check if resume button should be shown
             const { data } = await supabase
                 .from('hero_journeys')
@@ -946,18 +987,18 @@ async function init() {
                 .eq('user_id', state.user.id)
                 .eq('status', 'in_progress')
                 .limit(1);
-            
+
             if (data && data.length > 0) {
                 document.getElementById('resume-journey-btn').classList.remove('hidden');
             }
         }
-        
+
         // Setup event listeners
         setupEventListeners();
-        
+
         // Show app container
         document.getElementById('app-container').classList.remove('hidden');
-        
+
     } catch (error) {
         console.error('Initialization error:', error);
         showError('Erreur lors du chargement de l\'application. ' + error.message);
