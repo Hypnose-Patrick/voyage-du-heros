@@ -112,12 +112,25 @@
                 </div>
 
                 <div id="stage-input-container">
-                    <textarea 
-                        id="user-input" 
-                        class="user-input" 
-                        placeholder="Écrivez votre réponse ici... (minimum 50 caractères)"
-                        rows="6"
-                    ></textarea>
+                    <div class="input-wrapper">
+                        <textarea
+                            id="user-input"
+                            class="user-input"
+                            placeholder="Écrivez votre réponse ici... (minimum 50 caractères)"
+                            rows="6"
+                        ></textarea>
+                        <button id="voice-btn" class="voice-btn" title="Activer la reconnaissance vocale">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15C13.66 15 15 13.66 15 12V6C15 4.34 13.66 3 12 3C10.34 3 9 4.34 9 6V12C9 13.66 10.34 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19 10V12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 19V22M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="voice-status hidden" id="voice-status">
+                        <span class="pulse-dot"></span>
+                        <span id="voice-status-text">En écoute...</span>
+                    </div>
                     <div class="char-counter">
                         <span id="char-count">0</span> / 50 minimum
                     </div>
@@ -189,6 +202,16 @@
                 <div class="insight-card">
                     <h3>🌟 Votre Environnement de Travail Idéal</h3>
                     <p id="final-environment" class="insight-content"></p>
+                </div>
+
+                <!-- Expériences STAR -->
+                <div class="insight-card" id="star-experiences-section">
+                    <h3>⭐ Vos Expériences Professionnelles (Méthode STAR)</h3>
+                    <p class="insight-content" style="margin-bottom: 1.5rem;">
+                        Durant votre parcours, nous avons extrait et structuré vos expériences professionnelles selon la méthode STAR
+                        (Situation, Tâche, Action, Résultat). Ces récits sont prêts à être utilisés dans vos candidatures et entretiens.
+                    </p>
+                    <div id="star-experiences-container" class="star-experiences-grid"></div>
                 </div>
 
                 <!-- ICARE Final -->

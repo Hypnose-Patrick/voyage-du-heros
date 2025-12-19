@@ -48,24 +48,14 @@ log_error() {
 check_files() {
     log_info "Vérification des fichiers sources..."
     
-    if [ ! -f "$SRC_DIR/index.html" ]; then
-        log_error "index.html non trouvé"
-        exit 1
-    fi
-    
-    if [ ! -f "$SRC_DIR/style.css" ]; then
-        log_error "style.css non trouvé"
-        exit 1
-    fi
-    
-    if [ ! -f "$SRC_DIR/app.js" ]; then
-        log_error "app.js non trouvé"
-        exit 1
-    fi
-    
-    if [ ! -f "$SRC_DIR/config.js" ]; then
-        log_warn "config.js non trouvé - assurez-vous de l'avoir créé depuis config.example.js"
-    fi
+    local required_files=("login.html" "index.html" "style.css" "app.js" "config.js")
+
+    for file in "${required_files[@]}"; do
+        if [ ! -f "$SRC_DIR/$file" ]; then
+            log_error "$file non trouvé dans $SRC_DIR"
+            exit 1
+        fi
+    done
     
     log_info "✓ Tous les fichiers sources sont présents"
 }
@@ -169,7 +159,8 @@ main() {
     # 3. Upload des fichiers
     log_info "Upload des fichiers sur Bunny CDN..."
     echo ""
-    
+
+    upload_file "$SRC_DIR/login.html"
     upload_file "$SRC_DIR/index.html"
     upload_file "$SRC_DIR/style.css"
     upload_file "$SRC_DIR/app.js"

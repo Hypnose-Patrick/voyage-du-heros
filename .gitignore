@@ -10,6 +10,7 @@ yarn-error.log*
 
 # Configuration
 src/config.js
+src/config.bundle.js
 .env
 .env.local
 .env.production

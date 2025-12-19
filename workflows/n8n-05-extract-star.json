@@ -1,0 +1,197 @@
+{
+  "name": "JobSeed - Extract STAR",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "jobseed-extract-star",
+        "options": {}
+      },
+      "id": "webhook-extract-star",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        176,
+        304
+      ],
+      "webhookId": "c257a058-2f95-492e-9469-04cc76aacf74"
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nlet content = response.message?.content || response.text || response;\n\nif (typeof content === 'string') {\n  content = content.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n  try {\n    content = JSON.parse(content);\n  } catch (e) {\n    return [{json: {success: false, error: 'Parse error', raw: content}}];\n  }\n}\n\nconst required = ['title', 'situation', 'task', 'action', 'result'];\nconst missing = required.filter(f => !content[f]);\n\nif (missing.length > 0) {\n  return [{json: {success: false, error: 'Missing: ' + missing.join(', '), partial: content}}];\n}\n\nconst original = $('Webhook').first().json;\n\nreturn [{json: {\n  success: true,\n  userId: original.userId,\n  sourceType: original.stationNum ? 'journey' : 'manual',\n  sourceStationNum: original.stationNum || null,\n  narrativeOriginal: original.narrative,\n  ...content,\n  competencies: content.competencies || original.suggestedCompetencies || []\n}}];"
+      },
+      "id": "parse-response",
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.success }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "check-success",
+      "name": "Success?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        880,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({success: true, experience: $json, message: 'Expérience STAR extraite'}) }}",
+        "options": {}
+      },
+      "id": "respond-success",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1104,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({success: false, error: $json.error}) }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1104,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "claude-sonnet-4-5-20250929",
+          "mode": "list",
+          "cachedResultName": "claude-sonnet-4-5-20250929"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Tu es un expert en coaching de carrière et en analyse d'expériences professionnelles. Ton rôle est d'extraire et de structurer les informations selon la méthode STAR (Situation, Task, Action, Result) à partir d'une narration fournie par l'utilisateur.\n\nLa narration suivante contient une expérience professionnelle que tu dois analyser et structurer :\n\n{{ $json.narrative }}\n\nTu dois retourner un objet JSON avec la structure suivante :\n{\n  \"title\": \"Un titre court et percutant pour cette expérience (maximum 60 caractères)\",\n  \"situation\": \"Description du contexte et de la situation initiale (2-3 phrases)\",\n  \"task\": \"Description de la tâche ou du défi à relever (1-2 phrases)\",\n  \"action\": \"Description détaillée des actions entreprises (3-4 phrases, utilise 'je' pour les actions personnelles)\",\n  \"result\": \"Description des résultats obtenus avec des métriques si possible (2-3 phrases)\",\n  \"competencias\": [\"compétence1\", \"compétence2\", \"compétence3\"]\n}\n\nRègles importantes :\n1. Sois factuel et précis, n'invente pas d'informations qui ne sont pas dans la narration\n2. Si une section ne peut pas être extraite clairement, formule-la au mieux avec les informations disponibles\n3. Pour les compétences, identifie 3 à 5 compétences clés démontrées dans cette expérience\n4. Utilise un langage professionnel mais accessible\n5. Retourne UNIQUEMENT le JSON, sans texte additionnel avant ou après"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.anthropic",
+      "typeVersion": 1,
+      "position": [
+        368,
+        304
+      ],
+      "id": "882af8fc-7510-4b89-be09-53fe7d1a8c87",
+      "name": "Message a model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "iEElCooMdFfPnbBj",
+          "name": "Claude_Livre"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Response": {
+      "main": [
+        [
+          {
+            "node": "Success?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Success?": {
+      "main": [
+        [
+          {
+            "node": "Respond Success",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Parse Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": true,
+    "timezone": "Europe/Zurich"
+  },
+  "versionId": "6d619fcf-3b38-47cf-8a17-7e255d86266e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0ea510c4493dd7db4c0d79ea4065a1972733d74cbc3512eec3c84777fa0c1059"
+  },
+  "id": "ha7iiCF9HbxL1J8K",
+  "tags": []
+}

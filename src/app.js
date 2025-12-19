@@ -100,7 +100,10 @@ let state = {
         estime: 50
     },
     currentStage: 1,
-    totalXP: 0
+    totalXP: 0,
+    isRecording: false,
+    recognition: null,
+    starExperiences: [] // Expériences STAR collectées
 };
 
 // =====================================================
@@ -216,27 +219,30 @@ async function startJourney() {
 
 async function submitStageAnswer(stageNumber, userInput) {
     showLoading(true);
-    
+
     try {
         const data = await callN8N(CONFIG.API_ENDPOINTS.SUBMIT_STAGE, 'POST', {
             journeyId: state.journey,
             stageNumber,
             userInput
         });
-        
+
         // Update state
         state.icareProfile = data.newIcareProfile;
         state.currentStage = data.nextStage;
         state.totalXP += 125;
-        
+
         await fetchCredits();
-        
+
         // Display AI feedback
         displayAIFeedback(data.narrative, data.insight);
-        
+
         // Update UI
         updateJourneyUI();
-        
+
+        // Extract STAR experience from narrative (async, non-blocking)
+        extractSTARExperience(userInput, stageNumber);
+
     } catch (error) {
         showError('Erreur lors de la soumission. ' + error.message);
     } finally {
@@ -400,34 +406,34 @@ function displayAIFeedback(narrative, insight) {
     document.getElementById('ai-feedback-container').classList.remove('hidden');
 }
 
-function displayFinalInsights(insights) {
+async function displayFinalInsights(insights) {
     // Pitch
     document.getElementById('final-pitch').textContent = insights.pitch;
-    
+
     // Tagline
     document.getElementById('final-tagline').textContent = insights.tagline;
-    
+
     // Soft Skills
     const skillsContainer = document.getElementById('final-soft-skills');
     skillsContainer.innerHTML = '';
-    const skills = typeof insights.soft_skills === 'string' 
-        ? JSON.parse(insights.soft_skills) 
+    const skills = typeof insights.soft_skills === 'string'
+        ? JSON.parse(insights.soft_skills)
         : insights.soft_skills;
-    
+
     skills.forEach(skill => {
         const badge = document.createElement('div');
         badge.className = 'skill-badge';
         badge.textContent = skill;
         skillsContainer.appendChild(badge);
     });
-    
+
     // Accomplishments
     const accomplishmentsContainer = document.getElementById('final-accomplishments');
     accomplishmentsContainer.innerHTML = '';
     const accomplishments = typeof insights.accomplishments === 'string'
         ? JSON.parse(insights.accomplishments)
         : insights.accomplishments;
-    
+
     accomplishments.forEach(acc => {
         const item = document.createElement('div');
         item.className = 'accomplishment-item';
@@ -437,10 +443,14 @@ function displayFinalInsights(insights) {
         `;
         accomplishmentsContainer.appendChild(item);
     });
-    
+
     // Environment
     document.getElementById('final-environment').textContent = insights.environment;
-    
+
+    // Load and display STAR experiences
+    await loadSTARExperiences();
+    displaySTARExperiences();
+
     // Final ICARE chart
     updateICareChart('final-icare-chart', state.icareProfile);
 }
@@ -542,39 +552,341 @@ function updateICareChart(canvasId, profile) {
 }
 
 // =====================================================
+// STAR EXTRACTION
+// =====================================================
+
+async function extractSTARExperience(narrative, stageNumber = null) {
+    try {
+        console.log('🌟 Extraction STAR en cours...', {narrative: narrative.substring(0, 50) + '...'});
+
+        const data = await callN8N(CONFIG.API_ENDPOINTS.EXTRACT_STAR, 'POST', {
+            userId: state.user.id,
+            narrative: narrative,
+            stationNum: stageNumber
+        });
+
+        if (data.success && data.experience) {
+            // Ajouter l'expérience au state local
+            state.starExperiences.push(data.experience);
+
+            // Sauvegarder dans Supabase
+            await saveSTARToSupabase(data.experience);
+
+            // Afficher une notification subtile
+            showSTARNotification(data.experience.title);
+
+            console.log('✅ Expérience STAR extraite:', data.experience.title);
+        }
+
+    } catch (error) {
+        // Ne pas bloquer l'utilisateur si l'extraction échoue
+        console.warn('⚠️ Extraction STAR échouée (non bloquant):', error.message);
+    }
+}
+
+async function saveSTARToSupabase(experience) {
+    try {
+        const { data, error } = await supabase
+            .from('star_experiences')
+            .insert([{
+                user_id: state.user.id,
+                journey_id: state.journey,
+                stage_number: experience.sourceStationNum,
+                source_type: experience.sourceType || 'journey',
+                narrative_original: experience.narrativeOriginal,
+                title: experience.title,
+                situation: experience.situation,
+                task: experience.task,
+                action: experience.action,
+                result: experience.result,
+                competencies: experience.competencies || []
+            }])
+            .select()
+            .single();
+
+        if (error) {
+            console.error('Erreur sauvegarde STAR:', error);
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Erreur lors de la sauvegarde STAR:', error);
+        throw error;
+    }
+}
+
+async function loadSTARExperiences() {
+    try {
+        const { data, error } = await supabase
+            .from('star_experiences')
+            .select('*')
+            .eq('user_id', state.user.id)
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+
+        state.starExperiences = data || [];
+        return data;
+    } catch (error) {
+        console.error('Erreur chargement STAR:', error);
+        return [];
+    }
+}
+
+function showSTARNotification(title) {
+    const notification = document.createElement('div');
+    notification.className = 'star-notification';
+    notification.innerHTML = `
+        <div class="star-notification-content">
+            <span class="star-icon">⭐</span>
+            <span class="star-text">Expérience extraite: <strong>${title}</strong></span>
+        </div>
+    `;
+    document.body.appendChild(notification);
+
+    // Animation d'entrée
+    setTimeout(() => notification.classList.add('show'), 100);
+
+    // Retrait après 4 secondes
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
+}
+
+function displaySTARExperiences() {
+    const container = document.getElementById('star-experiences-container');
+    if (!container || state.starExperiences.length === 0) return;
+
+    container.innerHTML = state.starExperiences.map((exp, index) => `
+        <div class="star-card" data-star-id="${exp.id || index}">
+            <div class="star-card-header">
+                <h4 class="star-title">${exp.title}</h4>
+                <span class="star-badge">STAR</span>
+            </div>
+            <div class="star-card-body">
+                <div class="star-section">
+                    <strong class="star-label">📍 Situation:</strong>
+                    <p>${exp.situation}</p>
+                </div>
+                <div class="star-section">
+                    <strong class="star-label">🎯 Tâche:</strong>
+                    <p>${exp.task}</p>
+                </div>
+                <div class="star-section">
+                    <strong class="star-label">⚡ Action:</strong>
+                    <p>${exp.action}</p>
+                </div>
+                <div class="star-section">
+                    <strong class="star-label">🏆 Résultat:</strong>
+                    <p>${exp.result}</p>
+                </div>
+                ${exp.competencies && exp.competencies.length > 0 ? `
+                    <div class="star-competencies">
+                        ${exp.competencies.map(comp => `
+                            <span class="competency-badge">${comp}</span>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `).join('');
+}
+
+// =====================================================
+// SPEECH RECOGNITION
+// =====================================================
+
+function initSpeechRecognition() {
+    // Check browser compatibility
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+        console.warn('Speech recognition not supported in this browser');
+        // Hide voice button if not supported
+        const voiceBtn = document.getElementById('voice-btn');
+        if (voiceBtn) {
+            voiceBtn.style.display = 'none';
+        }
+        return null;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'fr-FR';
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+
+    let finalTranscript = '';
+
+    recognition.onstart = () => {
+        state.isRecording = true;
+        updateVoiceUI(true);
+        console.log('Voice recognition started');
+    };
+
+    recognition.onresult = (event) => {
+        let interimTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+
+            if (event.results[i].isFinal) {
+                finalTranscript += transcript + ' ';
+            } else {
+                interimTranscript += transcript;
+            }
+        }
+
+        // Update textarea with transcription
+        const userInput = document.getElementById('user-input');
+        const existingText = userInput.value;
+
+        // Only update if we have final transcript
+        if (finalTranscript) {
+            userInput.value = existingText + finalTranscript;
+            finalTranscript = '';
+
+            // Trigger input event to update character count
+            userInput.dispatchEvent(new Event('input'));
+        }
+
+        // Update status text with interim results
+        if (interimTranscript) {
+            document.getElementById('voice-status-text').textContent = `En écoute: "${interimTranscript}"`;
+        } else {
+            document.getElementById('voice-status-text').textContent = 'En écoute...';
+        }
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+
+        let errorMessage = 'Erreur de reconnaissance vocale';
+
+        switch (event.error) {
+            case 'no-speech':
+                errorMessage = 'Aucune parole détectée';
+                break;
+            case 'audio-capture':
+                errorMessage = 'Microphone non disponible';
+                break;
+            case 'not-allowed':
+                errorMessage = 'Permission microphone refusée';
+                break;
+            case 'network':
+                errorMessage = 'Erreur réseau';
+                break;
+        }
+
+        document.getElementById('voice-status-text').textContent = errorMessage;
+
+        // Auto-stop after error
+        setTimeout(() => {
+            stopVoiceRecognition();
+        }, 2000);
+    };
+
+    recognition.onend = () => {
+        state.isRecording = false;
+        updateVoiceUI(false);
+        console.log('Voice recognition ended');
+    };
+
+    return recognition;
+}
+
+function toggleVoiceRecognition() {
+    if (!state.recognition) {
+        state.recognition = initSpeechRecognition();
+        if (!state.recognition) {
+            showError('La reconnaissance vocale n\'est pas disponible sur ce navigateur. Veuillez utiliser Chrome, Edge ou Safari.');
+            return;
+        }
+    }
+
+    if (state.isRecording) {
+        stopVoiceRecognition();
+    } else {
+        startVoiceRecognition();
+    }
+}
+
+function startVoiceRecognition() {
+    try {
+        state.recognition.start();
+    } catch (error) {
+        console.error('Error starting recognition:', error);
+        showError('Impossible de démarrer la reconnaissance vocale. Vérifiez les permissions du microphone.');
+    }
+}
+
+function stopVoiceRecognition() {
+    if (state.recognition && state.isRecording) {
+        state.recognition.stop();
+    }
+}
+
+function updateVoiceUI(isRecording) {
+    const voiceBtn = document.getElementById('voice-btn');
+    const voiceStatus = document.getElementById('voice-status');
+
+    if (isRecording) {
+        voiceBtn.classList.add('recording');
+        voiceStatus.classList.remove('hidden');
+    } else {
+        voiceBtn.classList.remove('recording');
+        voiceStatus.classList.add('hidden');
+    }
+}
+
+// =====================================================
 // EVENT LISTENERS
 // =====================================================
 
 function setupEventListeners() {
     // Start journey button
     document.getElementById('start-journey-btn').addEventListener('click', startJourney);
-    
+
     // Resume journey button
     document.getElementById('resume-journey-btn').addEventListener('click', async () => {
         await loadExistingJourney();
     });
-    
+
     // User input character count
     const userInput = document.getElementById('user-input');
     const charCount = document.getElementById('char-count');
     const submitBtn = document.getElementById('submit-answer-btn');
-    
+
     userInput.addEventListener('input', () => {
         const length = userInput.value.trim().length;
         charCount.textContent = length;
         submitBtn.disabled = length < 50;
     });
-    
+
+    // Voice recognition button
+    const voiceBtn = document.getElementById('voice-btn');
+    if (voiceBtn) {
+        voiceBtn.addEventListener('click', toggleVoiceRecognition);
+    }
+
     // Submit answer
     submitBtn.addEventListener('click', async () => {
         const input = userInput.value.trim();
         if (input.length < 50) return;
-        
+
+        // Stop voice recognition if active
+        stopVoiceRecognition();
+
         await submitStageAnswer(state.currentStage, input);
     });
-    
+
     // Next stage button
     document.getElementById('next-stage-btn').addEventListener('click', () => {
+        // Stop voice recognition when moving to next stage
+        stopVoiceRecognition();
+
         if (state.currentStage >= 12) {
             // Generate final insights
             generateFinalInsights();
@@ -583,15 +895,16 @@ function setupEventListeners() {
             updateJourneyUI();
         }
     });
-    
+
     // Download PDF
     document.getElementById('download-pdf-btn').addEventListener('click', () => {
         window.print();
     });
-    
+
     // Restart journey
     document.getElementById('restart-journey-btn').addEventListener('click', () => {
         if (confirm('Êtes-vous sûr de vouloir recommencer un nouveau parcours ?')) {
+            stopVoiceRecognition();
             showScreen('welcome-screen');
         }
     });

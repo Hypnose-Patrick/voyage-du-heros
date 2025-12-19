@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Setup - JobSeek Hero Journey</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .test-section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+
+    .test-section h2 {
+      color: #333;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .test-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem;
+      background: white;
+      margin-bottom: 0.5rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .status-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .status-success {
+      background: #10b981;
+      color: white;
+    }
+
+    .status-error {
+      background: #ef4444;
+      color: white;
+    }
+
+    .status-pending {
+      background: #f59e0b;
+      color: white;
+    }
+
+    .test-label {
+      flex: 1;
+      color: #333;
+    }
+
+    .test-value {
+      color: #666;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+    }
+
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .error-details {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .spinner {
+      border: 3px solid rgba(102, 126, 234, 0.1);
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Test de Configuration</h1>
+    <p class="subtitle">Vérification automatique de votre setup JobSeek Hero Journey</p>
+
+    <div class="test-section">
+      <h2>📦 Fichiers de Configuration</h2>
+      <div id="config-tests"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>🔐 Connexion Supabase</h2>
+      <div id="supabase-tests"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>🌐 Endpoints n8n</h2>
+      <div id="n8n-tests"></div>
+    </div>
+
+    <div class="test-section">
+      <h2>🎤 Fonctionnalités Navigateur</h2>
+      <div id="browser-tests"></div>
+    </div>
+
+    <div class="actions">
+      <button id="run-tests" onclick="runAllTests()">▶️ Lancer les tests</button>
+      <button onclick="location.href='src/login.html'">Aller à la page de connexion</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import { CONFIG } from './src/config.js';
+
+    window.CONFIG = CONFIG;
+    window.results = {
+      config: [],
+      supabase: [],
+      n8n: [],
+      browser: []
+    };
+
+    function addTest(category, label, status, value = '', error = '') {
+      const container = document.getElementById(`${category}-tests`);
+      const item = document.createElement('div');
+      item.className = 'test-item';
+
+      const statusClass = status === 'success' ? 'status-success' :
+                          status === 'error' ? 'status-error' : 'status-pending';
+
+      const statusIcon = status === 'success' ? '✓' :
+                         status === 'error' ? '✗' : '⟳';
+
+      item.innerHTML = `
+        <div class="status-icon ${statusClass}">${statusIcon}</div>
+        <div class="test-label">${label}</div>
+        ${value ? `<div class="test-value">${value}</div>` : ''}
+      `;
+
+      if (error) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-details';
+        errorDiv.textContent = error;
+        item.appendChild(errorDiv);
+      }
+
+      container.appendChild(item);
+      window.results[category].push({ label, status, value, error });
+    }
+
+    window.runAllTests = async function() {
+      // Clear previous results
+      ['config', 'supabase', 'n8n', 'browser'].forEach(category => {
+        document.getElementById(`${category}-tests`).innerHTML = '';
+        window.results[category] = [];
+      });
+
+      const btn = document.getElementById('run-tests');
+      btn.disabled = true;
+      btn.innerHTML = '<div class="spinner" style="display:inline-block;margin-right:8px;"></div> Tests en cours...';
+
+      try {
+        await testConfig();
+        await testSupabase();
+        await testN8N();
+        testBrowser();
+      } catch (error) {
+        console.error('Test error:', error);
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '✓ Tests terminés';
+
+      // Generate report
+      generateReport();
+    };
+
+    async function testConfig() {
+      // Test 1: CONFIG loaded
+      if (window.CONFIG) {
+        addTest('config', 'Fichier config.js chargé', 'success');
+      } else {
+        addTest('config', 'Fichier config.js chargé', 'error', '', 'config.js non trouvé');
+        return;
+      }
+
+      // Test 2: Supabase URL
+      if (CONFIG.SUPABASE_URL && !CONFIG.SUPABASE_URL.includes('[your-project]')) {
+        addTest('config', 'SUPABASE_URL configurée', 'success', CONFIG.SUPABASE_URL);
+      } else {
+        addTest('config', 'SUPABASE_URL configurée', 'error', '', 'URL non configurée');
+      }
+
+      // Test 3: Supabase Key
+      if (CONFIG.SUPABASE_ANON_KEY && CONFIG.SUPABASE_ANON_KEY.length > 20) {
+        const masked = CONFIG.SUPABASE_ANON_KEY.substring(0, 20) + '...';
+        addTest('config', 'SUPABASE_ANON_KEY configurée', 'success', masked);
+      } else {
+        addTest('config', 'SUPABASE_ANON_KEY configurée', 'error', '', 'Clé non configurée');
+      }
+
+      // Test 4: n8n URL
+      if (CONFIG.N8N_BASE_URL && !CONFIG.N8N_BASE_URL.includes('[your-n8n]')) {
+        addTest('config', 'N8N_BASE_URL configurée', 'success', CONFIG.N8N_BASE_URL);
+      } else {
+        addTest('config', 'N8N_BASE_URL configurée', 'error', '', 'URL non configurée');
+      }
+
+      // Test 5: Endpoints
+      const endpoints = Object.keys(CONFIG.API_ENDPOINTS);
+      addTest('config', 'Endpoints définis', 'success', `${endpoints.length} endpoints`);
+    }
+
+    async function testSupabase() {
+      if (!window.CONFIG) return;
+
+      const { createClient } = supabase;
+
+      try {
+        // Create client
+        const client = createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+        addTest('supabase', 'Client Supabase créé', 'success');
+
+        // Test connection (check session)
+        const { data, error } = await client.auth.getSession();
+
+        if (error) {
+          addTest('supabase', 'Connexion à Supabase', 'error', '', error.message);
+        } else {
+          addTest('supabase', 'Connexion à Supabase', 'success');
+
+          if (data.session) {
+            addTest('supabase', 'Session active', 'success', data.session.user.email);
+          } else {
+            addTest('supabase', 'Session active', 'pending', 'Non connecté (normal)');
+          }
+        }
+
+        // Test table access (try to query user_subscriptions - will fail if not logged in, which is OK)
+        try {
+          const { error: queryError } = await client
+            .from('user_subscriptions')
+            .select('count')
+            .limit(0);
+
+          if (queryError && queryError.code !== 'PGRST116') {
+            // PGRST116 = no rows, which is OK
+            addTest('supabase', 'Accès aux tables', 'error', '', queryError.message);
+          } else {
+            addTest('supabase', 'Accès aux tables', 'success', 'Tables accessibles');
+          }
+        } catch (e) {
+          addTest('supabase', 'Accès aux tables', 'pending', 'Nécessite connexion');
+        }
+
+      } catch (error) {
+        addTest('supabase', 'Client Supabase créé', 'error', '', error.message);
+      }
+    }
+
+    async function testN8N() {
+      if (!window.CONFIG) return;
+
+      const endpoints = [
+        { name: 'START_JOURNEY', key: 'START_JOURNEY' },
+        { name: 'SUBMIT_STAGE', key: 'SUBMIT_STAGE' },
+        { name: 'GENERATE_INSIGHTS', key: 'GENERATE_INSIGHTS' },
+        { name: 'EXTRACT_STAR', key: 'EXTRACT_STAR' }
+      ];
+
+      for (const endpoint of endpoints) {
+        const path = CONFIG.API_ENDPOINTS[endpoint.key];
+        const url = `${CONFIG.N8N_BASE_URL}${path}`;
+
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ test: true })
+          });
+
+          if (response.ok || response.status === 400) {
+            // 400 is OK - means webhook is active but validation failed
+            addTest('n8n', endpoint.name, 'success', `${response.status} - Actif`);
+          } else if (response.status === 404) {
+            addTest('n8n', endpoint.name, 'error', '', 'Workflow non trouvé ou inactif');
+          } else {
+            addTest('n8n', endpoint.name, 'pending', `${response.status}`);
+          }
+        } catch (error) {
+          addTest('n8n', endpoint.name, 'error', '', error.message);
+        }
+      }
+    }
+
+    function testBrowser() {
+      // Test 1: Speech Recognition
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SR) {
+        addTest('browser', 'Web Speech API', 'success', 'Reconnaissance vocale supportée');
+      } else {
+        addTest('browser', 'Web Speech API', 'error', '', 'Non supporté (utilisez Chrome/Edge)');
+      }
+
+      // Test 2: Fetch API
+      if (window.fetch) {
+        addTest('browser', 'Fetch API', 'success');
+      } else {
+        addTest('browser', 'Fetch API', 'error', '', 'Navigateur trop ancien');
+      }
+
+      // Test 3: Local Storage
+      try {
+        localStorage.setItem('test', '1');
+        localStorage.removeItem('test');
+        addTest('browser', 'LocalStorage', 'success');
+      } catch (e) {
+        addTest('browser', 'LocalStorage', 'error', '', 'Désactivé ou non supporté');
+      }
+
+      // Test 4: ES6 Modules
+      addTest('browser', 'ES6 Modules', 'success', 'Chargement OK');
+    }
+
+    function generateReport() {
+      const total = Object.values(window.results).flat();
+      const success = total.filter(r => r.status === 'success').length;
+      const errors = total.filter(r => r.status === 'error').length;
+      const pending = total.filter(r => r.status === 'pending').length;
+
+      console.log('='.repeat(60));
+      console.log('RAPPORT DE TEST - JobSeek Hero Journey');
+      console.log('='.repeat(60));
+      console.log(`✓ Succès: ${success}`);
+      console.log(`✗ Erreurs: ${errors}`);
+      console.log(`⟳ En attente: ${pending}`);
+      console.log('='.repeat(60));
+
+      if (errors === 0) {
+        console.log('✅ Tous les tests sont OK ! Vous pouvez utiliser l\'application.');
+      } else {
+        console.log('⚠️ Certains tests ont échoué. Consultez QUICK_SETUP_CHECK.md');
+      }
+      console.log('='.repeat(60));
+    }
+
+    // Auto-run on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        runAllTests();
+      }, 500);
+    });
+  </script>
+</body>
+</html>

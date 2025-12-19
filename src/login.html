@@ -12,88 +12,186 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--spacing-lg);
+      padding: 2rem;
     }
-    
+
     .login-card {
-      background: var(--color-dark);
-      border: 1px solid var(--color-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: var(--spacing-xl);
+      padding: 3rem;
       max-width: 400px;
       width: 100%;
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-lg);
     }
-    
+
     .login-header {
       text-align: center;
-      margin-bottom: var(--spacing-xl);
+      margin-bottom: 2rem;
     }
-    
+
     .login-logo {
       font-size: 4rem;
-      margin-bottom: var(--spacing-md);
+      margin-bottom: 1rem;
     }
-    
+
     .login-form {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-md);
+      gap: 1rem;
     }
-    
+
+    .form-group {
+      width: 100%;
+    }
+
     .form-input {
       width: 100%;
-      padding: var(--spacing-md);
-      background: var(--color-surface);
-      border: 2px solid var(--color-border);
+      padding: 1rem;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border-color);
       border-radius: var(--radius-md);
-      color: var(--color-text);
-      font-family: var(--font-body);
+      color: var(--text-primary);
+      font-family: inherit;
       font-size: 1rem;
-      transition: all var(--transition-base);
+      transition: all 0.3s ease;
     }
-    
+
     .form-input:focus {
       outline: none;
-      border-color: var(--color-border-focus);
-      background: var(--color-surface-hover);
-      box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     }
-    
+
     .tabs {
       display: flex;
-      gap: var(--spacing-sm);
-      margin-bottom: var(--spacing-lg);
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
-    
+
     .tab {
       flex: 1;
-      padding: var(--spacing-sm);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      color: var(--color-text-secondary);
+      padding: 0.75rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
       cursor: pointer;
-      transition: all var(--transition-fast);
+      transition: all 0.2s ease;
       border-radius: var(--radius-md);
       text-align: center;
       font-weight: 600;
     }
-    
+
     .tab:hover {
-      background: var(--color-surface-hover);
+      background: var(--bg-card);
+      border-color: var(--color-primary);
     }
-    
+
     .tab.active {
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      background: var(--gradient-primary);
       color: white;
       border-color: transparent;
     }
-    
+
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .text-muted {
+      color: var(--text-muted);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-0 {
+      margin-top: 0;
+    }
+
+    .mb-0 {
+      margin-bottom: 0;
+    }
+
     .login-footer {
       text-align: center;
-      margin-top: var(--spacing-lg);
-      color: var(--color-text-muted);
+      margin-top: 1.5rem;
+      color: var(--text-muted);
       font-size: 0.875rem;
+    }
+
+    .login-footer a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+
+    #alertContainer {
+      margin-bottom: 1rem;
+    }
+
+    .alert {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      animation: slideDown 0.3s ease;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+
+    .alert-danger {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+    }
+
+    .alert-warning {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #f59e0b;
+    }
+
+    .alert-info {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #3b82f6;
     }
   </style>
 </head>
@@ -193,8 +291,8 @@
   </div>
 
   <script type="module">
-    import CONFIG from './config.js';
-    
+    import { CONFIG } from './config.js';
+
     // Initialize Supabase
     const { createClient } = supabase;
     const supabaseClient = createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
