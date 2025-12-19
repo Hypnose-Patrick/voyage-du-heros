@@ -8,12 +8,16 @@ yarn-error.log*
 /build
 /dist
 
-# Configuration
+# Configuration (fichiers avec vraies clés)
 src/config.js
 src/config.bundle.js
 .env
 .env.local
 .env.production
+
+# Templates OK à commiter
+# src/config.example.js
+# src/config.bundle.example.js
 
 # IDE
 .vscode/
